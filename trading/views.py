@@ -11,12 +11,21 @@ import threading
 from django.utils import timezone
 import csv
 from kiteconnect import KiteTicker
+import alpaca_trade_api as tradeapi
+from alpaca_trade_api.rest import REST, TimeFrame
 import random
+import requests
+import re
 
 api = "uha6zxzenz17uw2y"
 access = "LpVp9M4hwGjbZVyl44Ako3xyj08ScxJz"
 MCX = []
 NSE = []
+headers = {
+    'X-Kite-Version': '3',
+    'Authorization': 'token '+api+':'+access,
+}
+
 with open("static/all_Symbols.csv", 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     for row in csvreader:
@@ -45,7 +54,6 @@ threads = []
 counter = 0
 
 
-"""
 def thread_function(i, stocks):
     global dataArrFinal
     dataArr = []
@@ -99,7 +107,6 @@ def data(stock):
     dataArrFinal = []
     return temp
 
-"""
 
 # new functions
 
@@ -172,6 +179,41 @@ class API:
         return temp
 
 
+def ApiF(market, token):
+    response = requests.get(
+        'https://api.kite.trade/quote?i='+market+":"+token, headers=headers)
+    stock = list(response.json()['data'].keys())[0]
+    live_data = response.json()['data']
+    temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
+            random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
+    name = stock.split(":")[1]
+    if market == "NSE":
+        for shares in NSE:
+            if shares[2] == name:
+                name = shares[3]
+    else:
+        name = stock.split(":")[1]
+    try:
+        temp[0] = name
+        temp[1] = live_data[stock]["ohlc"]['open']
+        temp[2] = live_data[stock]["ohlc"]["high"]
+        temp[3] = live_data[stock]["ohlc"]["low"]
+        temp[4] = live_data[stock]["ohlc"]["close"]
+        temp[5] = live_data[stock]["last_price"]
+        temp[6] = live_data[stock]["volume"]
+        temp[7] = live_data[stock]["net_change"]
+    except:
+        temp[0] = name
+        temp[1] = live_data[stock]["ohlc"]["open"]
+        temp[2] = live_data[stock]["ohlc"]["high"]
+        temp[3] = live_data[stock]["ohlc"]["low"]
+        temp[4] = live_data[stock]["ohlc"]["close"]
+        temp[5] = live_data[stock]["last_price"]
+        temp[6] = "volume"
+        temp[7] = live_data[stock]["net_change"]
+    return temp
+
+
 @login_required
 def home(request):
     """current_user = request.user
@@ -198,31 +240,28 @@ def watchlist(request):
     # obj.stocks = {"data": []}
     # obj.save()
     request.session['live_data'] = {}
-    request.session['token_to_instrument_NSE'] = {}
-    request.session['token_to_instrument_MCX'] = {}
-    request.session['TempNSE'] = {}
-    request.session['TempMCX'] = {}
+    request.session['token_to_instrument_NSE'] = []
+    request.session['token_to_instrument_MCX'] = []
+    request.session['TempNSE'] = []
+    request.session['TempMCX'] = []
     if obj.stocks['data'] != []:
         for stock in obj.stocks['data']:
             for share in NSE:
                 if share[3] == stock:
-                    request.session['token_to_instrument_NSE'][int(
-                        share[0])] = stock
+                    request.session['token_to_instrument_NSE'].append(share[2])
             for share in MCX:
                 if share[2] == stock:
-                    request.session['token_to_instrument_MCX'][int(
-                        share[0])] = share[2]
+                    request.session['token_to_instrument_MCX'].append(share[2])
 
-        ApiInstance1 = API(
-            request.session['token_to_instrument_NSE'], api, access)
-        request.session['TempNSE'] = ApiInstance1.Api()
+        for stock in request.session['token_to_instrument_NSE']:
+            print(stock)
+            request.session['TempNSE'].append(ApiF("NSE", stock))
+        for stock in request.session['token_to_instrument_MCX']:
+            request.session['TempMCX'].append(ApiF("MCX", stock))
         request.session['TempNSE'].sort(key=lambda x: x[1])
-        ApiInstance2 = API(
-            request.session['token_to_instrument_MCX'], api, access)
-        request.session['TempMCX'] = ApiInstance2.Api()
         request.session['TempMCX'].sort(key=lambda x: x[1])
-    ApiInstance2 = API({256265: "NIFTY 50", 265: "SENSEX"}, api, access)
-    senty = ApiInstance2.Api()
+    ApiInstance1 = API({256265: "NIFTY 50", 265: "SENSEX"}, api, access)
+    senty = ApiInstance1.Api()
     if current_user.is_superuser:
         return render(request, 'trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataMCX': request.session['TempMCX'], 'stocksA': stockT, 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
     else:
@@ -444,21 +483,21 @@ def dataDisplay(request):
     # args = request.args
     apiKey = request.GET.get('apiKey')
     symbol = request.GET.get('symbol')
+    market = request.GET.get('segment')
     todo = request.GET.get('todo')
     print(apiKey, symbol)
     stringOutput = {"data": []}
     if apiKey == "asdfghjkl":
         if symbol != None:
             try:
-                token_to_instrument_NSE = {}
+                token_to_instrument_NSE = []
                 for share in NSE:
                     if share[3] == symbol:
-                        token_to_instrument_NSE = {int(share[0]): symbol}
+                        token_to_instrument_NSE.append(share[2])
                 for share in MCX:
                     if share[2] == symbol:
-                        token_to_instrument_NSE = {int(share[0]): share[2]}
-                ApiInstance3 = API(token_to_instrument_NSE, api, access)
-                dataArrFinal = ApiInstance3.Api()
+                        token_to_instrument_NSE.append(share[2])
+                dataArrFinal = ApiF("NSE", stock)
                 x = {
                     "name": str(dataArrFinal[0][0]),
                     "open": str(dataArrFinal[0][1]),
@@ -476,17 +515,18 @@ def dataDisplay(request):
         else:
             userStack = stack.objects.filter(username=request.user.id).first()
             if userStack.stocks['data'] != []:
-                token_to_instrument_NSE = {}
-                token_to_instrument_MCX = {}
+                token_to_instrument_NSE = []
+                token_to_instrument_MCX = []
                 for stock in userStack.stocks['data']:
                     for share in NSE:
                         if share[3] == stock:
-                            token_to_instrument_NSE[int(share[0])] = stock
+                            token_to_instrument_NSE.append(share[2])
                     for share in MCX:
                         if share[2] == stock:
-                            token_to_instrument_MCX[int(share[0])] = share[2]
-                ApiInstance4 = API(token_to_instrument_NSE, api, access)
-                dataArrFinal1 = ApiInstance4.Api()
+                            token_to_instrument_MCX.append(share[2])
+                dataArrFinal1 = []
+                for stock in token_to_instrument_NSE:
+                    dataArrFinal1.append(ApiF("NSE", stock))
                 stringOutput = {"NSE": [], "MCX": []}
                 for i in dataArrFinal1:
                     x = {
@@ -500,8 +540,9 @@ def dataDisplay(request):
                         "change": str(i[7])
                     }
                     stringOutput["NSE"].append(x)
-                ApiInstance5 = API(token_to_instrument_MCX, api, access)
-                dataArrFinal2 = ApiInstance5.Api()
+                dataArrFinal2 = []
+                for stock in token_to_instrument_MCX:
+                    dataArrFinal2.append(ApiF("MCX", stock))
                 for i in dataArrFinal2:
                     x = {
                         "name": str(i[0]),
@@ -520,24 +561,25 @@ def dataDisplay(request):
     elif apiKey == "qwertyuiop":
         if todo == "get":
             try:
-                token_to_instrument_NSE = {}
-                for share in NSE:
-                    if share[3] == symbol:
-                        token_to_instrument_NSE = {int(share[0]): symbol}
-                for share in MCX:
-                    if share[2] == symbol:
-                        token_to_instrument_NSE = {int(share[0]): share[2]}
-                ApiInstance3 = API(token_to_instrument_NSE, api, access)
-                dataArrFinal = ApiInstance3.Api()
+                if market == "NSE":
+                    for share in NSE:
+                        if share[3] == symbol:
+                            stock = share[2]
+                    dataArrFinal = ApiF("NSE", stock)
+                else:
+                    for share in MCX:
+                        if share[2] == symbol:
+                            stock = share[2]
+                    dataArrFinal = ApiF("MCX", stock)
                 x = {
-                    "name": str(dataArrFinal[0][0]),
-                    "open": str(dataArrFinal[0][1]),
-                    "high": str(dataArrFinal[0][2]),
-                    "low": str(dataArrFinal[0][3]),
-                    "close": str(dataArrFinal[0][4]),
-                    "last price": str(dataArrFinal[0][5]),
-                    "volume": str(dataArrFinal[0][6]),
-                    "change": str(dataArrFinal[0][7])
+                    "name": str(dataArrFinal[0]),
+                    "open": str(dataArrFinal[1]),
+                    "high": str(dataArrFinal[2]),
+                    "low": str(dataArrFinal[3]),
+                    "close": str(dataArrFinal[4]),
+                    "last price": str(dataArrFinal[5]),
+                    "volume": str(dataArrFinal[6]),
+                    "change": str(dataArrFinal[7])
                 }
                 stringOutput["data"].append(x)
                 obj = stack.objects.filter(username=request.user).first()
