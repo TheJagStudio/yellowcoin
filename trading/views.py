@@ -25,7 +25,6 @@ headers = {
     'X-Kite-Version': '3',
     'Authorization': 'token '+api+':'+access,
 }
-
 with open("static/all_Symbols.csv", 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     for row in csvreader:
