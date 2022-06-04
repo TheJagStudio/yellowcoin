@@ -9,6 +9,6 @@ class UserAccount(models.Model):
     Account_Type = models.CharField(max_length=10)
     Card_Type = models.CharField(max_length=10)
     Card_Number = models.CharField(max_length=10)
-    Partnership = models.CharField(max_length=100, default="YellowCoin")
-    Remarks = models.CharField(max_length=10)
+    Partnership = models.CharField(max_length=100, default="5")
+    Remarks = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

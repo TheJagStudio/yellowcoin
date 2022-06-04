@@ -64,7 +64,7 @@ ROOT_URLCONF = 'yellowcoin.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates', 'accounts/templates', 'trading/templates', 'dashboard/templates', 'user/templates', 'log/templates', 'report/templates', 'forex/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

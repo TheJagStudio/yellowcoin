@@ -1,0 +1,913 @@
+{% extends "base.html" %}
+{% block content %}
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+       <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-551546630909354-1;">
+        <div class="row my-2">
+         <div class="col-3 col-sm-3 col-md-6 col-lg-4 col-xl-4">
+          Auto Square Up Log
+         </div>
+         <div class="col-4 col-sm-3 col-md-1 col-lg-5 col-xl-5">
+         </div>
+         <div class="col-6 col-sm-3 col-md-2 col-lg-1 col-xl-1 text-center">
+          <div class="dropdown bg-transparent">
+           <a aria-expanded="false" class="btn focus-none" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink" role="button">
+            <button class="position-relative border-none bg-transparent" type="button">
+             <svg aria-hidden="true" class="svg-inline--fa fa-bell fa-1x p-0 custom-size" color="grey" data-icon="bell" data-prefix="fas" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" fill="currentColor">
+              </path>
+             </svg>
+             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              3
+              <span class="visually-hidden">
+               unread messages
+              </span>
+             </span>
+            </button>
+           </a>
+           <ul aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+            <li>
+             <a class="dropdown-item" href="/">
+              Action
+             </a>
+            </li>
+            <li>
+             <a class="dropdown-item" href="/">
+              Another action
+             </a>
+            </li>
+            <li>
+             <a class="dropdown-item" href="/">
+              Something else here
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+         <div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+          <div class="d-flex justify-content-end">
+           <svg aria-hidden="true" class="svg-inline--fa fa-circle-user fa-2x mt-1" data-icon="circle-user" data-prefix="fas" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" fill="currentColor">
+            </path>
+           </svg>
+           <div class="dropdown ms-1 bg-transparent">
+            <a aria-expanded="false" class="btn fw-bold focus-none mt-0" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink" role="button">
+             {{current_user.username}}
+             <span class="ps-2">
+              <svg aria-hidden="true" class="svg-inline--fa fa-angle-down fw-bold" data-icon="angle-down" data-prefix="fas" focusable="false" role="img" viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" fill="currentColor">
+               </path>
+              </svg>
+             </span>
+            </a>
+            <button class="btn-sm bg-danger text-light w-75 focus-none mt-3 float-start border-none" onclick="location.href = '../../accounts/logout';" type="button">
+             <svg aria-hidden="true" class="svg-inline--fa fa-arrow-right-from-bracket me-2" data-icon="arrow-right-from-bracket" data-prefix="fas" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M160 416H96c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h64c17.67 0 32-14.33 32-32S177.7 32 160 32H96C42.98 32 0 74.98 0 128v256c0 53.02 42.98 96 96 96h64c17.67 0 32-14.33 32-32S177.7 416 160 416zM502.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L402.8 224H192C174.3 224 160 238.3 160 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C515.1 266.1 515.1 245.9 502.6 233.4z" fill="currentColor">
+              </path>
+             </svg>
+             Logout
+            </button>
+            <ul aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+             <li>
+              <a class="dropdown-item" href="/">
+               Action
+              </a>
+             </li>
+             <li>
+              <a class="dropdown-item" href="/">
+               Another action
+              </a>
+             </li>
+             <li>
+              <a class="dropdown-item" href="/">
+               Something else here
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="react-reveal container my-4" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-551546630909354-1;">
+        <div class="row">
+         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <p class="m-2">
+           From End
+          </p>
+          <input class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-5 cursor" type="date"/>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <p class="m-2">
+           From End
+          </p>
+          <input class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-5 cursor" type="date"/>
+         </div>
+         <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2 text-center margin-custom">
+          <button class="btn btn-primary focus-none float-end" type="button">
+           Find Logs
+          </button>
+         </div>
+         <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2 text-center margin-custom">
+          <button class="text-light btn btn-info focus-none float-start" type="button">
+           Reset
+          </button>
+         </div>
+        </div>
+       </div>
+       <div class="react-reveal container my-5" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-551546630909354-1;">
+        <div class="row">
+         <div class="col-0 col-sm-0 col-md-4 col-lg-6 col-xl-6">
+         </div>
+        </div>
+       </div>
+       <div class="react-reveal container my-5" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-551546630909354-1;">
+        <div class="row">
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center my-1">
+         </div>
+         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center my-1">
+          <div class="input-group shadow-sm">
+           <span class="input-group-text focus-none bg-transparent border-right-none" id="basic-addon1">
+            <svg aria-hidden="true" class="svg-inline--fa fa-magnifying-glass hover-search" color="#fab417" data-icon="magnifying-glass" data-prefix="fas" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+             <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" fill="currentColor">
+             </path>
+            </svg>
+           </span>
+           <input aria-describedby="basic-addon1" aria-label="Username" class="form-control focus-none border-left-none" placeholder="Search..." type="text"/>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="react-reveal ms-4" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-551546630909354-1;">
+        SHOW
+        <span>
+         <select aria-label="Default select example" class="form-select bg-orange color-white focus-none width-entry d-inline mx-2">
+          <option class="bg-light text-dark ps-3" value="10">
+           10
+          </option>
+          <option class="bg-light text-dark ps-3" value="20">
+           20
+          </option>
+          <option class="bg-light text-dark ps-3" value="30">
+           30
+          </option>
+          <option class="bg-light text-dark ps-3" value="40">
+           40
+          </option>
+         </select>
+        </span>
+        ENTRIES
+       </div>
+       <div class="react-reveal" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-551546630909354-1;">
+        <div class="table-responsive ms-3">
+         <table class="table my-5 table-borderless">
+          <thead>
+           <tr class="table-border-none">
+            <th class="bg-light" scope="col">
+             NSEFUT SYM
+            </th>
+            <th class="bg-light" scope="col">
+             BIO RATE
+            </th>
+            <th class="bg-light" scope="col">
+             ASK RATE
+            </th>
+            <th class="bg-light" scope="col">
+             LTP
+            </th>
+            <th class="bg-light" scope="col">
+             CHANGE%
+            </th>
+            <th class="bg-light" scope="col">
+             NET CHANGE
+            </th>
+            <th class="bg-light" scope="col">
+             HIGH
+            </th>
+            <th class="bg-light" scope="col">
+             LOW
+            </th>
+            <th class="bg-light" scope="col">
+             OPEN
+            </th>
+            <th class="bg-light" scope="col">
+             CLOSE
+            </th>
+            <th class="bg-light" scope="col">
+             REMOVE
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec c color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              148.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-danger text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              148.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-danger text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-down" color="red" data-icon="caret-down" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z" fill="currentColor">
+               </path>
+              </svg>
+              1 48.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-danger text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              1 48.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-danger text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              1 48.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-down" color="red" data-icon="caret-down" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z" fill="currentColor">
+               </path>
+              </svg>
+              148.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              148.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              148.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              148.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              148.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+           <tr class="">
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              NIFTY 31MAR2022
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0 bg-primary text-center">
+             <a class="no-dec color-white" href="/trade/detail-graph">
+              17,518.00
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              0.96
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              <svg aria-hidden="true" class="svg-inline--fa fa-caret-up" color="green" data-icon="caret-up" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z" fill="currentColor">
+               </path>
+              </svg>
+              148.95
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,533.50
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,436.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,501.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <a class="no-dec text-dark" href="/trade/detail-graph">
+              17,368.05
+             </a>
+            </td>
+            <td class="td-border py-0">
+             <button class="btn mx-3 my-0 py-0 the-button" type="button">
+              <svg aria-hidden="true" class="svg-inline--fa fa-xmark fa-1x cross-size" color="red" data-icon="xmark" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" fill="currentColor">
+               </path>
+              </svg>
+             </button>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="react-reveal fw-bold my-2">
+        Sharing 0 to of 0 entries
+       </div>
+      </div>
+{% endblock %}
