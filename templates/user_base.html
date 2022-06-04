@@ -808,6 +808,37 @@
                                        </ul>
                                     </div>
                                  </li>
+                                 {% if givenUser == "True" %}
+                                 <li>
+                                    <div class="dropdown ">
+                                       <button class="btn  height-navbar-button border  radius-navbar border-light shadow-sm focus-none mt-4 p-0 custom-dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <div class="container width-navbar-drop">
+                                             <div class="row">
+                                                <div class="col-2 p-0">
+                                                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-user" class="svg-inline--fa fa-circle-user " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" >
+                                                      <path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z"></path>
+                                                   </svg>
+                                                </div>
+                                                <div class="col-8 text-start">User</div>
+                                                <div class="col-2">
+                                                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" >
+                                                      <path fill="currentColor" d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"></path>
+                                                   </svg>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </button>
+                                       <ul class="dropdown-menu dpdn-class  width-navbar-drop border-none bg-transparent m-0 p-0" aria-labelledby="dropdownMenuButton1">
+                                          <a class="text-start no-dec text-dark" href="/user/user_list/">
+                                             <li class="list-group-item no-dec text-start">UserList</li>
+                                          </a>
+                                          <a class="text-start no-dec text-dark" href="/user/adduser/">
+                                             <li class="list-group-item no-dec text-start border-list-2">Add Account</li>
+                                          </a>
+                                       </ul>
+                                    </div>
+                                 </li>
+                                 {% endif %}
                                  <li>
                                     <div class="dropdown ">
                                        <button class="btn  height-navbar-button border  radius-navbar border-light shadow-sm focus-none mt-4 p-0 custom-dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

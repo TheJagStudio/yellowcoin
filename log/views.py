@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from user.models import UserAccount
 
 
 @login_required
@@ -8,7 +9,12 @@ def trade_edit(request):
     if current_user.is_superuser:
         return render(request, 'log_trade_edit.html', {'current_user': current_user})
     else:
-        return render(request, 'user_log_trade_edit.html', {'current_user': current_user})
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
+        return render(request, 'user_log_trade_edit.html', {'current_user': current_user, 'givenUser': givenUser})
 
 
 @login_required
@@ -38,4 +44,9 @@ def rejection_log(request):
     if current_user.is_superuser:
         return render(request, 'log_rejection.html', {'current_user': current_user})
     else:
-        return render(request, 'user_log_rejection.html', {'current_user': current_user})
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
+        return render(request, 'user_log_rejection.html', {'current_user': current_user, 'givenUser': givenUser})

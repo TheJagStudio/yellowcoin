@@ -15,7 +15,7 @@ import alpaca_trade_api as tradeapi
 from alpaca_trade_api.rest import REST, TimeFrame
 import random
 import requests
-import re
+from user.models import UserAccount
 
 api = "uha6zxzenz17uw2y"
 access = "LpVp9M4hwGjbZVyl44Ako3xyj08ScxJz"
@@ -264,7 +264,12 @@ def watchlist(request):
     if current_user.is_superuser:
         return render(request, 'trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataMCX': request.session['TempMCX'], 'stocksA': stockT, 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
     else:
-        return render(request, 'user_trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'stocksA': stockT, 'dataMCX': request.session['TempMCX'], 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
+        return render(request, 'user_trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'givenUser': givenUser, 'stocksA': stockT, 'dataMCX': request.session['TempMCX'], 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
 
 
 @login_required
@@ -274,8 +279,13 @@ def tradesFunction(request):
         obj = trades.objects.all()
         return render(request, 'trade_transcation.html', {'trades': obj, 'current_user': current_user, 'stocksA': stocksA, 'dataArrFinal': dataArrFinal})
     else:
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
         obj = trades.objects.filter(user_id=request.user).all()
-        return render(request, 'user_trade_transcation.html', {'trades': obj, 'current_user': current_user, 'stocksA': stockT, 'dataArrFinal': dataArrFinal})
+        return render(request, 'user_trade_transcation.html', {'trades': obj, 'current_user': current_user, 'stocksA': stockT, 'dataArrFinal': dataArrFinal, 'givenUser': givenUser})
 
 
 @login_required
@@ -451,7 +461,12 @@ def trading_portfolio(request):
     if current_user.is_superuser:
         return render(request, 'trading_portfolio.html', {'current_user': current_user})
     else:
-        return render(request, 'user_trading_portfolio.html', {'current_user': current_user})
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
+        return render(request, 'user_trading_portfolio.html', {'current_user': current_user, 'givenUser': givenUser})
 
 
 @login_required
@@ -460,7 +475,12 @@ def trading_ban(request):
     if current_user.is_superuser:
         return render(request, 'trading_ban.html', {'current_user': current_user})
     else:
-        return render(request, 'user_trading_ban.html', {'current_user': current_user})
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
+        return render(request, 'user_trading_ban.html', {'current_user': current_user, 'givenUser': givenUser})
 
 
 @login_required

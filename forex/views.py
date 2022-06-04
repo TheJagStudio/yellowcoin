@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from user.models import UserAccount
 # Create your views here.
 
 
@@ -9,7 +10,12 @@ def forex_wacthlist(request):
     if current_user.is_superuser:
         return render(request, 'forex_watchlist.html', {'current_user': current_user})
     else:
-        return render(request, 'user_forex_watchlist.html', {'current_user': current_user})
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
+        return render(request, 'user_forex_watchlist.html', {'current_user': current_user, 'givenUser': givenUser})
 
 
 @login_required
@@ -18,7 +24,12 @@ def forex_trades(request):
     if current_user.is_superuser:
         return render(request, 'forex_trades.html', {'current_user': current_user})
     else:
-        return render(request, 'user_forex_trades.html', {'current_user': current_user})
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
+        return render(request, 'user_forex_trades.html', {'current_user': current_user, 'givenUser': givenUser})
 
 
 @login_required
@@ -27,7 +38,12 @@ def forex_portfolio(request):
     if current_user.is_superuser:
         return render(request, 'forex_portfolio.html', {'current_user': current_user})
     else:
-        return render(request, 'user_forex_portfolio.html', {'current_user': current_user})
+        user_account = UserAccount.objects.filter(user=current_user).first()
+        if user_account.Account_Type == "User":
+            givenUser = "False"
+        else:
+            givenUser = "True"
+        return render(request, 'user_forex_portfolio.html', {'current_user': current_user, 'givenUser': givenUser})
 
 
 @login_required
