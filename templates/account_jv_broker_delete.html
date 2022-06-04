@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+                  <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+                     <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-678162766545106-1;">
+                        <div class="row my-2">
+                           <div class="col-3 col-sm-3 col-md-6 col-lg-4 col-xl-4 fw-bold">JV Brocker Delete</div>
+                           <div class="col-4 col-sm-3 col-md-1 col-lg-5 col-xl-5"></div>
+                           <div class="col-6 col-sm-3 col-md-2 col-lg-1 col-xl-1 text-center">
+                              <div class="dropdown bg-transparent">
+                                 <a class="btn focus-none" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="/">
+                                    <button type="button" class="position-relative border-none bg-transparent">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="svg-inline--fa fa-bell fa-2x p-0 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="grey">
+                                          <path fill="currentColor" d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z"></path>
+                                       </svg>
+                                       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3<span class="visually-hidden">unread messages</span></span>
+                                    </button>
+                                 </a>
+                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/">Action</a></li>
+                                    <li><a class="dropdown-item" href="/">Another action</a></li>
+                                    <li><a class="dropdown-item" href="/">Something else here</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+                              <div class="d-flex justify-content-strat">
+                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-user" class="svg-inline--fa fa-circle-user fa-2x mt-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z"></path>
+                                 </svg>
+                                 <div class="dropdown ms-1 bg-transparent">
+                                    <a class="btn fw-bold focus-none" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="/">
+                                        {{current_user.username}}
+                                       <span class="ps-2">
+                                          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fw-bold" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                             <path fill="currentColor" d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"></path>
+                                          </svg>
+                                       </span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                       <li><a class="dropdown-item" href="/">Action</a></li>
+                                       <li><a class="dropdown-item" href="/">Another action</a></li>
+                                       <li><a class="dropdown-item" href="/">Something else here</a></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-678162766545106-1;">
+                        <div class="row align-items-center my-3">
+                           <div class="col-3">Brocker</div>
+                           <div class="col-5">
+                              <select class="form-select input-border focus-none" id="inputGroupSelect01">
+                                 <option class="">Title</option>
+                                 <option class="">second</option>
+                                 <option class="">third</option>
+                              </select>
+                           </div>
+                           <div class="col-3"></div>
+                           <div class="col-1"></div>
+                        </div>
+                        <div class="row align-items-center my-3">
+                           <div class="col-3">Date</div>
+                           <div class="col-5"><input type="date" class="w-100 p-1 "></div>
+                           <div class="col-3"></div>
+                           <div class="col-1"></div>
+                        </div>
+                        <div class="row align-items-center my-3">
+                           <div class="col-3"></div>
+                           <div class="col-2"><button type="button" class="btn btn-primary w-100">Get</button></div>
+                           <div class="col-1"></div>
+                           <div class="col-6"></div>
+                        </div>
+                     </div>
+                     <div class="react-reveal container mt-5" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-678162766545106-1;">
+                        <table class="table">
+                           <thead class="table-dark">
+                              <tr>
+                                 <th scope="col">From User</th>
+                                 <th scope="col">To User</th>
+                                 <th scope="col">Remark</th>
+                                 <th scope="col">Account</th>
+                                 <th scope="col">Action</th>
+                              </tr>
+                           </thead>
+                           <tbody></tbody>
+                        </table>
+                     </div>
+                  </div>
+{% endblock content %}

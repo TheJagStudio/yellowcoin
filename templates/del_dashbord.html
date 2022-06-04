@@ -1,0 +1,691 @@
+{% extends 'del_base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+   <div class="react-reveal container-fluid" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-217962295205880-1;">
+      <div class="row my-3">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+            <div class="input-group shadow-sm ">
+               <span class="input-group-text focus-none bg-transparent border-right-none" id="basic-addon1">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass hover-search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="#fab417">
+                     <path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path>
+                  </svg>
+               </span>
+               <input type="text" class="form-control focus-none border-left-none" placeholder="Search..." aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+         </div>
+         <div class="col-6 col-sm-6 col-md-6 col-lg-1 text-center  my-3 my-sm-3 my-md-3 my-lg-0 my-xl-0">
+            <div class="dropdown bg-transparent">
+               <a class="btn focus-none" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="/">
+                  <button type="button" class="position-relative border-none bg-transparent">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="svg-inline--fa fa-bell fa-2x p-0 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="grey">
+                        <path fill="currentColor" d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z"></path>
+                     </svg>
+                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3<span class="visually-hidden">unread messages</span></span>
+                  </button>
+               </a>
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="/">Action</a></li>
+                  <li><a class="dropdown-item" href="/">Another action</a></li>
+                  <li><a class="dropdown-item" href="/">Something else here</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2  my-3 my-sm-3 my-md-3 my-lg-0 my-xl-0">
+            <div class="d-flex justify-content-strat">
+               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-user" class="svg-inline--fa fa-circle-user fa-2x mt-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z"></path>
+               </svg>
+               <div class="dropdown ms-1 bg-transparent">
+                  <a class="btn fw-bold focus-none" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="/">
+                     Timothy
+                     <span class="ps-2">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fw-bold" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                           <path fill="currentColor" d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"></path>
+                        </svg>
+                     </span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                     <li><a class="dropdown-item" href="/">Action</a></li>
+                     <li><a class="dropdown-item" href="/">Another action</a></li>
+                     <li><a class="dropdown-item" href="/">Something else here</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <nav class="react-reveal navbar navbar-expand-lg border-dash-nav mb-2" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-217962295205880-1;">
+      <div class="container-fluid">
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon mt-2">
+               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"></path>
+               </svg>
+            </span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               <li class="nav-item"><a class="nav-link mx-1 text-dark border rounder hover-effect-nav" href="/trade/trades-dashboard">Dashboard</a></li>
+               <li class="nav-item"><a class="nav-link mx-1 text-dark border rounder hover-effect-nav" href="/trade/executed">Executed Options</a></li>
+               <li class="nav-item"><a class="nav-link mx-1 text-dark border rounder hover-effect-nav" href="/trade/running">Running Orders</a></li>
+               <li class="nav-item"><a class="nav-link mx-1 text-dark border rounder hover-effect-nav" href="/trade/summary">Summary Reports</a></li>
+               <li class="nav-item"><a class="nav-link mx-1 text-dark border rounder hover-effect-nav" href="/trade/m2m">M2M Alerts</a></li>
+               <li class="nav-item"><a class="nav-link mx-1 text-dark border rounder hover-effect-nav" href="/trade/user-dashboard">User</a></li>
+               <li class="nav-item"><a class="nav-link mx-1 text-dark border rounder hover-effect-nav" href="/trade/trade-entry">Trade Entry</a></li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-217962295205880-1;">
+      <div class="row">
+         <div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 ">
+            <div class=" d-flex justify-content-center pos-rel">
+               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="eye" class="svg-inline--fa fa-eye fa-1x bg-info p-3 btn-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" color="white">
+                  <path fill="currentColor" d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z"></path>
+               </svg>
+            </div>
+            <div class="text-center border shadow btn-radius">
+               <p class="fs-3 my-1 text-info">17,000</p>
+               <p class="my-0">Daily Views</p>
+            </div>
+         </div>
+         <div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 ">
+            <div class=" d-flex justify-content-center pos-rel">
+               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-shopping" class="svg-inline--fa fa-cart-shopping fa-1x bg-primary p-3 btn-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" color="white">
+                  <path fill="currentColor" d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"></path>
+               </svg>
+            </div>
+            <div class="text-center border shadow btn-radius">
+               <p class="fs-3 my-1 text-primary">8000</p>
+               <p class="my-0">Sales</p>
+            </div>
+         </div>
+         <div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 ">
+            <div class=" d-flex justify-content-center pos-rel">
+               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="message" class="svg-inline--fa fa-message fa-1x bg-brown p-3 btn-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="white">
+                  <path fill="currentColor" d="M511.1 63.1v287.1c0 35.25-28.75 63.1-64 63.1h-144l-124.9 93.68c-7.875 5.75-19.12 .0497-19.12-9.7v-83.98h-96c-35.25 0-64-28.75-64-63.1V63.1c0-35.25 28.75-63.1 64-63.1h384C483.2 0 511.1 28.75 511.1 63.1z"></path>
+               </svg>
+            </div>
+            <div class="text-center border shadow btn-radius">
+               <p class="fs-3 my-1 color-brown">284</p>
+               <p class="my-0">Comments</p>
+            </div>
+         </div>
+         <div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 ">
+            <div class=" d-flex justify-content-center pos-rel">
+               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="eye" class="svg-inline--fa fa-eye fa-1x bg-warning p-3 btn-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" color="white">
+                  <path fill="currentColor" d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z"></path>
+               </svg>
+            </div>
+            <div class="text-center border shadow btn-radius">
+               <p class="fs-3 my-1 text-warning">$7786</p>
+               <p class="my-0">Earnings</p>
+            </div>
+         </div>
+         <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+            <p class="fs-3 fw-bold">Accounts</p>
+            <div class="bg-primary text-center py-5 accounts-radius">
+               <p class="my-1 color-white fs-6">$14,45,000</p>
+               <span class="accounts-radius color-white bg-info font-smaller px-2 py-1">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                     <path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path>
+                  </svg>
+                  $32 (2%)
+               </span>
+            </div>
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-6 text-center mx-0 px-1">
+                     <button type="button" class="btn btn-primary w-100 my-2 btn-radius focus-none">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-up" class="svg-inline--fa fa-arrow-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                           <path fill="currentColor" d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"></path>
+                        </svg>
+                        Deposit
+                     </button>
+                  </div>
+                  <div class="col-6 text-center mx-0 px-1">
+                     <button type="button" class="btn btn-info w-100 my-2 btn-radius color-white focus-none">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" class="svg-inline--fa fa-arrow-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                           <path fill="currentColor" d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"></path>
+                        </svg>
+                        Withdraw
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="react-reveal container p-0 my-3" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-217962295205880-1;">
+      <div class="row">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+            <div class="container p-0 ">
+               <div class="row ">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 bg-light btn-radius">
+                     <div class="container p-0">
+                        <div class="row">
+                           <div class="col-3">
+                              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="b" class="svg-inline--fa fa-b bg-orange p-3 B-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="white">
+                                 <path fill="currentColor" d="M257.1 242.4C276.1 220.1 288 191.6 288 160c0-70.58-57.42-128-128-128H32c-17.67 0-32 14.33-32 32v384c0 17.67 14.33 32 32 32l160-.0049c70.58 0 128-57.42 128-128C320 305.3 294.6 264.8 257.1 242.4zM64 96.01h96c35.3 0 64 28.7 64 64s-28.7 64-64 64H64V96.01zM192 416H64v-128h128c35.3 0 64 28.7 64 64S227.3 416 192 416z"></path>
+                              </svg>
+                           </div>
+                           <div class="col-9">
+                              <div class="">
+                                 <p class="m-0 ">BTC/USDT <span class="float-end">$135.25</span></p>
+                                 <p class="my-0">
+                                    Bitcoin
+                                    <span class="float-end text-danger">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" class="svg-inline--fa fa-arrow-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                          <path fill="currentColor" d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"></path>
+                                       </svg>
+                                       $32(2%)
+                                    </span>
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 bg-light btn-radius">
+                     <div class="container p-0">
+                        <div class="row">
+                           <div class="col-3">
+                              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gem" class="svg-inline--fa fa-gem bg-secondary p-3 B-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="white">
+                                 <path fill="currentColor" d="M378.7 32H133.3L256 182.7L378.7 32zM512 192l-107.4-141.3L289.6 192H512zM107.4 50.67L0 192h222.4L107.4 50.67zM244.3 474.9C247.3 478.2 251.6 480 256 480s8.653-1.828 11.67-5.062L510.6 224H1.365L244.3 474.9z"></path>
+                              </svg>
+                           </div>
+                           <div class="col-9">
+                              <div class="">
+                                 <p class="m-0 ">ETH/USDT <span class="float-end">$215.00</span></p>
+                                 <p class="my-0">
+                                    Etheruem
+                                    <span class="float-end text-success">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-up" class="svg-inline--fa fa-arrow-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                          <path fill="currentColor" d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"></path>
+                                       </svg>
+                                       $32(2%)
+                                    </span>
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 bg-light btn-radius">
+                     <div class="container p-0">
+                        <div class="row">
+                           <div class="col-3">
+                              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="up-down" class="svg-inline--fa fa-up-down bg-warning p-3 B-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" color="white">
+                                 <path fill="currentColor" d="M249.6 392.3l-104 112c-9.094 9.781-26.09 9.781-35.19 0l-103.1-112c-6.484-6.984-8.219-17.17-4.406-25.92S14.45 352 24 352H80V160H24C14.45 160 5.812 154.3 1.999 145.6C-1.813 136.8-.0781 126.7 6.406 119.7l104-112c9.094-9.781 26.09-9.781 35.19 0l104 112c6.484 6.984 8.219 17.17 4.406 25.92C250.2 154.3 241.5 160 232 160H176v192h56c9.547 0 18.19 5.656 22 14.41S256.1 385.3 249.6 392.3z"></path>
+                              </svg>
+                           </div>
+                           <div class="col-9">
+                              <div class="">
+                                 <p class="m-0 ">BNB/USDT <span class="float-end">$135.25</span></p>
+                                 <p class="my-0">
+                                    BINANCE
+                                    <span class="float-end text-danger">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" class="svg-inline--fa fa-arrow-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                          <path fill="currentColor" d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"></path>
+                                       </svg>
+                                       $32(2%)
+                                    </span>
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 bg-light btn-radius">
+                     <div class="container p-0">
+                        <div class="row">
+                           <div class="col-3">
+                              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gem" class="svg-inline--fa fa-gem bg-secondary p-3 B-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="white">
+                                 <path fill="currentColor" d="M378.7 32H133.3L256 182.7L378.7 32zM512 192l-107.4-141.3L289.6 192H512zM107.4 50.67L0 192h222.4L107.4 50.67zM244.3 474.9C247.3 478.2 251.6 480 256 480s8.653-1.828 11.67-5.062L510.6 224H1.365L244.3 474.9z"></path>
+                              </svg>
+                           </div>
+                           <div class="col-9">
+                              <div class="">
+                                 <p class="m-0 ">ETH/USDT <span class="float-end">$215.00</span></p>
+                                 <p class="my-0">
+                                    Etheruem
+                                    <span class="float-end text-success">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-up" class="svg-inline--fa fa-arrow-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                          <path fill="currentColor" d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"></path>
+                                       </svg>
+                                       $32(2%)
+                                    </span>
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <p class="fs-3 fw-bold">Recent Transactions</p>
+            <div class="container p-0">
+               <div class="row w-100">
+                  <div class="col-3">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="b" class="svg-inline--fa fa-b bg-warning p-3 B-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="white">
+                        <path fill="currentColor" d="M257.1 242.4C276.1 220.1 288 191.6 288 160c0-70.58-57.42-128-128-128H32c-17.67 0-32 14.33-32 32v384c0 17.67 14.33 32 32 32l160-.0049c70.58 0 128-57.42 128-128C320 305.3 294.6 264.8 257.1 242.4zM64 96.01h96c35.3 0 64 28.7 64 64s-28.7 64-64 64H64V96.01zM192 416H64v-128h128c35.3 0 64 28.7 64 64S227.3 416 192 416z"></path>
+                     </svg>
+                  </div>
+                  <div class="col-9">
+                     <div class="">
+                        <p class="m-0 ">Bitcon Buy</p>
+                        <p class="my-0 d-flex justify-content-between"><span>Today</span><span class="text-success">+2.05 BTC</span></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="container p-0">
+               <div class="row w-100">
+                  <div class="col-3">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gem" class="svg-inline--fa fa-gem bg-secondary p-3 B-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="white">
+                        <path fill="currentColor" d="M378.7 32H133.3L256 182.7L378.7 32zM512 192l-107.4-141.3L289.6 192H512zM107.4 50.67L0 192h222.4L107.4 50.67zM244.3 474.9C247.3 478.2 251.6 480 256 480s8.653-1.828 11.67-5.062L510.6 224H1.365L244.3 474.9z"></path>
+                     </svg>
+                  </div>
+                  <div class="col-9">
+                     <div class="">
+                        <p class="m-0 ">ETHEREUM SELL</p>
+                        <p class="my-0 d-flex justify-content-between"><span>2 Days ago</span><span class="text-success">+2.05 BTC</span></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="container p-0 ">
+               <div class="row w-100">
+                  <div class="col-3">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gem" class="svg-inline--fa fa-gem bg-secondary p-3 B-radius" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="white">
+                        <path fill="currentColor" d="M378.7 32H133.3L256 182.7L378.7 32zM512 192l-107.4-141.3L289.6 192H512zM107.4 50.67L0 192h222.4L107.4 50.67zM244.3 474.9C247.3 478.2 251.6 480 256 480s8.653-1.828 11.67-5.062L510.6 224H1.365L244.3 474.9z"></path>
+                     </svg>
+                  </div>
+                  <div class="col-9">
+                     <div class="">
+                        <p class="m-0 ">ETHEREUM Buy</p>
+                        <p class="my-0 d-flex justify-content-between"><span>3 Days ago</span><span class="text-success">+2.05 BTC</span></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="react-reveal" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-217962295205880-1;">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+               <div class="ReactChart " style="width: 727.6px; height: 300px; position: relative;">
+                  <svg style="width: 727.6px; height: 300px; overflow: hidden;">
+                     <g style="transform: translate3d(34px, 6px, 0px);">
+                        <rect x="-34" y="-6" width="727.6000366210938" height="300" style="stroke-width: 0; fill: rgb(51, 51, 51); opacity: 0; rx: 0px; ry: 0px;"></rect>
+                        <g class="axes">
+                           <g class="Axis" style="pointer-events: none; transform: translate3d(0px, 262px, 0px);">
+                              <path class="domain" d="
+                                 M 0, 6
+                                 V 0
+                                 H 693.6000366210938
+                                 V 6
+                                 " style="stroke-width: 1; stroke: rgba(0, 0, 0, 0.1); fill: transparent; opacity: 1;"></path>
+                              <g class="ticks">
+                                 <g class="tick" style="transform: translate3d(0px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">0.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(87px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">0.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(173px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">1.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(260px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">1.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(347px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">2.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(434px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">2.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(520px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">3.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(607px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">3.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(694px, 0px, 0px);">
+                                    <line class="gridLine" y1="0" y2="-262" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(0deg);">4.0</text>
+                                    </g>
+                                 </g>
+                              </g>
+                           </g>
+                           <g class="Axis" style="pointer-events: none;">
+                              <path class="domain" d="
+                                 M -6, 262
+                                 H 0
+                                 V 0
+                                 H -6
+                                 " style="stroke-width: 1; stroke: rgba(0, 0, 0, 0.1); fill: transparent; opacity: 1;"></path>
+                              <g class="ticks">
+                                 <g class="tick" style="transform: translate3d(0px, 262px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">1.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 240px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">1.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 218px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">2.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 197px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">2.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 175px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">3.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 153px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">3.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 131px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">4.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 109px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">4.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 87px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">5.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 66px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">5.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 44px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">6.0</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 22px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">6.5</text>
+                                    </g>
+                                 </g>
+                                 <g class="tick" style="transform: translate3d(0px, 0px, 0px);">
+                                    <line class="gridLine" x1="0" x2="693.6000366210938" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                    <g class="labelGroup">
+                                       <line class="tickline" x1="0" x2="-6" y1="0" y2="0" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line>
+                                       <text class="tickLabel" dominant-baseline="central" text-anchor="end" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(-20px, 0px, 0px) rotate(0deg);">7.0</text>
+                                    </g>
+                                 </g>
+                              </g>
+                           </g>
+                        </g>
+                        <g class="Series" style="pointer-events: none;">
+                           <g>
+                              <path d="M0,174.66666666666669C57.80000305175781,218.33333333333334,115.60000610351562,262,173.40000915527344,262C231.20001220703125,262,289.00001525878906,116.44444444444446,346.8000183105469,87.33333333333334C404.6000213623047,58.22222222222222,462.4000244140625,43.66666666666666,520.2000274658203,43.66666666666666C578.0000305175781,43.66666666666666,635.8000335693359,87.33333333333334,693.6000366210938,131" style="stroke-width: 2; stroke: rgb(252, 104, 104); fill: none; opacity: 1;"></path>
+                              <circle cx="0" cy="174.66666666666669" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(252, 104, 104); fill: rgb(252, 104, 104); opacity: 1;"></circle>
+                              <circle cx="173.40000915527344" cy="262" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(252, 104, 104); fill: rgb(252, 104, 104); opacity: 1;"></circle>
+                              <circle cx="346.8000183105469" cy="87.33333333333334" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(252, 104, 104); fill: rgb(252, 104, 104); opacity: 1;"></circle>
+                              <circle cx="520.2000274658203" cy="43.66666666666666" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(252, 104, 104); fill: rgb(252, 104, 104); opacity: 1;"></circle>
+                              <circle cx="693.6000366210938" cy="131" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(252, 104, 104); fill: rgb(252, 104, 104); opacity: 1;"></circle>
+                           </g>
+                           <g>
+                              <path d="M0,262C57.80000305175781,251.08333333333334,115.60000610351562,240.16666666666669,173.40000915527344,218.33333333333334C231.20001220703125,196.5,289.00001525878906,131,346.8000183105469,131C404.6000213623047,131,462.4000244140625,218.33333333333334,520.2000274658203,218.33333333333334C578.0000305175781,218.33333333333334,635.8000335693359,109.16666666666666,693.6000366210938,0" style="stroke-width: 2; stroke: rgb(74, 181, 235); fill: none; opacity: 1;"></path>
+                              <circle cx="0" cy="262" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(74, 181, 235); fill: rgb(74, 181, 235); opacity: 1;"></circle>
+                              <circle cx="173.40000915527344" cy="218.33333333333334" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(74, 181, 235); fill: rgb(74, 181, 235); opacity: 1;"></circle>
+                              <circle cx="346.8000183105469" cy="131" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(74, 181, 235); fill: rgb(74, 181, 235); opacity: 1;"></circle>
+                              <circle cx="520.2000274658203" cy="218.33333333333334" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(74, 181, 235); fill: rgb(74, 181, 235); opacity: 1;"></circle>
+                              <circle cx="693.6000366210938" cy="0" r="1" style="r: 2px; stroke-width: 1; stroke: rgb(74, 181, 235); fill: rgb(74, 181, 235); opacity: 1;"></circle>
+                           </g>
+                        </g>
+                     </g>
+                  </svg>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="react-reveal">
+      <div class="my-5 table-responsive">
+         <table class="table">
+            <thead>
+               <tr>
+                  <th scope="col" class="text-muted">
+                     <div class="form-check"><input class="form-check-input focus-none" type="checkbox" id="flexCheckDefault" value=""><label class="form-check-label" for="flexCheckDefault"></label></div>
+                  </th>
+                  <th scope="col" class="text-muted">NAME</th>
+                  <th scope="col" class="text-muted">POSITION</th>
+                  <th scope="col" class="text-muted">COUNTRY</th>
+                  <th scope="col" class="text-muted">STATUS</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <th scope="row ">
+                     <div class="form-check "><input class="form-check-input focus-none mt-3" type="checkbox" id="flexCheckDefault" value=""></div>
+                  </th>
+                  <td class="d-flex">
+                     <div><img src="/static/media/client.c05777afe1867ec2f09b.png" alt="demo" width="50" height="50"></div>
+                     <div class="ms-2">
+                        <p class="m-0 p-0 ">Neil Sims</p>
+                        <p class="m-0 p-0 fw-light">neil.sims@flowbite.com</p>
+                     </div>
+                  </td>
+                  <td class="align-middle">Front-end Developer</td>
+                  <td class="align-middle">United States</td>
+                  <td class="align-middle">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="green">
+                        <path fill="currentColor" d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256z"></path>
+                     </svg>
+                     Active
+                  </td>
+                  <td class="align-middle">
+                     <button type="button" class="btn focus-none btn-secondary">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                           <path fill="currentColor" d="M490.3 40.4C512.2 62.27 512.2 97.73 490.3 119.6L460.3 149.7L362.3 51.72L392.4 21.66C414.3-.2135 449.7-.2135 471.6 21.66L490.3 40.4zM172.4 241.7L339.7 74.34L437.7 172.3L270.3 339.6C264.2 345.8 256.7 350.4 248.4 353.2L159.6 382.8C150.1 385.6 141.5 383.4 135 376.1C128.6 370.5 126.4 361 129.2 352.4L158.8 263.6C161.6 255.3 166.2 247.8 172.4 241.7V241.7zM192 63.1C209.7 63.1 224 78.33 224 95.1C224 113.7 209.7 127.1 192 127.1H96C78.33 127.1 64 142.3 64 159.1V416C64 433.7 78.33 448 96 448H352C369.7 448 384 433.7 384 416V319.1C384 302.3 398.3 287.1 416 287.1C433.7 287.1 448 302.3 448 319.1V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V159.1C0 106.1 42.98 63.1 96 63.1H192z"></path>
+                        </svg>
+                        Edit User
+                     </button>
+                  </td>
+                  <td class="align-middle">
+                     <button type="button" class="btn focus-none btn-danger ">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-can" class="svg-inline--fa fa-trash-can me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                           <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                        </svg>
+                        Delete User
+                     </button>
+                  </td>
+               </tr>
+               <tr>
+                  <th scope="row ">
+                     <div class="form-check "><input class="form-check-input focus-none mt-3" type="checkbox" id="flexCheckDefault" value=""></div>
+                  </th>
+                  <td class="d-flex">
+                     <div><img src="/static/media/client.c05777afe1867ec2f09b.png" alt="demo" width="50" height="50"></div>
+                     <div class="ms-2">
+                        <p class="m-0 p-0 ">Neil Sims</p>
+                        <p class="m-0 p-0 fw-light">neil.sims@flowbite.com</p>
+                     </div>
+                  </td>
+                  <td class="align-middle">Front-end Developer</td>
+                  <td class="align-middle">United States</td>
+                  <td class="align-middle">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="green">
+                        <path fill="currentColor" d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256z"></path>
+                     </svg>
+                     Active
+                  </td>
+                  <td class="align-middle">
+                     <button type="button" class="btn focus-none btn-secondary">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                           <path fill="currentColor" d="M490.3 40.4C512.2 62.27 512.2 97.73 490.3 119.6L460.3 149.7L362.3 51.72L392.4 21.66C414.3-.2135 449.7-.2135 471.6 21.66L490.3 40.4zM172.4 241.7L339.7 74.34L437.7 172.3L270.3 339.6C264.2 345.8 256.7 350.4 248.4 353.2L159.6 382.8C150.1 385.6 141.5 383.4 135 376.1C128.6 370.5 126.4 361 129.2 352.4L158.8 263.6C161.6 255.3 166.2 247.8 172.4 241.7V241.7zM192 63.1C209.7 63.1 224 78.33 224 95.1C224 113.7 209.7 127.1 192 127.1H96C78.33 127.1 64 142.3 64 159.1V416C64 433.7 78.33 448 96 448H352C369.7 448 384 433.7 384 416V319.1C384 302.3 398.3 287.1 416 287.1C433.7 287.1 448 302.3 448 319.1V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V159.1C0 106.1 42.98 63.1 96 63.1H192z"></path>
+                        </svg>
+                        Edit User
+                     </button>
+                  </td>
+                  <td class="align-middle">
+                     <button type="button" class="btn focus-none btn-danger ">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-can" class="svg-inline--fa fa-trash-can me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                           <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                        </svg>
+                        Delete User
+                     </button>
+                  </td>
+               </tr>
+               <tr>
+                  <th scope="row ">
+                     <div class="form-check "><input class="form-check-input focus-none mt-3" type="checkbox" id="flexCheckDefault" value=""></div>
+                  </th>
+                  <td class="d-flex">
+                     <div><img src="/static/media/client.c05777afe1867ec2f09b.png" alt="demo" width="50" height="50"></div>
+                     <div class="ms-2">
+                        <p class="m-0 p-0 ">Neil Sims</p>
+                        <p class="m-0 p-0 fw-light">neil.sims@flowbite.com</p>
+                     </div>
+                  </td>
+                  <td class="align-middle">Front-end Developer</td>
+                  <td class="align-middle">United States</td>
+                  <td class="align-middle">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="green">
+                        <path fill="currentColor" d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256z"></path>
+                     </svg>
+                     Active
+                  </td>
+                  <td class="align-middle">
+                     <button type="button" class="btn focus-none btn-secondary">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                           <path fill="currentColor" d="M490.3 40.4C512.2 62.27 512.2 97.73 490.3 119.6L460.3 149.7L362.3 51.72L392.4 21.66C414.3-.2135 449.7-.2135 471.6 21.66L490.3 40.4zM172.4 241.7L339.7 74.34L437.7 172.3L270.3 339.6C264.2 345.8 256.7 350.4 248.4 353.2L159.6 382.8C150.1 385.6 141.5 383.4 135 376.1C128.6 370.5 126.4 361 129.2 352.4L158.8 263.6C161.6 255.3 166.2 247.8 172.4 241.7V241.7zM192 63.1C209.7 63.1 224 78.33 224 95.1C224 113.7 209.7 127.1 192 127.1H96C78.33 127.1 64 142.3 64 159.1V416C64 433.7 78.33 448 96 448H352C369.7 448 384 433.7 384 416V319.1C384 302.3 398.3 287.1 416 287.1C433.7 287.1 448 302.3 448 319.1V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V159.1C0 106.1 42.98 63.1 96 63.1H192z"></path>
+                        </svg>
+                        Edit User
+                     </button>
+                  </td>
+                  <td class="align-middle">
+                     <button type="button" class="btn focus-none btn-danger ">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-can" class="svg-inline--fa fa-trash-can me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                           <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                        </svg>
+                        Delete User
+                     </button>
+                  </td>
+               </tr>
+               <tr>
+                  <th scope="row ">
+                     <div class="form-check "><input class="form-check-input focus-none mt-3" type="checkbox" id="flexCheckDefault" value=""></div>
+                  </th>
+                  <td class="d-flex">
+                     <div><img src="/static/media/client.c05777afe1867ec2f09b.png" alt="demo" width="50" height="50"></div>
+                     <div class="ms-2">
+                        <p class="m-0 p-0 ">Neil Sims</p>
+                        <p class="m-0 p-0 fw-light">neil.sims@flowbite.com</p>
+                     </div>
+                  </td>
+                  <td class="align-middle">Front-end Developer</td>
+                  <td class="align-middle">United States</td>
+                  <td class="align-middle">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="green">
+                        <path fill="currentColor" d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256z"></path>
+                     </svg>
+                     Active
+                  </td>
+                  <td class="align-middle">
+                     <button type="button" class="btn focus-none btn-secondary">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                           <path fill="currentColor" d="M490.3 40.4C512.2 62.27 512.2 97.73 490.3 119.6L460.3 149.7L362.3 51.72L392.4 21.66C414.3-.2135 449.7-.2135 471.6 21.66L490.3 40.4zM172.4 241.7L339.7 74.34L437.7 172.3L270.3 339.6C264.2 345.8 256.7 350.4 248.4 353.2L159.6 382.8C150.1 385.6 141.5 383.4 135 376.1C128.6 370.5 126.4 361 129.2 352.4L158.8 263.6C161.6 255.3 166.2 247.8 172.4 241.7V241.7zM192 63.1C209.7 63.1 224 78.33 224 95.1C224 113.7 209.7 127.1 192 127.1H96C78.33 127.1 64 142.3 64 159.1V416C64 433.7 78.33 448 96 448H352C369.7 448 384 433.7 384 416V319.1C384 302.3 398.3 287.1 416 287.1C433.7 287.1 448 302.3 448 319.1V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V159.1C0 106.1 42.98 63.1 96 63.1H192z"></path>
+                        </svg>
+                        Edit User
+                     </button>
+                  </td>
+                  <td class="align-middle">
+                     <button type="button" class="btn focus-none btn-danger ">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-can" class="svg-inline--fa fa-trash-can me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                           <path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path>
+                        </svg>
+                        Delete User
+                     </button>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>
+{% endblock content %}

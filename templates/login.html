@@ -1,0 +1,1321 @@
+{% load static %}
+<html lang="en">
+      <head>
+         <meta charset="utf-8">
+         <style type="text/css">:root, :host {
+               --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+               --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+               --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+               --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+               --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+               --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+               }
+               svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+               overflow: visible;
+               box-sizing: content-box;
+               }
+               .svg-inline--fa {
+               display: var(--fa-display, inline-block);
+               height: 1em;
+               overflow: visible;
+               vertical-align: -0.125em;
+               }
+               .svg-inline--fa.fa-2xs {
+               vertical-align: 0.1em;
+               }
+               .svg-inline--fa.fa-xs {
+               vertical-align: 0em;
+               }
+               .svg-inline--fa.fa-sm {
+               vertical-align: -0.0714285705em;
+               }
+               .svg-inline--fa.fa-lg {
+               vertical-align: -0.2em;
+               }
+               .svg-inline--fa.fa-xl {
+               vertical-align: -0.25em;
+               }
+               .svg-inline--fa.fa-2xl {
+               vertical-align: -0.3125em;
+               }
+               .svg-inline--fa.fa-pull-left {
+               margin-right: var(--fa-pull-margin, 0.3em);
+               width: auto;
+               }
+               .svg-inline--fa.fa-pull-right {
+               margin-left: var(--fa-pull-margin, 0.3em);
+               width: auto;
+               }
+               .svg-inline--fa.fa-li {
+               width: var(--fa-li-width, 2em);
+               top: 0.25em;
+               }
+               .svg-inline--fa.fa-fw {
+               width: var(--fa-fw-width, 1.25em);
+               }
+               .fa-layers svg.svg-inline--fa {
+               bottom: 0;
+               left: 0;
+               margin: auto;
+               position: absolute;
+               right: 0;
+               top: 0;
+               }
+               .fa-layers-counter, .fa-layers-text {
+               display: inline-block;
+               position: absolute;
+               text-align: center;
+               }
+               .fa-layers {
+               display: inline-block;
+               height: 1em;
+               position: relative;
+               text-align: center;
+               vertical-align: -0.125em;
+               width: 1em;
+               }
+               .fa-layers svg.svg-inline--fa {
+               -webkit-transform-origin: center center;
+               transform-origin: center center;
+               }
+               .fa-layers-text {
+               left: 50%;
+               top: 50%;
+               -webkit-transform: translate(-50%, -50%);
+               transform: translate(-50%, -50%);
+               -webkit-transform-origin: center center;
+               transform-origin: center center;
+               }
+               .fa-layers-counter {
+               background-color: var(--fa-counter-background-color, #ff253a);
+               border-radius: var(--fa-counter-border-radius, 1em);
+               box-sizing: border-box;
+               color: var(--fa-inverse, #fff);
+               line-height: var(--fa-counter-line-height, 1);
+               max-width: var(--fa-counter-max-width, 5em);
+               min-width: var(--fa-counter-min-width, 1.5em);
+               overflow: hidden;
+               padding: var(--fa-counter-padding, 0.25em 0.5em);
+               right: var(--fa-right, 0);
+               text-overflow: ellipsis;
+               top: var(--fa-top, 0);
+               -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+               transform: scale(var(--fa-counter-scale, 0.25));
+               -webkit-transform-origin: top right;
+               transform-origin: top right;
+               }
+               .fa-layers-bottom-right {
+               bottom: var(--fa-bottom, 0);
+               right: var(--fa-right, 0);
+               top: auto;
+               -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+               transform: scale(var(--fa-layers-scale, 0.25));
+               -webkit-transform-origin: bottom right;
+               transform-origin: bottom right;
+               }
+               .fa-layers-bottom-left {
+               bottom: var(--fa-bottom, 0);
+               left: var(--fa-left, 0);
+               right: auto;
+               top: auto;
+               -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+               transform: scale(var(--fa-layers-scale, 0.25));
+               -webkit-transform-origin: bottom left;
+               transform-origin: bottom left;
+               }
+               .fa-layers-top-right {
+               top: var(--fa-top, 0);
+               right: var(--fa-right, 0);
+               -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+               transform: scale(var(--fa-layers-scale, 0.25));
+               -webkit-transform-origin: top right;
+               transform-origin: top right;
+               }
+               .fa-layers-top-left {
+               left: var(--fa-left, 0);
+               right: auto;
+               top: var(--fa-top, 0);
+               -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+               transform: scale(var(--fa-layers-scale, 0.25));
+               -webkit-transform-origin: top left;
+               transform-origin: top left;
+               }
+               .fa-1x {
+               font-size: 1em;
+               }
+               .fa-2x {
+               font-size: 2em;
+               }
+               .fa-3x {
+               font-size: 3em;
+               }
+               .fa-4x {
+               font-size: 4em;
+               }
+               .fa-5x {
+               font-size: 5em;
+               }
+               .fa-6x {
+               font-size: 6em;
+               }
+               .fa-7x {
+               font-size: 7em;
+               }
+               .fa-8x {
+               font-size: 8em;
+               }
+               .fa-9x {
+               font-size: 9em;
+               }
+               .fa-10x {
+               font-size: 10em;
+               }
+               .fa-2xs {
+               font-size: 0.625em;
+               line-height: 0.1em;
+               vertical-align: 0.225em;
+               }
+               .fa-xs {
+               font-size: 0.75em;
+               line-height: 0.0833333337em;
+               vertical-align: 0.125em;
+               }
+               .fa-sm {
+               font-size: 0.875em;
+               line-height: 0.0714285718em;
+               vertical-align: 0.0535714295em;
+               }
+               .fa-lg {
+               font-size: 1.25em;
+               line-height: 0.05em;
+               vertical-align: -0.075em;
+               }
+               .fa-xl {
+               font-size: 1.5em;
+               line-height: 0.0416666682em;
+               vertical-align: -0.125em;
+               }
+               .fa-2xl {
+               font-size: 2em;
+               line-height: 0.03125em;
+               vertical-align: -0.1875em;
+               }
+               .fa-fw {
+               text-align: center;
+               width: 1.25em;
+               }
+               .fa-ul {
+               list-style-type: none;
+               margin-left: var(--fa-li-margin, 2.5em);
+               padding-left: 0;
+               }
+               .fa-ul > li {
+               position: relative;
+               }
+               .fa-li {
+               left: calc(var(--fa-li-width, 2em) * -1);
+               position: absolute;
+               text-align: center;
+               width: var(--fa-li-width, 2em);
+               line-height: inherit;
+               }
+               .fa-border {
+               border-color: var(--fa-border-color, #eee);
+               border-radius: var(--fa-border-radius, 0.1em);
+               border-style: var(--fa-border-style, solid);
+               border-width: var(--fa-border-width, 0.08em);
+               padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+               }
+               .fa-pull-left {
+               float: left;
+               margin-right: var(--fa-pull-margin, 0.3em);
+               }
+               .fa-pull-right {
+               float: right;
+               margin-left: var(--fa-pull-margin, 0.3em);
+               }
+               .fa-beat {
+               -webkit-animation-name: fa-beat;
+               animation-name: fa-beat;
+               -webkit-animation-delay: var(--fa-animation-delay, 0);
+               animation-delay: var(--fa-animation-delay, 0);
+               -webkit-animation-direction: var(--fa-animation-direction, normal);
+               animation-direction: var(--fa-animation-direction, normal);
+               -webkit-animation-duration: var(--fa-animation-duration, 1s);
+               animation-duration: var(--fa-animation-duration, 1s);
+               -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+               animation-timing-function: var(--fa-animation-timing, ease-in-out);
+               }
+               .fa-bounce {
+               -webkit-animation-name: fa-bounce;
+               animation-name: fa-bounce;
+               -webkit-animation-delay: var(--fa-animation-delay, 0);
+               animation-delay: var(--fa-animation-delay, 0);
+               -webkit-animation-direction: var(--fa-animation-direction, normal);
+               animation-direction: var(--fa-animation-direction, normal);
+               -webkit-animation-duration: var(--fa-animation-duration, 1s);
+               animation-duration: var(--fa-animation-duration, 1s);
+               -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+               animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+               }
+               .fa-fade {
+               -webkit-animation-name: fa-fade;
+               animation-name: fa-fade;
+               -webkit-animation-delay: var(--fa-animation-delay, 0);
+               animation-delay: var(--fa-animation-delay, 0);
+               -webkit-animation-direction: var(--fa-animation-direction, normal);
+               animation-direction: var(--fa-animation-direction, normal);
+               -webkit-animation-duration: var(--fa-animation-duration, 1s);
+               animation-duration: var(--fa-animation-duration, 1s);
+               -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+               animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+               }
+               .fa-beat-fade {
+               -webkit-animation-name: fa-beat-fade;
+               animation-name: fa-beat-fade;
+               -webkit-animation-delay: var(--fa-animation-delay, 0);
+               animation-delay: var(--fa-animation-delay, 0);
+               -webkit-animation-direction: var(--fa-animation-direction, normal);
+               animation-direction: var(--fa-animation-direction, normal);
+               -webkit-animation-duration: var(--fa-animation-duration, 1s);
+               animation-duration: var(--fa-animation-duration, 1s);
+               -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+               animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+               }
+               .fa-flip {
+               -webkit-animation-name: fa-flip;
+               animation-name: fa-flip;
+               -webkit-animation-delay: var(--fa-animation-delay, 0);
+               animation-delay: var(--fa-animation-delay, 0);
+               -webkit-animation-direction: var(--fa-animation-direction, normal);
+               animation-direction: var(--fa-animation-direction, normal);
+               -webkit-animation-duration: var(--fa-animation-duration, 1s);
+               animation-duration: var(--fa-animation-duration, 1s);
+               -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+               animation-timing-function: var(--fa-animation-timing, ease-in-out);
+               }
+               .fa-shake {
+               -webkit-animation-name: fa-shake;
+               animation-name: fa-shake;
+               -webkit-animation-delay: var(--fa-animation-delay, 0);
+               animation-delay: var(--fa-animation-delay, 0);
+               -webkit-animation-direction: var(--fa-animation-direction, normal);
+               animation-direction: var(--fa-animation-direction, normal);
+               -webkit-animation-duration: var(--fa-animation-duration, 1s);
+               animation-duration: var(--fa-animation-duration, 1s);
+               -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+               animation-timing-function: var(--fa-animation-timing, linear);
+               }
+               .fa-spin {
+               -webkit-animation-name: fa-spin;
+               animation-name: fa-spin;
+               -webkit-animation-delay: var(--fa-animation-delay, 0);
+               animation-delay: var(--fa-animation-delay, 0);
+               -webkit-animation-direction: var(--fa-animation-direction, normal);
+               animation-direction: var(--fa-animation-direction, normal);
+               -webkit-animation-duration: var(--fa-animation-duration, 2s);
+               animation-duration: var(--fa-animation-duration, 2s);
+               -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+               animation-timing-function: var(--fa-animation-timing, linear);
+               }
+               .fa-spin-reverse {
+               --fa-animation-direction: reverse;
+               }
+               .fa-pulse,
+               .fa-spin-pulse {
+               -webkit-animation-name: fa-spin;
+               animation-name: fa-spin;
+               -webkit-animation-direction: var(--fa-animation-direction, normal);
+               animation-direction: var(--fa-animation-direction, normal);
+               -webkit-animation-duration: var(--fa-animation-duration, 1s);
+               animation-duration: var(--fa-animation-duration, 1s);
+               -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+               -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+               animation-timing-function: var(--fa-animation-timing, steps(8));
+               }
+               @media (prefers-reduced-motion: reduce) {
+               .fa-beat,
+               .fa-bounce,
+               .fa-fade,
+               .fa-beat-fade,
+               .fa-flip,
+               .fa-pulse,
+               .fa-shake,
+               .fa-spin,
+               .fa-spin-pulse {
+               -webkit-animation-delay: -1ms;
+               animation-delay: -1ms;
+               -webkit-animation-duration: 1ms;
+               animation-duration: 1ms;
+               -webkit-animation-iteration-count: 1;
+               animation-iteration-count: 1;
+               transition-delay: 0s;
+               transition-duration: 0s;
+               }
+               }
+               @-webkit-keyframes fa-beat {
+               0%, 90% {
+               -webkit-transform: scale(1);
+               transform: scale(1);
+               }
+               45% {
+               -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+               transform: scale(var(--fa-beat-scale, 1.25));
+               }
+               }
+               @keyframes fa-beat {
+               0%, 90% {
+               -webkit-transform: scale(1);
+               transform: scale(1);
+               }
+               45% {
+               -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+               transform: scale(var(--fa-beat-scale, 1.25));
+               }
+               }
+               @-webkit-keyframes fa-bounce {
+               0% {
+               -webkit-transform: scale(1, 1) translateY(0);
+               transform: scale(1, 1) translateY(0);
+               }
+               10% {
+               -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+               transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+               }
+               30% {
+               -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+               transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+               }
+               50% {
+               -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+               transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+               }
+               57% {
+               -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+               transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+               }
+               64% {
+               -webkit-transform: scale(1, 1) translateY(0);
+               transform: scale(1, 1) translateY(0);
+               }
+               100% {
+               -webkit-transform: scale(1, 1) translateY(0);
+               transform: scale(1, 1) translateY(0);
+               }
+               }
+               @keyframes fa-bounce {
+               0% {
+               -webkit-transform: scale(1, 1) translateY(0);
+               transform: scale(1, 1) translateY(0);
+               }
+               10% {
+               -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+               transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+               }
+               30% {
+               -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+               transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+               }
+               50% {
+               -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+               transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+               }
+               57% {
+               -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+               transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+               }
+               64% {
+               -webkit-transform: scale(1, 1) translateY(0);
+               transform: scale(1, 1) translateY(0);
+               }
+               100% {
+               -webkit-transform: scale(1, 1) translateY(0);
+               transform: scale(1, 1) translateY(0);
+               }
+               }
+               @-webkit-keyframes fa-fade {
+               50% {
+               opacity: var(--fa-fade-opacity, 0.4);
+               }
+               }
+               @keyframes fa-fade {
+               50% {
+               opacity: var(--fa-fade-opacity, 0.4);
+               }
+               }
+               @-webkit-keyframes fa-beat-fade {
+               0%, 100% {
+               opacity: var(--fa-beat-fade-opacity, 0.4);
+               -webkit-transform: scale(1);
+               transform: scale(1);
+               }
+               50% {
+               opacity: 1;
+               -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+               transform: scale(var(--fa-beat-fade-scale, 1.125));
+               }
+               }
+               @keyframes fa-beat-fade {
+               0%, 100% {
+               opacity: var(--fa-beat-fade-opacity, 0.4);
+               -webkit-transform: scale(1);
+               transform: scale(1);
+               }
+               50% {
+               opacity: 1;
+               -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+               transform: scale(var(--fa-beat-fade-scale, 1.125));
+               }
+               }
+               @-webkit-keyframes fa-flip {
+               50% {
+               -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+               transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+               }
+               }
+               @keyframes fa-flip {
+               50% {
+               -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+               transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+               }
+               }
+               @-webkit-keyframes fa-shake {
+               0% {
+               -webkit-transform: rotate(-15deg);
+               transform: rotate(-15deg);
+               }
+               4% {
+               -webkit-transform: rotate(15deg);
+               transform: rotate(15deg);
+               }
+               8%, 24% {
+               -webkit-transform: rotate(-18deg);
+               transform: rotate(-18deg);
+               }
+               12%, 28% {
+               -webkit-transform: rotate(18deg);
+               transform: rotate(18deg);
+               }
+               16% {
+               -webkit-transform: rotate(-22deg);
+               transform: rotate(-22deg);
+               }
+               20% {
+               -webkit-transform: rotate(22deg);
+               transform: rotate(22deg);
+               }
+               32% {
+               -webkit-transform: rotate(-12deg);
+               transform: rotate(-12deg);
+               }
+               36% {
+               -webkit-transform: rotate(12deg);
+               transform: rotate(12deg);
+               }
+               40%, 100% {
+               -webkit-transform: rotate(0deg);
+               transform: rotate(0deg);
+               }
+               }
+               @keyframes fa-shake {
+               0% {
+               -webkit-transform: rotate(-15deg);
+               transform: rotate(-15deg);
+               }
+               4% {
+               -webkit-transform: rotate(15deg);
+               transform: rotate(15deg);
+               }
+               8%, 24% {
+               -webkit-transform: rotate(-18deg);
+               transform: rotate(-18deg);
+               }
+               12%, 28% {
+               -webkit-transform: rotate(18deg);
+               transform: rotate(18deg);
+               }
+               16% {
+               -webkit-transform: rotate(-22deg);
+               transform: rotate(-22deg);
+               }
+               20% {
+               -webkit-transform: rotate(22deg);
+               transform: rotate(22deg);
+               }
+               32% {
+               -webkit-transform: rotate(-12deg);
+               transform: rotate(-12deg);
+               }
+               36% {
+               -webkit-transform: rotate(12deg);
+               transform: rotate(12deg);
+               }
+               40%, 100% {
+               -webkit-transform: rotate(0deg);
+               transform: rotate(0deg);
+               }
+               }
+               @-webkit-keyframes fa-spin {
+               0% {
+               -webkit-transform: rotate(0deg);
+               transform: rotate(0deg);
+               }
+               100% {
+               -webkit-transform: rotate(360deg);
+               transform: rotate(360deg);
+               }
+               }
+               @keyframes fa-spin {
+               0% {
+               -webkit-transform: rotate(0deg);
+               transform: rotate(0deg);
+               }
+               100% {
+               -webkit-transform: rotate(360deg);
+               transform: rotate(360deg);
+               }
+               }
+               .fa-rotate-90 {
+               -webkit-transform: rotate(90deg);
+               transform: rotate(90deg);
+               }
+               .fa-rotate-180 {
+               -webkit-transform: rotate(180deg);
+               transform: rotate(180deg);
+               }
+               .fa-rotate-270 {
+               -webkit-transform: rotate(270deg);
+               transform: rotate(270deg);
+               }
+               .fa-flip-horizontal {
+               -webkit-transform: scale(-1, 1);
+               transform: scale(-1, 1);
+               }
+               .fa-flip-vertical {
+               -webkit-transform: scale(1, -1);
+               transform: scale(1, -1);
+               }
+               .fa-flip-both,
+               .fa-flip-horizontal.fa-flip-vertical {
+               -webkit-transform: scale(-1, -1);
+               transform: scale(-1, -1);
+               }
+               .fa-rotate-by {
+               -webkit-transform: rotate(var(--fa-rotate-angle, none));
+               transform: rotate(var(--fa-rotate-angle, none));
+               }
+               .fa-stack {
+               display: inline-block;
+               vertical-align: middle;
+               height: 2em;
+               position: relative;
+               width: 2.5em;
+               }
+               .fa-stack-1x,
+               .fa-stack-2x {
+               bottom: 0;
+               left: 0;
+               margin: auto;
+               position: absolute;
+               right: 0;
+               top: 0;
+               z-index: var(--fa-stack-z-index, auto);
+               }
+               .svg-inline--fa.fa-stack-1x {
+               height: 1em;
+               width: 1.25em;
+               }
+               .svg-inline--fa.fa-stack-2x {
+               height: 2em;
+               width: 2.5em;
+               }
+               .fa-inverse {
+               color: var(--fa-inverse, #fff);
+               }
+               .sr-only,
+               .fa-sr-only {
+               position: absolute;
+               width: 1px;
+               height: 1px;
+               padding: 0;
+               margin: -1px;
+               overflow: hidden;
+               clip: rect(0, 0, 0, 0);
+               white-space: nowrap;
+               border-width: 0;
+               }
+               .sr-only-focusable:not(:focus),
+               .fa-sr-only-focusable:not(:focus) {
+               position: absolute;
+               width: 1px;
+               height: 1px;
+               padding: 0;
+               margin: -1px;
+               overflow: hidden;
+               clip: rect(0, 0, 0, 0);
+               white-space: nowrap;
+               border-width: 0;
+               }
+               .svg-inline--fa .fa-primary {
+               fill: var(--fa-primary-color, currentColor);
+               opacity: var(--fa-primary-opacity, 1);
+               }
+               .svg-inline--fa .fa-secondary {
+               fill: var(--fa-secondary-color, currentColor);
+               opacity: var(--fa-secondary-opacity, 0.4);
+               }
+               .svg-inline--fa.fa-swap-opacity .fa-primary {
+               opacity: var(--fa-secondary-opacity, 0.4);
+               }
+               .svg-inline--fa.fa-swap-opacity .fa-secondary {
+               opacity: var(--fa-primary-opacity, 1);
+               }
+               .svg-inline--fa mask .fa-primary,
+               .svg-inline--fa mask .fa-secondary {
+               fill: black;
+               }
+               .fad.fa-inverse,
+               .fa-duotone.fa-inverse {
+               color: var(--fa-inverse, #fff);
+               }
+         </style>
+         <link rel="icon" href="/favicon.ico">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <meta name="theme-color" content="#000000">
+         <meta name="description" content="Web site created using create-react-app">
+         <link rel="apple-touch-icon" href="/logo192.png">
+         <!--
+               manifest.json provides metadata used when your web app is installed on a
+               user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+               -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+         <link rel="manifest" href="/manifest.json">
+         <!--
+               Notice the use of  in the tags above.
+               It will be replaced with the URL of the `public` folder during the build.
+               Only files inside the `public` folder can be referenced from the HTML.
+               
+               Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+               work correctly both with client-side routing and a non-root public URL.
+               Learn how to configure a non-root public URL by running `npm run build`.
+               -->
+         <title>Yellowcoin</title>
+         </script>
+         <style>.navbar-border-radius {
+               border-radius: 15px;
+               }
+               .sidebar {
+               height: 100vh;
+               position: relative;
+               }
+               .navbar-border-radius-2 {
+               border-radius: 8px;
+               }
+               .bg-orange {
+               background-color: #fab417;
+               }
+               .bg-white {
+               background-color: white;
+               box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+               }
+               .color-white {
+               color: #fff !important;
+               }
+               .color-black {
+               color: black !important;
+               }
+               .dropdown-toggle::after {
+               content: none;
+               }
+               .focus-none:focus {
+               outline: none;
+               box-shadow: none;
+               }
+               .dropbtn {
+               cursor: pointer;
+               }
+               .dropdown {
+               position: relative;
+               display: inline-block;
+               }
+               .dropdown-content {
+               display: none;
+               position: absolute;
+               min-width: 12.5rem;
+               /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+               z-index: 1;
+               right: 0;
+               }
+               .dropdown-content .link-tag-navbar {
+               color: black;
+               padding: 12px 16px;
+               text-decoration: none;
+               display: block;
+               }
+               .dropdown:hover .dropdown-content {
+               display: block;
+               }
+               .no-dec{
+               text-decoration: none !important;
+               }
+               .logout-text {
+               font-weight: 700;
+               margin-left: 20px;
+               font-size: 16px;
+               line-height: 16px;
+               color: #FF4842;
+               }
+               .logout {
+               position: absolute;
+               bottom: 5.33%;
+               left: 3.33% ;
+               cursor: pointer;
+               }
+               @media screen and (min-width : 767px) {
+               .logout-wrapper {
+               display: none;
+               }
+               }
+               @media screen and (max-width : 767px) {
+               .logout {
+               display: none !important;
+               }
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL3NpZGJhci9TaWRlYmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGFBQWE7RUFDYixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7OztBQUdBO0VBQ0UseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsdUJBQXVCO0VBQ3ZCLDJDQUEyQztBQUM3Qzs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHVCQUF1QjtBQUN6Qjs7QUFFQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGFBQWE7RUFDYixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGFBQWE7RUFDYixrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLHFEQUFxRDtFQUNyRCxVQUFVO0VBQ1YsUUFBUTtBQUNWOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixxQkFBcUI7RUFDckIsY0FBYztBQUNoQjs7O0FBR0E7RUFDRSxjQUFjO0FBQ2hCOzs7QUFHQTtJQUNJLGdDQUFnQztBQUNwQzs7O0FBR0E7RUFDRSxnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsWUFBWTtFQUNaLGVBQWU7QUFDakI7OztBQUdBO0VBQ0U7SUFDRSxhQUFhO0VBQ2Y7QUFDRjs7QUFFQTtFQUNFO0lBQ0Usd0JBQXdCO0VBQzFCO0FBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyIubmF2YmFyLWJvcmRlci1yYWRpdXMge1xuICBib3JkZXItcmFkaXVzOiAxNXB4O1xufVxuXG4uc2lkZWJhciB7XG4gIGhlaWdodDogMTAwdmg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbiAgXG4ubmF2YmFyLWJvcmRlci1yYWRpdXMtMiB7XG4gIGJvcmRlci1yYWRpdXM6IDhweDtcbn1cbiAgXG4gIFxuLmJnLW9yYW5nZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmYWI0MTc7XG59XG5cbi5iZy13aGl0ZSB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBib3gtc2hhZG93OiAwcHggMXB4IDFweCByZ2JhKDAsIDAsIDAsIDAuMjUpO1xufVxuXG4uY29sb3Itd2hpdGUge1xuICBjb2xvcjogI2ZmZiAhaW1wb3J0YW50O1xufVxuXG4uY29sb3ItYmxhY2sge1xuICBjb2xvcjogYmxhY2sgIWltcG9ydGFudDtcbn1cblxuLmRyb3Bkb3duLXRvZ2dsZTo6YWZ0ZXIge1xuICBjb250ZW50OiBub25lO1xufVxuXG4uZm9jdXMtbm9uZTpmb2N1cyB7XG4gIG91dGxpbmU6IG5vbmU7XG4gIGJveC1zaGFkb3c6IG5vbmU7XG59XG5cbi5kcm9wYnRuIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4uZHJvcGRvd24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbn1cblxuLmRyb3Bkb3duLWNvbnRlbnQge1xuICBkaXNwbGF5OiBub25lO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIG1pbi13aWR0aDogMTIuNXJlbTtcbiAgLyogYm94LXNoYWRvdzogMHB4IDhweCAxNnB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMik7ICovXG4gIHotaW5kZXg6IDE7XG4gIHJpZ2h0OiAwO1xufVxuXG4uZHJvcGRvd24tY29udGVudCAubGluay10YWctbmF2YmFyIHtcbiAgY29sb3I6IGJsYWNrO1xuICBwYWRkaW5nOiAxMnB4IDE2cHg7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgZGlzcGxheTogYmxvY2s7XG59XG5cblxuLmRyb3Bkb3duOmhvdmVyIC5kcm9wZG93bi1jb250ZW50IHtcbiAgZGlzcGxheTogYmxvY2s7XG59XG4gIFxuXG4ubm8tZGVje1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZSAhaW1wb3J0YW50O1xufVxuXG5cbi5sb2dvdXQtdGV4dCB7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGxpbmUtaGVpZ2h0OiAxNnB4O1xuICBjb2xvcjogI0ZGNDg0Mjtcbn1cblxuLmxvZ291dCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiA1LjMzJTtcbiAgbGVmdDogMy4zMyUgO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aCA6IDc2N3B4KSB7XG4gIC5sb2dvdXQtd3JhcHBlciB7XG4gICAgZGlzcGxheTogbm9uZTtcbiAgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoIDogNzY3cHgpIHtcbiAgLmxvZ291dCB7XG4gICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50O1xuICB9XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */
+         </style>
+         <style>.dashboard-container {
+               padding-top: 8px;
+               }
+               .header {
+               height: 96px;
+               }
+               .title {
+               font-weight: 700;
+               font-size: 18px;
+               line-height: 124.5%;
+               letter-spacing: 0.01em;
+               color: #000000;
+               }
+               .cursor-pointer {
+               cursor: pointer;
+               }
+               .ball-wrapper {
+               position: relative;
+               margin-right: 33px;
+               }
+               .reddot {
+               position: absolute;
+               width: 10px;
+               height: 10px;
+               top: 1px;
+               right: -2px;
+               }
+               .username {
+               margin-right: 6px;
+               }
+               .profile-image {
+               margin-right: 8px;
+               }
+               @media screen and (max-width : 600px) {
+               .overflow-x {
+               overflow-x: scroll;
+               }
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy9EYXNoYm9hcmQvRGFzaGJvYXJkLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixzQkFBc0I7SUFDdEIsY0FBYztBQUNsQjs7QUFFQTtJQUNJLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxZQUFZO0lBQ1osUUFBUTtJQUNSLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJO1FBQ0ksa0JBQWtCO0lBQ3RCO0FBQ0oiLCJzb3VyY2VzQ29udGVudCI6WyIuZGFzaGJvYXJkLWNvbnRhaW5lciB7XG4gICAgcGFkZGluZy10b3A6IDhweDtcbn1cblxuLmhlYWRlciB7XG4gICAgaGVpZ2h0OiA5NnB4O1xufVxuXG4udGl0bGUge1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgZm9udC1zaXplOiAxOHB4O1xuICAgIGxpbmUtaGVpZ2h0OiAxMjQuNSU7XG4gICAgbGV0dGVyLXNwYWNpbmc6IDAuMDFlbTtcbiAgICBjb2xvcjogIzAwMDAwMDtcbn1cblxuLmN1cnNvci1wb2ludGVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi5iYWxsLXdyYXBwZXIge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBtYXJnaW4tcmlnaHQ6IDMzcHg7XG59XG5cbi5yZWRkb3Qge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB3aWR0aDogMTBweDtcbiAgICBoZWlnaHQ6IDEwcHg7XG4gICAgdG9wOiAxcHg7XG4gICAgcmlnaHQ6IC0ycHg7XG59XG5cbi51c2VybmFtZSB7XG4gICAgbWFyZ2luLXJpZ2h0OiA2cHg7XG59XG5cbi5wcm9maWxlLWltYWdlIHtcbiAgICBtYXJnaW4tcmlnaHQ6IDhweDtcbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aCA6IDYwMHB4KSB7XG4gICAgLm92ZXJmbG93LXgge1xuICAgICAgICBvdmVyZmxvdy14OiBzY3JvbGw7XG4gICAgfVxufSJdLCJzb3VyY2VSb290IjoiIn0= */
+         </style>
+         <style>.top-images {
+               max-height: 153px;
+               }
+               /* styling for bars on both the side */
+               .left-bar {
+               width: 13px;
+               height: 300px;
+               background: #FAB417;
+               border-radius: 10px 0px 0px 10px;
+               transform: rotate(180deg);
+               }
+               .right-bar {
+               width: 13px;
+               height: 300px;
+               background: #FAB417;
+               border-radius: 10px 0px 0px 10px;
+               }
+               .bar {
+               margin-top: 25%;
+               }
+               /* form style */
+               .text-field {
+               width: 509px;
+               height: 63px;
+               left: 501px;
+               top: 484px;
+               background: #F2F8FF;
+               box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+               border-radius: 31.5px;
+               }
+               .icon {
+               position: absolute;
+               left: 34.78px;
+               right: 62.96%;
+               bottom: 34.4%;
+               }
+               .placeholder {
+               left: 87px;
+               right: auto;
+               border: transparent !important;
+               outline: none !important;
+               cursor: text;
+               background-color: transparent;
+               }
+               /* sing in button style */
+               .submit-btn {
+               width: 279px;
+               height: 63px;
+               left: 616px;
+               top: 702px;
+               background: #FAB417;
+               border-radius: 31.5px;
+               }
+               .signin-text {
+               font-weight: 800;
+               font-size: 20px;
+               line-height: 27px;
+               letter-spacing: 0.11em;
+               color: #000000;
+               text-transform: uppercase;
+               }
+               /* style for text under sign in button */
+               .info {
+               font-weight: 600;
+               font-size: 16px;
+               line-height: 116.9%;
+               letter-spacing: 0.01em;
+               color: #702313;
+               }
+               .extra-info {
+               font-weight: 400;
+               font-size: 14px;
+               line-height: 151.4%;
+               letter-spacing: 0.01em;
+               color: #231F20;
+               }
+               /* media queries */
+               @media only screen and (min-width: 600px) {
+               .login-logo {
+               min-height: 172px;
+               min-width: 348px;
+               }
+               }
+               @media screen and (max-width : 600px) {
+               .text-field {
+               width: 315px;
+               }
+               .info , .extra-info {
+               width: 300px;
+               }
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy9sb2dpbi9Mb2dpbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUEsc0NBQXNDOztBQUV0QztJQUNJLFdBQVc7SUFDWCxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLGdDQUFnQztJQUNoQyx5QkFBeUI7QUFDN0I7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsYUFBYTtJQUNiLG1CQUFtQjtJQUNuQixnQ0FBZ0M7QUFDcEM7O0FBRUE7SUFDSSxlQUFlO0FBQ25COztBQUVBLGVBQWU7O0FBRWY7SUFDSSxZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7SUFDWCxVQUFVOztJQUVWLG1CQUFtQjtJQUNuQiwyQ0FBMkM7SUFDM0MscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixhQUFhO0lBQ2IsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLFVBQVU7SUFDVixXQUFXO0lBQ1gsOEJBQThCO0lBQzlCLHdCQUF3QjtJQUN4QixZQUFZO0lBQ1osNkJBQTZCO0FBQ2pDOztBQUVBLHlCQUF5Qjs7QUFFekI7SUFDSSxZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7SUFDWCxVQUFVO0lBQ1YsbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLHNCQUFzQjtJQUN0QixjQUFjO0lBQ2QseUJBQXlCO0FBQzdCOztBQUVBLHdDQUF3Qzs7QUFFeEM7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixzQkFBc0I7SUFDdEIsY0FBYztBQUNsQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixlQUFlO0lBQ2YsbUJBQW1CO0lBQ25CLHNCQUFzQjtJQUN0QixjQUFjO0FBQ2xCOztBQUVBLGtCQUFrQjs7QUFFbEI7SUFDSTtRQUNJLGlCQUFpQjtRQUNqQixnQkFBZ0I7SUFDcEI7RUFDRjs7RUFFQTtJQUNFO1FBQ0ksWUFBWTtJQUNoQjs7SUFFQTtRQUNJLFlBQVk7SUFDaEI7RUFDRiIsInNvdXJjZXNDb250ZW50IjpbIi50b3AtaW1hZ2VzIHtcbiAgICBtYXgtaGVpZ2h0OiAxNTNweDtcbn1cblxuLyogc3R5bGluZyBmb3IgYmFycyBvbiBib3RoIHRoZSBzaWRlICovXG5cbi5sZWZ0LWJhciB7XG4gICAgd2lkdGg6IDEzcHg7XG4gICAgaGVpZ2h0OiAzMDBweDtcbiAgICBiYWNrZ3JvdW5kOiAjRkFCNDE3O1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHggMHB4IDBweCAxMHB4O1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDE4MGRlZyk7XG59XG5cbi5yaWdodC1iYXIge1xuICAgIHdpZHRoOiAxM3B4O1xuICAgIGhlaWdodDogMzAwcHg7XG4gICAgYmFja2dyb3VuZDogI0ZBQjQxNztcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4IDBweCAwcHggMTBweDtcbn1cblxuLmJhciB7XG4gICAgbWFyZ2luLXRvcDogMjUlO1xufVxuXG4vKiBmb3JtIHN0eWxlICovXG5cbi50ZXh0LWZpZWxkIHtcbiAgICB3aWR0aDogNTA5cHg7XG4gICAgaGVpZ2h0OiA2M3B4O1xuICAgIGxlZnQ6IDUwMXB4O1xuICAgIHRvcDogNDg0cHg7XG5cbiAgICBiYWNrZ3JvdW5kOiAjRjJGOEZGO1xuICAgIGJveC1zaGFkb3c6IDBweCAxcHggMXB4IHJnYmEoMCwgMCwgMCwgMC4yNSk7XG4gICAgYm9yZGVyLXJhZGl1czogMzEuNXB4O1xufVxuXG4uaWNvbiB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIGxlZnQ6IDM0Ljc4cHg7XG4gICAgcmlnaHQ6IDYyLjk2JTtcbiAgICBib3R0b206IDM0LjQlO1xufVxuXG4ucGxhY2Vob2xkZXIge1xuICAgIGxlZnQ6IDg3cHg7XG4gICAgcmlnaHQ6IGF1dG87XG4gICAgYm9yZGVyOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xuICAgIG91dGxpbmU6IG5vbmUgIWltcG9ydGFudDtcbiAgICBjdXJzb3I6IHRleHQ7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi8qIHNpbmcgaW4gYnV0dG9uIHN0eWxlICovXG5cbi5zdWJtaXQtYnRuIHtcbiAgICB3aWR0aDogMjc5cHg7XG4gICAgaGVpZ2h0OiA2M3B4O1xuICAgIGxlZnQ6IDYxNnB4O1xuICAgIHRvcDogNzAycHg7XG4gICAgYmFja2dyb3VuZDogI0ZBQjQxNztcbiAgICBib3JkZXItcmFkaXVzOiAzMS41cHg7XG59XG5cbi5zaWduaW4tdGV4dCB7XG4gICAgZm9udC13ZWlnaHQ6IDgwMDtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gICAgbGluZS1oZWlnaHQ6IDI3cHg7XG4gICAgbGV0dGVyLXNwYWNpbmc6IDAuMTFlbTtcbiAgICBjb2xvcjogIzAwMDAwMDtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xufVxuXG4vKiBzdHlsZSBmb3IgdGV4dCB1bmRlciBzaWduIGluIGJ1dHRvbiAqL1xuXG4uaW5mbyB7XG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICBmb250LXNpemU6IDE2cHg7XG4gICAgbGluZS1oZWlnaHQ6IDExNi45JTtcbiAgICBsZXR0ZXItc3BhY2luZzogMC4wMWVtO1xuICAgIGNvbG9yOiAjNzAyMzEzO1xufVxuXG4uZXh0cmEtaW5mbyB7XG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICBmb250LXNpemU6IDE0cHg7XG4gICAgbGluZS1oZWlnaHQ6IDE1MS40JTtcbiAgICBsZXR0ZXItc3BhY2luZzogMC4wMWVtO1xuICAgIGNvbG9yOiAjMjMxRjIwO1xufVxuXG4vKiBtZWRpYSBxdWVyaWVzICovXG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNjAwcHgpIHtcbiAgICAubG9naW4tbG9nbyB7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDE3MnB4O1xuICAgICAgICBtaW4td2lkdGg6IDM0OHB4O1xuICAgIH1cbiAgfVxuXG4gIEBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGggOiA2MDBweCkge1xuICAgIC50ZXh0LWZpZWxkIHtcbiAgICAgICAgd2lkdGg6IDMxNXB4O1xuICAgIH1cblxuICAgIC5pbmZvICwgLmV4dHJhLWluZm8ge1xuICAgICAgICB3aWR0aDogMzAwcHg7XG4gICAgfVxuICB9Il0sInNvdXJjZVJvb3QiOiIifQ== */
+         </style>
+         <style>/* date picker style */
+               .date_width {
+               width: 215.73px;
+               height: 52px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               background: #FAB417;
+               border-radius: 16px;
+               }
+               .date-input {
+               background: transparent;
+               width: 90%;
+               border: none;
+               outline: none;
+               color: white;
+               }
+               /* select box style  */
+               .select-input {
+               background: transparent;
+               width: 80%;
+               border: none;
+               outline: none;
+               color: white;
+               }
+               .select-input > option {
+               color: black;
+               }
+               .select-input:active {
+               background-color: #FAB417;
+               }
+               .date-input::-webkit-calendar-picker-indicator {
+               filter: invert(1);
+               }
+               /* search box style */
+               .search-icon {
+               position: absolute;
+               left: 7.61%;
+               right: 58.22%;
+               top: 29.72%;
+               bottom: 91.47%;
+               }
+               .text-input {
+               position: absolute!important;
+               left: 16%;
+               top: 20%;
+               width: 68%;
+               border: none;
+               border: transparent !important;
+               outline: none !important;
+               }
+               .search-box {
+               width: 100%;
+               height: 56px;
+               background: #FFFFFF;
+               box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+               border-radius: 16px;
+               min-width: 370px
+               }
+               .search-wrapper {
+               width: 80%;
+               margin: 0px auto;
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL2Zvcm0vRm9ybS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsc0JBQXNCOztBQUV0QjtJQUNJLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLHVCQUF1QjtJQUN2QixtQkFBbUI7SUFDbkIsbUJBQW1CO0lBQ25CLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLHVCQUF1QjtJQUN2QixVQUFVO0lBQ1YsWUFBWTtJQUNaLGFBQWE7SUFDYixZQUFZO0FBQ2hCOztBQUVBLHNCQUFzQjs7QUFFdEI7SUFDSSx1QkFBdUI7SUFDdkIsVUFBVTtJQUNWLFlBQVk7SUFDWixhQUFhO0lBQ2IsWUFBWTtBQUNoQjtBQUNBO0lBQ0ksWUFBWTtBQUNoQjs7QUFFQTtJQUNJLHlCQUF5Qjs7QUFFN0I7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUEscUJBQXFCOztBQUVyQjtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gsYUFBYTtJQUNiLFdBQVc7SUFDWCxjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksNEJBQTRCO0lBQzVCLFNBQVM7SUFDVCxRQUFRO0lBQ1IsVUFBVTtJQUNWLFlBQVk7SUFDWiw4QkFBOEI7SUFDOUIsd0JBQXdCO0FBQzVCOztBQUVBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIsMkNBQTJDO0lBQzNDLG1CQUFtQjtJQUNuQjtBQUNKOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGdCQUFnQjtBQUNwQiIsInNvdXJjZXNDb250ZW50IjpbIi8qIGRhdGUgcGlja2VyIHN0eWxlICovXG5cbi5kYXRlX3dpZHRoIHtcbiAgICB3aWR0aDogMjE1LjczcHg7XG4gICAgaGVpZ2h0OiA1MnB4O1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBiYWNrZ3JvdW5kOiAjRkFCNDE3O1xuICAgIGJvcmRlci1yYWRpdXM6IDE2cHg7XG59XG5cbi5kYXRlLWlucHV0IHtcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgICB3aWR0aDogOTAlO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cblxuLyogc2VsZWN0IGJveCBzdHlsZSAgKi9cblxuLnNlbGVjdC1pbnB1dCB7XG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gICAgd2lkdGg6IDgwJTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgb3V0bGluZTogbm9uZTtcbiAgICBjb2xvcjogd2hpdGU7XG59XG4uc2VsZWN0LWlucHV0ID4gb3B0aW9uIHtcbiAgICBjb2xvcjogYmxhY2s7XG59XG5cbi5zZWxlY3QtaW5wdXQ6YWN0aXZlIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkFCNDE3O1xuXG59XG5cbi5kYXRlLWlucHV0Ojotd2Via2l0LWNhbGVuZGFyLXBpY2tlci1pbmRpY2F0b3Ige1xuICAgIGZpbHRlcjogaW52ZXJ0KDEpO1xufVxuXG4vKiBzZWFyY2ggYm94IHN0eWxlICovXG5cbi5zZWFyY2gtaWNvbiB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIGxlZnQ6IDcuNjElO1xuICAgIHJpZ2h0OiA1OC4yMiU7XG4gICAgdG9wOiAyOS43MiU7XG4gICAgYm90dG9tOiA5MS40NyU7XG59XG5cbi50ZXh0LWlucHV0IHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGUhaW1wb3J0YW50O1xuICAgIGxlZnQ6IDE2JTtcbiAgICB0b3A6IDIwJTtcbiAgICB3aWR0aDogNjglO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBib3JkZXI6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XG4gICAgb3V0bGluZTogbm9uZSAhaW1wb3J0YW50O1xufVxuXG4uc2VhcmNoLWJveCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiA1NnB4O1xuICAgIGJhY2tncm91bmQ6ICNGRkZGRkY7XG4gICAgYm94LXNoYWRvdzogMHB4IDRweCA0cHggcmdiYSgwLCAwLCAwLCAwLjI1KTtcbiAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xuICAgIG1pbi13aWR0aDogMzcwcHhcbn1cblxuLnNlYXJjaC13cmFwcGVyIHtcbiAgICB3aWR0aDogODAlO1xuICAgIG1hcmdpbjogMHB4IGF1dG87XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */
+         </style>
+         <style>/* checkbox style */
+               .mycheckbox {
+               display: block;
+               position: relative;
+               padding-left: 35px;
+               font-size: 11px;
+               font-weight: 700;
+               line-height: 11px;
+               letter-spacing: 0.01em;
+               color: #000000;
+               -webkit-user-select: none;
+               user-select: none;
+               }
+               /* Hide the browser's default checkbox */
+               .mycheckbox input {
+               position: absolute;
+               opacity: 0;
+               cursor: pointer;
+               height: 0;
+               width: 0;
+               }
+               /* Create a custom checkbox */
+               .checkmark {
+               position: absolute;
+               top: -5px;
+               left: 0;
+               height: 20px;
+               width: 20px;
+               border-radius: 2px;
+               background-color: #eee;
+               }
+               /* On mouse-over, add a grey background color */
+               .mycheckbox:hover input ~ .checkmark {
+               background-color: #ccc;
+               }
+               /* When the checkbox is checked, add a blue background */
+               .mycheckbox input:checked ~ .checkmark {
+               background-color: #FAB417;;
+               }
+               /* Create the checkmark/indicator (hidden when not checked) */
+               .checkmark:after {
+               content: "";
+               position: absolute;
+               display: none;
+               }
+               /* Show the checkmark when checked */
+               .mycheckbox input:checked ~ .checkmark:after {
+               display: block;
+               }
+               /* Style the checkmark/indicator */
+               .mycheckbox .checkmark:after {
+               left: 8px;
+               top: 3px;
+               width: 6px;
+               height: 10px;
+               border: solid white;
+               border-width: 0 3px 3px 0;
+               transform: rotate(45deg);
+               }
+               /* trade header */
+               .small-screen-trade-header {
+               display: none !important;
+               }
+               .trades-btn {
+               width: 140px;
+               height: 52px;
+               border-radius: 16px;
+               }
+               .btn-text {
+               font-weight: 400;
+               font-size: 14px;
+               color: #FFFFFF;
+               }
+               .bg-blue {
+               background-color: #40BAFF;
+               }
+               .table-overflow {
+               overflow-x: hidden;
+               background-color: rgb(203, 199, 199);
+               }
+               @media screen and (max-width : 1528px) {
+               .trade-header {
+               display: none;
+               }  
+               .small-screen-trade-header {
+               display: block !important;
+               display: flex !important;
+               }
+               .table-overflow {
+               overflow-x: scroll !important;
+               }
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy90cmFkZS90cmFkZXMvVHJhZGVzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxtQkFBbUI7O0FBRW5CO0lBQ0ksY0FBYztJQUNkLGtCQUFrQjtJQUNsQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIsc0JBQXNCO0lBQ3RCLGNBQWM7SUFDZCx5QkFBeUI7SUFHekIsaUJBQWlCO0VBQ25COztFQUVBLHdDQUF3QztFQUN4QztJQUNFLGtCQUFrQjtJQUNsQixVQUFVO0lBQ1YsZUFBZTtJQUNmLFNBQVM7SUFDVCxRQUFRO0VBQ1Y7O0VBRUEsNkJBQTZCO0VBQzdCO0lBQ0Usa0JBQWtCO0lBQ2xCLFNBQVM7SUFDVCxPQUFPO0lBQ1AsWUFBWTtJQUNaLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsc0JBQXNCO0VBQ3hCOztFQUVBLCtDQUErQztFQUMvQztJQUNFLHNCQUFzQjtFQUN4Qjs7RUFFQSx3REFBd0Q7RUFDeEQ7SUFDRSx5QkFBeUI7RUFDM0I7O0VBRUEsNkRBQTZEO0VBQzdEO0lBQ0UsV0FBVztJQUNYLGtCQUFrQjtJQUNsQixhQUFhO0VBQ2Y7O0VBRUEsb0NBQW9DO0VBQ3BDO0lBQ0UsY0FBYztFQUNoQjs7RUFFQSxrQ0FBa0M7RUFDbEM7SUFDRSxTQUFTO0lBQ1QsUUFBUTtJQUNSLFVBQVU7SUFDVixZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLHlCQUF5QjtJQUd6Qix3QkFBd0I7RUFDMUI7O0FBRUYsaUJBQWlCOztBQUVqQjtFQUNFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixZQUFZO0VBQ1osbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLG9DQUFvQztBQUN0Qzs7QUFFQTtJQUNJO1FBQ0ksYUFBYTtJQUNqQjs7SUFFQTtNQUNFLHlCQUF5QjtNQUN6Qix3QkFBd0I7SUFDMUI7O0lBRUE7TUFDRSw2QkFBNkI7SUFDL0I7QUFDSiIsInNvdXJjZXNDb250ZW50IjpbIi8qIGNoZWNrYm94IHN0eWxlICovXG5cbi5teWNoZWNrYm94IHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgcGFkZGluZy1sZWZ0OiAzNXB4O1xuICAgIGZvbnQtc2l6ZTogMTFweDtcbiAgICBmb250LXdlaWdodDogNzAwO1xuICAgIGxpbmUtaGVpZ2h0OiAxMXB4O1xuICAgIGxldHRlci1zcGFjaW5nOiAwLjAxZW07XG4gICAgY29sb3I6ICMwMDAwMDA7XG4gICAgLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZTtcbiAgICAtbW96LXVzZXItc2VsZWN0OiBub25lO1xuICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTtcbiAgICB1c2VyLXNlbGVjdDogbm9uZTtcbiAgfVxuICBcbiAgLyogSGlkZSB0aGUgYnJvd3NlcidzIGRlZmF1bHQgY2hlY2tib3ggKi9cbiAgLm15Y2hlY2tib3ggaW5wdXQge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBvcGFjaXR5OiAwO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBoZWlnaHQ6IDA7XG4gICAgd2lkdGg6IDA7XG4gIH1cbiAgXG4gIC8qIENyZWF0ZSBhIGN1c3RvbSBjaGVja2JveCAqL1xuICAuY2hlY2ttYXJrIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiAtNXB4O1xuICAgIGxlZnQ6IDA7XG4gICAgaGVpZ2h0OiAyMHB4O1xuICAgIHdpZHRoOiAyMHB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDJweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWVlO1xuICB9XG4gIFxuICAvKiBPbiBtb3VzZS1vdmVyLCBhZGQgYSBncmV5IGJhY2tncm91bmQgY29sb3IgKi9cbiAgLm15Y2hlY2tib3g6aG92ZXIgaW5wdXQgfiAuY2hlY2ttYXJrIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjY2NjO1xuICB9XG4gIFxuICAvKiBXaGVuIHRoZSBjaGVja2JveCBpcyBjaGVja2VkLCBhZGQgYSBibHVlIGJhY2tncm91bmQgKi9cbiAgLm15Y2hlY2tib3ggaW5wdXQ6Y2hlY2tlZCB+IC5jaGVja21hcmsge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNGQUI0MTc7O1xuICB9XG4gIFxuICAvKiBDcmVhdGUgdGhlIGNoZWNrbWFyay9pbmRpY2F0b3IgKGhpZGRlbiB3aGVuIG5vdCBjaGVja2VkKSAqL1xuICAuY2hlY2ttYXJrOmFmdGVyIHtcbiAgICBjb250ZW50OiBcIlwiO1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBkaXNwbGF5OiBub25lO1xuICB9XG4gIFxuICAvKiBTaG93IHRoZSBjaGVja21hcmsgd2hlbiBjaGVja2VkICovXG4gIC5teWNoZWNrYm94IGlucHV0OmNoZWNrZWQgfiAuY2hlY2ttYXJrOmFmdGVyIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgfVxuICBcbiAgLyogU3R5bGUgdGhlIGNoZWNrbWFyay9pbmRpY2F0b3IgKi9cbiAgLm15Y2hlY2tib3ggLmNoZWNrbWFyazphZnRlciB7XG4gICAgbGVmdDogOHB4O1xuICAgIHRvcDogM3B4O1xuICAgIHdpZHRoOiA2cHg7XG4gICAgaGVpZ2h0OiAxMHB4O1xuICAgIGJvcmRlcjogc29saWQgd2hpdGU7XG4gICAgYm9yZGVyLXdpZHRoOiAwIDNweCAzcHggMDtcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDQ1ZGVnKTtcbiAgICAtbXMtdHJhbnNmb3JtOiByb3RhdGUoNDVkZWcpO1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDQ1ZGVnKTtcbiAgfVxuXG4vKiB0cmFkZSBoZWFkZXIgKi9cblxuLnNtYWxsLXNjcmVlbi10cmFkZS1oZWFkZXIge1xuICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XG59XG5cbi50cmFkZXMtYnRuIHtcbiAgd2lkdGg6IDE0MHB4O1xuICBoZWlnaHQ6IDUycHg7XG4gIGJvcmRlci1yYWRpdXM6IDE2cHg7XG59XG5cbi5idG4tdGV4dCB7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgY29sb3I6ICNGRkZGRkY7XG59XG5cbi5iZy1ibHVlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQwQkFGRjtcbn1cblxuLnRhYmxlLW92ZXJmbG93IHtcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjAzLCAxOTksIDE5OSk7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGggOiAxNTI4cHgpIHtcbiAgICAudHJhZGUtaGVhZGVyIHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9ICBcblxuICAgIC5zbWFsbC1zY3JlZW4tdHJhZGUtaGVhZGVyIHtcbiAgICAgIGRpc3BsYXk6IGJsb2NrICFpbXBvcnRhbnQ7XG4gICAgICBkaXNwbGF5OiBmbGV4ICFpbXBvcnRhbnQ7XG4gICAgfVxuXG4gICAgLnRhYmxlLW92ZXJmbG93IHtcbiAgICAgIG92ZXJmbG93LXg6IHNjcm9sbCAhaW1wb3J0YW50O1xuICAgIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */
+         </style>
+         <style>.snx-nft {
+               margin-right: 15px;
+               }
+               .watchlist-search {
+               width: 712px;
+               align-items: center;
+               }
+               .watchlist-smallscreen-search {
+               display: none;
+               }
+               /* content styles */
+               .col-padding {
+               padding: 0px 3px !important;
+               }
+               .input-title {
+               font-weight: 400;
+               font-size: 10px;
+               line-height: 10px;
+               letter-spacing: 0.05em;
+               color: #000000;
+               margin-bottom: 10px;
+               margin-left: 30px;
+               }
+               .first-box {
+               height: 52px;
+               background: #FAB417;
+               border-radius: 16px;
+               }
+               .inside-text {
+               position: absolute;
+               left: 16.97%;
+               right: 75.33%;
+               top: 48.37%;
+               bottom: 78.21%;
+               font-family: 'Nexa Bold';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 14px;
+               line-height: 14px;
+               display: flex;
+               align-items: center;
+               color: #FFFFFF;
+               }
+               .date {
+               position: absolute;
+               left: 38px;
+               top: 11px;
+               color: white;
+               }
+               .icon-position {
+               position: absolute;
+               left: 82.97%;
+               right: 75.33%;
+               top: 32.37%;
+               bottom: 75.21%
+               }
+               .plus-box {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 52px;
+               border-radius: 16px;
+               background-color: #40BAFF;
+               }
+               .plus-icon {
+               width: 12px;
+               height: 25px;
+               }
+               /* media queries */
+               @media screen and (max-width : 1528px) {
+               .watchlist-search {
+               display: none;
+               }  
+               .watchlist-smallscreen-search {
+               display: block;
+               width: 100%;
+               height: 56px;
+               background: #FFFFFF;
+               box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+               border-radius: 16px;
+               margin-top: 15px;
+               display: block;
+               }
+               }
+               @media screen and (max-width : 767px) {
+               .reduce-font-size {
+               font-size: 0.5em;
+               }
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy90cmFkZS93YXRjaGxpc3QvV2F0Y2hMaXN0LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLFlBQVk7SUFDWixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxhQUFhO0FBQ2pCOztBQUVBLG1CQUFtQjs7QUFFbkI7SUFDSSwyQkFBMkI7QUFDL0I7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixzQkFBc0I7SUFDdEIsY0FBYztJQUNkLG1CQUFtQjtJQUNuQixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osYUFBYTtJQUNiLFdBQVc7SUFDWCxjQUFjO0lBQ2Qsd0JBQXdCO0lBQ3hCLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLFNBQVM7SUFDVCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixhQUFhO0lBQ2IsV0FBVztJQUNYO0FBQ0o7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsdUJBQXVCO0lBQ3ZCLG1CQUFtQjtJQUNuQixZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCO0FBQ0Esa0JBQWtCOztBQUVsQjtJQUNJO1FBQ0ksYUFBYTtJQUNqQjs7SUFFQTtRQUNJLGNBQWM7UUFDZCxXQUFXO1FBQ1gsWUFBWTtRQUNaLG1CQUFtQjtRQUNuQiwyQ0FBMkM7UUFDM0MsbUJBQW1CO1FBQ25CLGdCQUFnQjtRQUNoQixjQUFjO0lBQ2xCO0FBQ0o7O0FBRUE7SUFDSTtRQUNJLGdCQUFnQjtJQUNwQjtBQUNKIiwic291cmNlc0NvbnRlbnQiOlsiLnNueC1uZnQge1xuICAgIG1hcmdpbi1yaWdodDogMTVweDtcbn1cblxuLndhdGNobGlzdC1zZWFyY2gge1xuICAgIHdpZHRoOiA3MTJweDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG4ud2F0Y2hsaXN0LXNtYWxsc2NyZWVuLXNlYXJjaCB7XG4gICAgZGlzcGxheTogbm9uZTtcbn1cblxuLyogY29udGVudCBzdHlsZXMgKi9cblxuLmNvbC1wYWRkaW5nIHtcbiAgICBwYWRkaW5nOiAwcHggM3B4ICFpbXBvcnRhbnQ7XG59XG5cbi5pbnB1dC10aXRsZSB7XG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICBmb250LXNpemU6IDEwcHg7XG4gICAgbGluZS1oZWlnaHQ6IDEwcHg7XG4gICAgbGV0dGVyLXNwYWNpbmc6IDAuMDVlbTtcbiAgICBjb2xvcjogIzAwMDAwMDtcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAzMHB4O1xufVxuXG4uZmlyc3QtYm94IHtcbiAgICBoZWlnaHQ6IDUycHg7XG4gICAgYmFja2dyb3VuZDogI0ZBQjQxNztcbiAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xufVxuIFxuLmluc2lkZS10ZXh0IHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogMTYuOTclO1xuICAgIHJpZ2h0OiA3NS4zMyU7XG4gICAgdG9wOiA0OC4zNyU7XG4gICAgYm90dG9tOiA3OC4yMSU7XG4gICAgZm9udC1mYW1pbHk6ICdOZXhhIEJvbGQnO1xuICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICBmb250LXdlaWdodDogNDAwO1xuICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICBsaW5lLWhlaWdodDogMTRweDtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgY29sb3I6ICNGRkZGRkY7XG59XG5cbi5kYXRlIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogMzhweDtcbiAgICB0b3A6IDExcHg7XG4gICAgY29sb3I6IHdoaXRlO1xufVxuXG4uaWNvbi1wb3NpdGlvbiB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIGxlZnQ6IDgyLjk3JTtcbiAgICByaWdodDogNzUuMzMlO1xuICAgIHRvcDogMzIuMzclO1xuICAgIGJvdHRvbTogNzUuMjElXG59XG5cbi5wbHVzLWJveCB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGhlaWdodDogNTJweDtcbiAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM0MEJBRkY7XG59XG5cbi5wbHVzLWljb24ge1xuICAgIHdpZHRoOiAxMnB4O1xuICAgIGhlaWdodDogMjVweDtcbn1cbi8qIG1lZGlhIHF1ZXJpZXMgKi9cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aCA6IDE1MjhweCkge1xuICAgIC53YXRjaGxpc3Qtc2VhcmNoIHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9ICBcbiAgICBcbiAgICAud2F0Y2hsaXN0LXNtYWxsc2NyZWVuLXNlYXJjaCB7XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgaGVpZ2h0OiA1NnB4O1xuICAgICAgICBiYWNrZ3JvdW5kOiAjRkZGRkZGO1xuICAgICAgICBib3gtc2hhZG93OiAwcHggNHB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMjUpO1xuICAgICAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xuICAgICAgICBtYXJnaW4tdG9wOiAxNXB4O1xuICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICB9XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGggOiA3NjdweCkge1xuICAgIC5yZWR1Y2UtZm9udC1zaXplIHtcbiAgICAgICAgZm9udC1zaXplOiAwLjVlbTtcbiAgICB9XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */
+         </style>
+         <style>.blocked-search {
+               flex-grow: 1;
+               padding: 0px 25px;
+               }
+               @media screen and (max-width : 1528px) {
+               .blocked-search {
+               display: none;
+               }  
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy90cmFkZS9ibG9ja2Vkc2NyaXB0cy9CbG9ja2VkU2NyaXBzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSTtRQUNJLGFBQWE7SUFDakI7QUFDSiIsInNvdXJjZXNDb250ZW50IjpbIi5ibG9ja2VkLXNlYXJjaCB7XG4gICAgZmxleC1ncm93OiAxO1xuICAgIHBhZGRpbmc6IDBweCAyNXB4O1xufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoIDogMTUyOHB4KSB7XG4gICAgLmJsb2NrZWQtc2VhcmNoIHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9ICBcbn0iXSwic291cmNlUm9vdCI6IiJ9 */
+         </style>
+         <style>.main-header {
+               height: 119px;
+               }
+               .portfolio-small-search {
+               display: block;
+               }
+               .portfolio-small-checkboxes {
+               display: none !important;
+               }
+               /* btn styles */
+               .portfolio-btn {
+               width: 166px;
+               height: 40px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               border: transparent;
+               outline: none;
+               border-radius: 16px;
+               color: white;
+               }
+               .table-heading {
+               width: 30%;
+               display: flex;
+               font-size: 11px;
+               font-weight: 700;
+               justify-content: space-between;
+               align-items: center;
+               color: #000000;
+               }
+               @media screen and (max-width : 1286px) {
+               .portfolio-search {
+               display: none !important;
+               }
+               }
+               @media screen and (min-width : 1286px) {
+               .portfolio-small-search {
+               display:  none;
+               }
+               }
+               @media screen and (max-width : 541px) {
+               .portfolio-small-checkboxes {
+               display: block !important;
+               }
+               }
+               @media screen and (max-width : 541px) {
+               .portfolio-checkboxes {
+               display: none !important;
+               }
+               .main-header {
+               justify-content: end !important;
+               }
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy90cmFkZS9wb3Jmb2xpby1wb3NpdGlvbi9Qb3J0Zm9saW9Qb3NpdGlvbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLHdCQUF3QjtBQUM1Qjs7QUFFQSxlQUFlOztBQUVmO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWixhQUFhO0lBQ2IsdUJBQXVCO0lBQ3ZCLG1CQUFtQjtJQUNuQixtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLG1CQUFtQjtJQUNuQixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGFBQWE7SUFDYixlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLDhCQUE4QjtJQUM5QixtQkFBbUI7SUFDbkIsY0FBYztBQUNsQjs7QUFFQTtJQUNJO1FBQ0ksd0JBQXdCO0lBQzVCO0FBQ0o7O0FBRUE7SUFDSTtRQUNJLGNBQWM7SUFDbEI7QUFDSjs7QUFFQTtJQUNJO1FBQ0kseUJBQXlCO0lBQzdCO0FBQ0o7O0FBRUE7SUFDSTtRQUNJLHdCQUF3QjtJQUM1Qjs7SUFFQTtRQUNJLCtCQUErQjtJQUNuQztBQUNKIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW4taGVhZGVyIHtcbiAgICBoZWlnaHQ6IDExOXB4O1xufVxuXG4ucG9ydGZvbGlvLXNtYWxsLXNlYXJjaCB7XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG5cbi5wb3J0Zm9saW8tc21hbGwtY2hlY2tib3hlcyB7XG4gICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50O1xufVxuXG4vKiBidG4gc3R5bGVzICovXG5cbi5wb3J0Zm9saW8tYnRuIHtcbiAgICB3aWR0aDogMTY2cHg7XG4gICAgaGVpZ2h0OiA0MHB4O1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBib3JkZXI6IHRyYW5zcGFyZW50O1xuICAgIG91dGxpbmU6IG5vbmU7XG4gICAgYm9yZGVyLXJhZGl1czogMTZweDtcbiAgICBjb2xvcjogd2hpdGU7XG59XG5cbi50YWJsZS1oZWFkaW5nIHtcbiAgICB3aWR0aDogMzAlO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZm9udC1zaXplOiAxMXB4O1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgY29sb3I6ICMwMDAwMDA7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGggOiAxMjg2cHgpIHtcbiAgICAucG9ydGZvbGlvLXNlYXJjaCB7XG4gICAgICAgIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcbiAgICB9XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGggOiAxMjg2cHgpIHtcbiAgICAucG9ydGZvbGlvLXNtYWxsLXNlYXJjaCB7XG4gICAgICAgIGRpc3BsYXk6ICBub25lO1xuICAgIH1cbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aCA6IDU0MXB4KSB7XG4gICAgLnBvcnRmb2xpby1zbWFsbC1jaGVja2JveGVzIHtcbiAgICAgICAgZGlzcGxheTogYmxvY2sgIWltcG9ydGFudDtcbiAgICB9XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGggOiA1NDFweCkge1xuICAgIC5wb3J0Zm9saW8tY2hlY2tib3hlcyB7XG4gICAgICAgIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcbiAgICB9XG5cbiAgICAubWFpbi1oZWFkZXIge1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGVuZCAhaW1wb3J0YW50O1xuICAgIH1cbn0iXSwic291cmNlUm9vdCI6IiJ9 */
+         </style>
+         <style>.add-box {
+               width: 83px;
+               height: 52px;
+               /* left: 1408px;
+               top: 167px; */
+               background: #702313;
+               border-radius: 12px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy9mb3JleC93YXRjaGxpc3QvV2F0Y2hMaXN0LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1o7aUJBQ2E7SUFDYixtQkFBbUI7SUFDbkIsbUJBQW1CO0lBQ25CLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIsdUJBQXVCO0FBQzNCIiwic291cmNlc0NvbnRlbnQiOlsiLmFkZC1ib3gge1xuICAgIHdpZHRoOiA4M3B4O1xuICAgIGhlaWdodDogNTJweDtcbiAgICAvKiBsZWZ0OiAxNDA4cHg7XG4gICAgdG9wOiAxNjdweDsgKi9cbiAgICBiYWNrZ3JvdW5kOiAjNzAyMzEzO1xuICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */
+         </style>
+         <style>@media screen and (min-width : 1200px) {
+               .restrict-width {
+               width: 18%;
+               }
+               .increase-width {
+               width: 82%;
+               }
+               }
+               /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9sYXlvdXQvRGVmYXVsdExheW91dC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSTtRQUNJLFVBQVU7SUFDZDs7SUFFQTtRQUNJLFVBQVU7SUFDZDtBQUNKIiwic291cmNlc0NvbnRlbnQiOlsiQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aCA6IDEyMDBweCkge1xuICAgIC5yZXN0cmljdC13aWR0aCB7XG4gICAgICAgIHdpZHRoOiAxOCU7XG4gICAgfVxuXG4gICAgLmluY3JlYXNlLXdpZHRoIHtcbiAgICAgICAgd2lkdGg6IDgyJTtcbiAgICB9XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */
+         </style>
+      </head>
+      <body cz-shortcut-listen="true">
+         <div id="root">
+               <div class="container-fluid vh-100 p-0 d-flex flex-column">
+                  <div class="row row-cols-3 m-0">
+                  <div class="col"><img src="{% static './images/login-top-left.svg' %}" class="img-fluid" alt=""></div>
+                  <div class="col"></div>
+                  <div class="col"><img src="{% static './images/login-top-right.svg' %}" class="img-fluid" alt=""></div>
+                  </div>
+                  <div class="row row-cols-3 m-0 flex-grow-1">
+                  <div class="col p-0">
+                     <div class="left-bar float-start bar"></div>
+                  </div>
+                  <div class="col d-flex flex-column align-items-center">
+                     <div class="logo"><img src="{% static './images/logo.svg' %}" class="img-fluid login-logo" alt=""></div>
+                     <div class="mt-5">
+                           <form action="" method="post">
+                              {% csrf_token %}
+                              <div class="position-relative d-flex align-items-center">
+                              <div class="text-field border border-secondary"></div>
+                              <img src="{% static './images/useridicon.svg' %}" class="icon" alt="">
+                              <input type="text" class="icon placeholder"  name="username" id="username" placeholder="Enter Username">
+                              </div>
+                              <div class="position-relative d-flex align-items-center mt-4">
+                              <div class="text-field border border-secondary"></div>
+                              <img src="{% static './images/lock.svg' %}" class="icon" alt="">
+                              <input type="password" class="icon placeholder" name="password" id="password" placeholder="Password" autocomplete="on" >
+                              </div>
+                              <div class="d-flex justify-content-center mt-5">
+                                 <button class="submit-btn" type="submit">
+                                    <span class="signin-text">sign in</span>
+                                    </button>
+                              </div>
+                           </form>
+                     </div>
+                     <div class="md:align-self-start mt-5">
+                           <p class="info mt-3">No real money involved.</p>
+                           <p class="extra-info">This is a Virtual Trading Application which has all the features to trade.</p>
+                     </div>
+                  </div>
+                  <div class="col p-0">
+                     <div class="right-bar float-end bar"></div>
+                  </div>
+                  </div>
+               </div>
+         </div>
+      </body>
+</html>
