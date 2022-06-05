@@ -18,7 +18,7 @@ import requests
 from user.models import UserAccount
 
 api = "uha6zxzenz17uw2y"
-access = "LpVp9M4hwGjbZVyl44Ako3xyj08ScxJz"
+access = "9KYGFmAv3PV7faNRem6E97fanCJ7cK23"
 MCX = []
 NSE = []
 headers = {
@@ -179,41 +179,38 @@ class API:
 
 
 def ApiF(market, token):
-    try:
-        response = requests.get(
-            'https://api.kite.trade/quote?i='+market+":"+token, headers=headers)
-        stock = list(response.json()['data'].keys())[0]
-        live_data = response.json()['data']
-        temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
-                random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
+    response = requests.get(
+        'https://api.kite.trade/quote?i='+market+":"+token, headers=headers)
+    stock = list(response.json()['data'].keys())[0]
+    live_data = response.json()['data']
+    temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
+            random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
+    name = stock.split(":")[1]
+    if market == "NSE":
+        for shares in NSE:
+            if shares[2] == name:
+                name = shares[3]
+    else:
         name = stock.split(":")[1]
-        if market == "NSE":
-            for shares in NSE:
-                if shares[2] == name:
-                    name = shares[3]
-        else:
-            name = stock.split(":")[1]
-        try:
-            temp[0] = name
-            temp[1] = live_data[stock]["ohlc"]['open']
-            temp[2] = live_data[stock]["ohlc"]["high"]
-            temp[3] = live_data[stock]["ohlc"]["low"]
-            temp[4] = live_data[stock]["ohlc"]["close"]
-            temp[5] = live_data[stock]["last_price"]
-            temp[6] = live_data[stock]["volume"]
-            temp[7] = live_data[stock]["net_change"]
-        except:
-            temp[0] = name
-            temp[1] = live_data[stock]["ohlc"]["open"]
-            temp[2] = live_data[stock]["ohlc"]["high"]
-            temp[3] = live_data[stock]["ohlc"]["low"]
-            temp[4] = live_data[stock]["ohlc"]["close"]
-            temp[5] = live_data[stock]["last_price"]
-            temp[6] = "volume"
-            temp[7] = live_data[stock]["net_change"]
-        return temp
+    try:
+        temp[0] = name
+        temp[1] = live_data[stock]["ohlc"]['open']
+        temp[2] = live_data[stock]["ohlc"]["high"]
+        temp[3] = live_data[stock]["ohlc"]["low"]
+        temp[4] = live_data[stock]["ohlc"]["close"]
+        temp[5] = live_data[stock]["last_price"]
+        temp[6] = live_data[stock]["volume"]
+        temp[7] = live_data[stock]["net_change"]
     except:
-        return [0, 0, 0, 0, 0, 0, 0, 0]
+        temp[0] = name
+        temp[1] = live_data[stock]["ohlc"]["open"]
+        temp[2] = live_data[stock]["ohlc"]["high"]
+        temp[3] = live_data[stock]["ohlc"]["low"]
+        temp[4] = live_data[stock]["ohlc"]["close"]
+        temp[5] = live_data[stock]["last_price"]
+        temp[6] = "volume"
+        temp[7] = live_data[stock]["net_change"]
+    return temp
 
 
 @login_required
