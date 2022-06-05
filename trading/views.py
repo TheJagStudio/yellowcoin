@@ -213,7 +213,7 @@ def ApiF(market, token):
             temp[7] = live_data[stock]["net_change"]
         return temp
     except:
-        return []
+        return [0, 0, 0, 0, 0, 0, 0, 0]
 
 
 @login_required
