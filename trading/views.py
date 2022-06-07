@@ -1,4 +1,9 @@
-from time import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+import chromedriver_autoinstaller
+from selenium import webdriver
+from kiteconnect import KiteConnect
+from time import sleep
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
@@ -18,7 +23,8 @@ import requests
 from user.models import UserAccount
 
 api = "uha6zxzenz17uw2y"
-access = "9KYGFmAv3PV7faNRem6E97fanCJ7cK23"
+secret = "cwdawxqyp6c0dgdljvffpi4k4nhejnbm"
+access = "2KMsIYwPwusmWXMCcOMmMfcpDKoaq6rI"
 MCX = []
 NSE = []
 headers = {
@@ -51,6 +57,42 @@ stocks = ["ITC:NSE", "AAPL:NASDAQ", "RELIANCE:NSE",
 dataArrFinal = []
 threads = []
 counter = 0
+
+
+def access_gen(request):
+    global api, secret, access
+    kite = KiteConnect(api_key=api)
+    chromedriver_autoinstaller.install()
+    options = Options()
+    options.add_argument("--no-sandbox")
+    options.add_argument("--headless")
+    driver = webdriver.Chrome(options=options)
+    driver.get(kite.login_url())
+    sleep(2)
+    password = driver.find_element(By.ID, "userid")
+    password.click()
+    password.send_keys("YQ0474")
+    password = driver.find_element(By.ID, "password")
+    password.click()
+    password.send_keys("Vishal@123")
+    submitBtn = driver.find_element(By.TAG_NAME, "button")
+    submitBtn.click()
+    sleep(1)
+    password = driver.find_element(By.ID, "pin")
+    password.click()
+    password.send_keys("300689")
+    submitBtn = driver.find_element(By.TAG_NAME, "button")
+    submitBtn.click()
+    sleep(1)
+    newurl = driver.current_url
+    driver.close()
+    request_token = newurl.split("request_token=")[1].split("&")[0]
+    gen_ssn = kite.generate_session(
+        request_token=request_token, api_secret=secret)
+    access = gen_ssn['access_token']
+    print(access)
+    kite.set_access_token(access_token=access)
+    return HttpResponse(access)
 
 
 def thread_function(i, stocks):
@@ -179,37 +221,40 @@ class API:
 
 
 def ApiF(market, token):
-    response = requests.get(
-        'https://api.kite.trade/quote?i='+market+":"+token, headers=headers)
-    stock = list(response.json()['data'].keys())[0]
-    live_data = response.json()['data']
-    temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
-            random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
-    name = stock.split(":")[1]
-    if market == "NSE":
-        for shares in NSE:
-            if shares[2] == name:
-                name = shares[3]
-    else:
-        name = stock.split(":")[1]
     try:
-        temp[0] = name
-        temp[1] = live_data[stock]["ohlc"]['open']
-        temp[2] = live_data[stock]["ohlc"]["high"]
-        temp[3] = live_data[stock]["ohlc"]["low"]
-        temp[4] = live_data[stock]["ohlc"]["close"]
-        temp[5] = live_data[stock]["last_price"]
-        temp[6] = live_data[stock]["volume"]
-        temp[7] = live_data[stock]["net_change"]
+        response = requests.get(
+            'https://api.kite.trade/quote?i='+market+":"+token, headers=headers)
+        stock = list(response.json()['data'].keys())[0]
+        live_data = response.json()['data']
+        temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
+                random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
+        name = stock.split(":")[1]
+        if market == "NSE":
+            for shares in NSE:
+                if shares[2] == name:
+                    name = shares[3]
+        else:
+            name = stock.split(":")[1]
+        try:
+            temp[0] = name
+            temp[1] = live_data[stock]["ohlc"]['open']
+            temp[2] = live_data[stock]["ohlc"]["high"]
+            temp[3] = live_data[stock]["ohlc"]["low"]
+            temp[4] = live_data[stock]["ohlc"]["close"]
+            temp[5] = live_data[stock]["last_price"]
+            temp[6] = live_data[stock]["volume"]
+            temp[7] = live_data[stock]["net_change"]
+        except:
+            temp[0] = name
+            temp[1] = live_data[stock]["ohlc"]["open"]
+            temp[2] = live_data[stock]["ohlc"]["high"]
+            temp[3] = live_data[stock]["ohlc"]["low"]
+            temp[4] = live_data[stock]["ohlc"]["close"]
+            temp[5] = live_data[stock]["last_price"]
+            temp[6] = "volume"
+            temp[7] = live_data[stock]["net_change"]
     except:
-        temp[0] = name
-        temp[1] = live_data[stock]["ohlc"]["open"]
-        temp[2] = live_data[stock]["ohlc"]["high"]
-        temp[3] = live_data[stock]["ohlc"]["low"]
-        temp[4] = live_data[stock]["ohlc"]["close"]
-        temp[5] = live_data[stock]["last_price"]
-        temp[6] = "volume"
-        temp[7] = live_data[stock]["net_change"]
+        temp = [0, 0, 0, 0, 0, 0, 0, 0]
     return temp
 
 
