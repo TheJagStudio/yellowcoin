@@ -21,6 +21,7 @@ from alpaca_trade_api.rest import REST, TimeFrame
 import random
 import requests
 from user.models import UserAccount
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
 api = "uha6zxzenz17uw2y"
 secret = "cwdawxqyp6c0dgdljvffpi4k4nhejnbm"
@@ -62,11 +63,11 @@ counter = 0
 def access_gen(request):
     global api, secret, access
     kite = KiteConnect(api_key=api)
-    chromedriver_autoinstaller.install()
-    options = Options()
-    options.add_argument("--no-sandbox")
-    options.add_argument("--headless")
-    driver = webdriver.Chrome(options=options)
+    option = webdriver.ChromeOptions()
+    option.add_argument("--headless")
+    option.add_argument("--no-sandbox")
+    driver = webdriver.Chrome(
+        options=option, executable_path=chromedriver_autoinstaller.install())
     driver.get(kite.login_url())
     sleep(2)
     password = driver.find_element(By.ID, "userid")
