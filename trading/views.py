@@ -278,43 +278,50 @@ def ws(request):
 
 @login_required
 def watchlist(request):
-    current_user = request.user
-    senty = []
-    obj = stack.objects.filter(username=request.user).first()
-    # obj.stocks = {"data": []}
-    # obj.save()
-    request.session['live_data'] = {}
-    request.session['token_to_instrument_NSE'] = []
-    request.session['token_to_instrument_MCX'] = []
-    request.session['TempNSE'] = []
-    request.session['TempMCX'] = []
-    if obj.stocks['data'] != []:
-        for stock in obj.stocks['data']:
-            for share in NSE:
-                if share[3] == stock:
-                    request.session['token_to_instrument_NSE'].append(share[2])
-            for share in MCX:
-                if share[2] == stock:
-                    request.session['token_to_instrument_MCX'].append(share[2])
+    try:
+        current_user = request.user
+        senty = []
+        obj = stack.objects.filter(username=request.user).first()
+        # obj.stocks = {"data": []}
+        # obj.save()
+        request.session['live_data'] = {}
+        request.session['token_to_instrument_NSE'] = []
+        request.session['token_to_instrument_MCX'] = []
+        request.session['TempNSE'] = []
+        request.session['TempMCX'] = []
+        if obj.stocks['data'] != []:
+            for stock in obj.stocks['data']:
+                for share in NSE:
+                    if share[3] == stock:
+                        request.session['token_to_instrument_NSE'].append(
+                            share[2])
+                for share in MCX:
+                    if share[2] == stock:
+                        request.session['token_to_instrument_MCX'].append(
+                            share[2])
 
-        for stock in request.session['token_to_instrument_NSE']:
-            print(stock)
-            request.session['TempNSE'].append(ApiF("NSE", stock))
-        for stock in request.session['token_to_instrument_MCX']:
-            request.session['TempMCX'].append(ApiF("MCX", stock))
-        request.session['TempNSE'].sort(key=lambda x: x[1])
-        request.session['TempMCX'].sort(key=lambda x: x[1])
-    ApiInstance1 = API({256265: "NIFTY 50", 265: "SENSEX"}, api, access)
-    senty = ApiInstance1.Api()
-    if current_user.is_superuser:
-        return render(request, 'trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataMCX': request.session['TempMCX'], 'stocksA': stockT, 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
-    else:
-        user_account = UserAccount.objects.filter(user=current_user).first()
-        if user_account.Account_Type == "User":
-            givenUser = "False"
+            for stock in request.session['token_to_instrument_NSE']:
+                print(stock)
+                request.session['TempNSE'].append(ApiF("NSE", stock))
+            for stock in request.session['token_to_instrument_MCX']:
+                request.session['TempMCX'].append(ApiF("MCX", stock))
+            request.session['TempNSE'].sort(key=lambda x: x[1])
+            request.session['TempMCX'].sort(key=lambda x: x[1])
+        ApiInstance1 = API({256265: "NIFTY 50", 265: "SENSEX"}, api, access)
+        senty = ApiInstance1.Api()
+        if current_user.is_superuser:
+            return render(request, 'trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataMCX': request.session['TempMCX'], 'stocksA': stockT, 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
         else:
-            givenUser = "True"
-        return render(request, 'user_trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'givenUser': givenUser, 'stocksA': stockT, 'dataMCX': request.session['TempMCX'], 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
+            user_account = UserAccount.objects.filter(
+                user=current_user).first()
+            if user_account.Account_Type == "User":
+                givenUser = "False"
+            else:
+                givenUser = "True"
+            return render(request, 'user_trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'givenUser': givenUser, 'stocksA': stockT, 'dataMCX': request.session['TempMCX'], 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
+    except:
+        access_gen(request)
+        return redirect('trading:watchlist')
 
 
 @login_required
