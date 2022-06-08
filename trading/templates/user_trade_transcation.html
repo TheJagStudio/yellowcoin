@@ -1,7 +1,7 @@
 {% extends 'user_base.html' %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10">
                         <div class="container-fluid">
                             <div class="row my-3">
                             <div class="col-3 fw-bold text-start p-0">
@@ -26,21 +26,39 @@
                             </div>
                             <div class="col-6 col-sm-6 col-md-6 col-lg-1 col-xl-1 text-center">
                                 <div class="dropdown bg-transparent">
-                                    <a class="btn focus-none" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="/">
-                                        <button type="button" class="position-relative border-none bg-transparent">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="svg-inline--fa fa-bell fa-2x p-0 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="grey">
-                                            <path fill="currentColor" d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z"></path>
-                                        </svg>
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3<span class="visually-hidden">unread messages</span></span>
-                                        </button>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="/">Action</a></li>
-                                        <li><a class="dropdown-item" href="/">Another action</a></li>
-                                        <li><a class="dropdown-item" href="/">Something else here</a></li>
-                                    </ul>
+                                 <a aria-expanded="false" class="btn focus-none" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink" role="button">
+                                  <button class="position-relative border-none bg-transparent" type="button">
+                                   <svg aria-hidden="true" class="svg-inline--fa fa-bell fa-1x p-0 custom-size" color="grey" data-icon="bell" data-prefix="fas" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" fill="currentColor">
+                                    </path>
+                                   </svg>
+                                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    3
+                                    <span class="visually-hidden">
+                                     unread messages
+                                    </span>
+                                   </span>
+                                  </button>
+                                 </a>
+                                 <ul aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+                                  <li>
+                                   <a class="dropdown-item" href="/">
+                                    Action
+                                   </a>
+                                  </li>
+                                  <li>
+                                   <a class="dropdown-item" href="/">
+                                    Another action
+                                   </a>
+                                  </li>
+                                  <li>
+                                   <a class="dropdown-item" href="/">
+                                    Something else here
+                                   </a>
+                                  </li>
+                                 </ul>
                                 </div>
-                            </div>
+                               </div>
                             <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2 d-flex flex-row">
                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-user" class="svg-inline--fa fa-circle-user fa-2x mt-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z"></path>
@@ -57,7 +75,7 @@
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <li><a class="dropdown-item" href="/">Action</a></li>
                                         <li><a class="dropdown-item" href="/">Another action</a></li>
-                                        <li><a class="dropdown-item" href="//accounts/logout">Logout</a></li>
+                                        <li><a class="dropdown-item" href="/accounts/logout/">Logout</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -65,13 +83,13 @@
                         </div>
                         <div class="container">
                             <div class="row">
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-2">
                                 <p class="m-2">TRADE AFTER</p>
-                                <input type="date" id="after"  class="bg-orange color-white w-100 height-button border-none px-3  cursor">
+                                <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-2">
                                 <p class="m-2">TRADE BEFORE</p>
-                                <input type="date" id="before" class="bg-orange color-white w-100 height-button border-none px-3  cursor">
+                                <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
                             </div>
                             <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-2">
                                 <p class="m-2">SELECT MARKET</p>
@@ -118,7 +136,7 @@
                             </div>
                             </div>
                         </div>
-                        <div>
+                        <div class=" ms-3"> 
                             SHOW
                             <span>
                             <select class="form-select bg-orange color-white focus-none width-entry d-inline mx-2" aria-label="Default select example">
@@ -130,39 +148,39 @@
                             </span>
                             ENTRIES
                         </div>
-                        <div class="table-responsive ">
+                        <div class="table-responsive  ms-3">
                             <table class="table my-5 table-borderless">
                             <thead>
                                 <tr class="table-border-none">
-                                    <th scope="col" class="bg-light ">D</th>
-                                    <th scope="col" class="bg-light ">TIME</th>
-                                    <th scope="col" class="bg-light ">MARKET</th>
-                                    <th scope="col" class="bg-light ">SCRIPT</th>
-                                    <th scope="col" class="bg-light ">B/S</th>
-                                    <th scope="col" class="bg-light ">ORDER TYPE</th>
-                                    <th scope="col" class="bg-light ">LOT</th>
-                                    <th scope="col" class="bg-light ">QTY</th>
-                                    <th scope="col" class="bg-light ">ORDER PRICE</th>
-                                    <th scope="col" class="bg-light ">STATUS</th>
-                                    <th scope="col" class="bg-light ">O.TIME</th>
-                                    <th scope="col" class="bg-light ">CANCEL</th>
+                                    <th scope="col" class="bg-dark text-white ">D</th>
+                                    <th scope="col" class="bg-dark text-white ">TIME</th>
+                                    <th scope="col" class="bg-dark text-white ">MARKET</th>
+                                    <th scope="col" class="bg-dark text-white ">SCRIPT</th>
+                                    <th scope="col" class="bg-dark text-white ">B/S</th>
+                                    <th scope="col" class="bg-dark text-white ">ORDER TYPE</th>
+                                    <th scope="col" class="bg-dark text-white ">LOT</th>
+                                    <th scope="col" class="bg-dark text-white ">QTY</th>
+                                    <th scope="col" class="bg-dark text-white ">ORDER PRICE</th>
+                                    <th scope="col" class="bg-dark text-white ">STATUS</th>
+                                    <th scope="col" class="bg-dark text-white ">O.TIME</th>
+                                    <th scope="col" class="bg-dark text-white ">CANCEL</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-primary" id="table">
+                            <tbody class="" id="table">
                                 {% for trade in trades %}
                                 <tr class="border-b">
-                                <td id="title" class="text-light bg-primary">{{trade.id}}</td>
-                                <td class="text-light bg-primary">{{trade.time}}</td>
-                                <td class="text-light bg-primary">{{trade.market}}</td>
-                                <td class="text-light bg-primary">{{trade.script}}</td>
-                                <td class="text-light bg-primary">{{trade.bs}}</td>
-                                <td class="text-light bg-primary">{{trade.orderType}}</td>
-                                <td class="text-light bg-primary">{{trade.lot}}</td>
-                                <td class="text-light bg-primary">{{trade.qty}}</td>
-                                <td class="text-light bg-primary">{{trade.orderPrice}}</td>
-                                <td class="text-light bg-primary">{{trade.status}}</td>
-                                <td class="text-light bg-primary">{{trade.oTime}}</td>
-                                <td class="text-light bg-primary">
+                                <td id="title" class="text-dark">{{trade.id}}</td>
+                                <td class="text-dark">{{trade.time}}</td>
+                                <td class="text-dark">{{trade.market}}</td>
+                                <td class="text-dark">{{trade.script}}</td>
+                                <td class="text-dark">{{trade.bs}}</td>
+                                <td class="text-dark">{{trade.orderType}}</td>
+                                <td class="text-dark">{{trade.lot}}</td>
+                                <td class="text-dark">{{trade.qty}}</td>
+                                <td class="text-dark">{{trade.orderPrice}}</td>
+                                <td class="text-dark">{{trade.status}}</td>
+                                <td class="text-dark">{{trade.oTime}}</td>
+                                <td class="text-dark">
                                     <button onclick="deleteR(this)" type="button">
                                         X
                                     </button>

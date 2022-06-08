@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10">
                            <div class="react-reveal container-fluid" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-35245370716331-1;">
                            <div class="row my-3">
                            <div class="col-3 text-start p-0 m-0 fs-small">
@@ -94,14 +94,14 @@
                      </div>
                      <div class="container-fluid">
                         <div class="row">
-                           <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                           <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-1">
                               <p class="m-2">SEGMENT</p>
                               <select onchange="scriptChanger(this)" id="segment" name="segment" class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
                                  <option class="bg-light text-dark ps-3" value="NSE">NSEFUT</option>
                                  <option class="bg-light text-dark ps-3" value="MCX">MCXOPT</option>
                               </select>
                            </div>
-                           <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                           <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                               <p class="m-2">SCRIPT</p>
                               <input list="scripts" onclick="updateToNull(this)" value="Type Script" name="script" id="script" class="bg-orange color-white height-button focus-none" style="font-size: .875rem;display: block; width: 100%; padding: 0.375rem 2.25rem 0.375rem 0.75rem; -moz-padding-start: calc(0.75rem - 3px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: white; border: 1px solid #ced4da; border-radius:15px; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; -webkit-appearance: none; -moz-appearance: none; appearance: none;" aria-label="Default select example">
                               <datalist id="scripts">
@@ -110,16 +110,11 @@
                                  {% endfor %}
                               </datalist>
                            </div>
-                           <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                           <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                               <p class="m-2">EXPIRY</p>
-                              <select class="form-select bg-orange color-white height-button focus-none" >
-                                 <option class="bg-light text-dark ps-3" value="1">31-03-2022</option>
-                                 <option class="bg-light text-dark ps-3" value="2">One</option>
-                                 <option class="bg-light text-dark ps-3" value="3">Two</option>
-                                 <option class="bg-light text-dark ps-3" value="3">Three</option>
-                              </select>
+                              <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
                            </div>
-                           <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+                           <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-1">
                               <p class="m-2">CE/PE</p>
                               <select class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
                                  <option class="bg-light text-dark ps-3" value="2">One</option>
@@ -127,7 +122,7 @@
                                  <option class="bg-light text-dark ps-3" value="3">Three</option>
                               </select>
                            </div>
-                           <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+                           <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-1">
                               <p class="m-2">STRIKE</p>
                               <select class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
                                  <option class="bg-light text-dark ps-3" value="1">Select...</option>
@@ -136,9 +131,13 @@
                                  <option class="bg-light text-dark ps-3" value="3">Three</option>
                               </select>
                            </div>
+                           <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+                              <p class="m-2">Add New Expiry</p>
+                              <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
+                           </div>
                               <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
                               <p class="m-2" style="opacity:0">SUBMIT</p>
-                              <button onclick="SubmitData()" class="bg-orange color-white height-button focus-none" style="border-radius:20px; width: 70%; border-width: 0;" aria-label="Default select example">
+                              <button onclick="SubmitData()" class="bg-orange color-white height-button focus-none" style="border-radius:15px; width: 70%; border-width: 0;" aria-label="Default select example">
                                  Submit
                               </button>
                            </div>
@@ -148,15 +147,15 @@
                         <table class="table my-5 table-borderless">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-light ">NSEFUT SYM</th>
-                                 <th scope="col" class="bg-light ">PRICE</th>
-                                 <th scope="col" class="bg-light ">OPEN</th>
-                                 <th scope="col" class="bg-light ">HIGH</th>
-                                 <th scope="col" class="bg-light ">LOW</th>
-                                 <th scope="col" class="bg-light ">CLOSE</th>
-                                 <th scope="col" class="bg-light ">VOLUME</th>
-                                 <th scope="col" class="bg-light ">CHANGE</th>
-                                 <th scope="col" class="bg-light ">REMOVE</th>
+                                 <th scope="col" class="bg-dark text-white ">NSEFUT SYM</th>
+                                 <th scope="col" class="bg-dark text-white ">PRICE</th>
+                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white ">LOW</th>
+                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
                               </tr>
                            </thead>
                            <tbody id="table1">
@@ -189,15 +188,15 @@
                         <table class="table my-5 table-borderless">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-light ">MCXOPT SYM</th>
-                                 <th scope="col" class="bg-light ">PRICE</th>
-                                 <th scope="col" class="bg-light ">OPEN</th>
-                                 <th scope="col" class="bg-light ">HIGH</th>
-                                 <th scope="col" class="bg-light ">LOW</th>
-                                 <th scope="col" class="bg-light ">CLOSE</th>
-                                 <th scope="col" class="bg-light ">VOLUME</th>
-                                 <th scope="col" class="bg-light ">CHANGE</th>
-                                 <th scope="col" class="bg-light ">REMOVE</th>
+                                 <th scope="col" class="bg-dark text-white ">MCXOPT SYM</th>
+                                 <th scope="col" class="bg-dark text-white ">PRICE</th>
+                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white ">LOW</th>
+                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
                               </tr>
                            </thead>
                            <tbody id="table2">

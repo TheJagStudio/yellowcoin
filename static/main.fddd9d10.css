@@ -229,10 +229,6 @@ body {
     cursor: pointer
 }
 
-.date-input::-webkit-calendar-picker-indicator {
-    -webkit-filter: invert(1) !important;
-    filter: invert(1) !important
-}
 
 .b-r-none {
     border-radius: none
@@ -361,9 +357,6 @@ body {
     border: none
 }
 
-.input-border {
-    border-radius: 7px !important
-}
 
 .color-orange {
     color: #fab417
@@ -406,4 +399,38 @@ body {
     background-color: #fab417 !important;
     color: white !important;
     border-radius: 15px 15px 0 0 !important;
+}
+
+input[type="date" i] {
+    align-items: center;
+    display: inline-flex;
+    font-family: monospace;
+    padding-inline-start: 1px;
+    cursor: default;
+    overflow: hidden;
+    padding: 0px;
+}
+
+input {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
 }

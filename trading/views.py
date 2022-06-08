@@ -1,3 +1,4 @@
+from wsgiref.util import application_uri
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import chromedriver_autoinstaller
@@ -25,7 +26,9 @@ import os
 
 api = "uha6zxzenz17uw2y"
 secret = "cwdawxqyp6c0dgdljvffpi4k4nhejnbm"
-access = "2KMsIYwPwusmWXMCcOMmMfcpDKoaq6rI"
+f = open("static/config.txt", "r")
+access = str(f.read())
+print(access)
 MCX = []
 NSE = []
 headers = {
@@ -61,15 +64,27 @@ counter = 0
 
 
 def access_gen(request):
-    global api, secret, access
+    global api, secret
+    f = open("static/config.txt", "r")
+    access = str(f.read())
+    print(access)
     kite = KiteConnect(api_key=api)
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    driver = webdriver.Chrome(executable_path=os.environ.get(
-        "CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    try:
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--no-sandbox")
+        driver = webdriver.Chrome(executable_path=os.environ.get(
+            "CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    except:
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--no-sandbox")
+        driver = webdriver.Chrome(
+            executable_path=chromedriver_autoinstaller.install(), chrome_options=chrome_options)
     driver.get(kite.login_url())
     sleep(2)
     password = driver.find_element(By.ID, "userid")
@@ -94,8 +109,63 @@ def access_gen(request):
         request_token=request_token, api_secret=secret)
     access = gen_ssn['access_token']
     print(access)
+    f = open("static/config.txt", "w")
+    f.write(access)
+    f.close()
     kite.set_access_token(access_token=access)
     return HttpResponse(access)
+
+
+def access_gen_to_use():
+    global api, secret
+    f = open("static/config.txt", "r")
+    access = str(f.read())
+    print(access)
+    kite = KiteConnect(api_key=api)
+    try:
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--no-sandbox")
+        driver = webdriver.Chrome(executable_path=os.environ.get(
+            "CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    except:
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--no-sandbox")
+        driver = webdriver.Chrome(
+            executable_path=chromedriver_autoinstaller.install(), chrome_options=chrome_options)
+    driver.get(kite.login_url())
+    sleep(2)
+    password = driver.find_element(By.ID, "userid")
+    password.click()
+    password.send_keys("YQ0474")
+    password = driver.find_element(By.ID, "password")
+    password.click()
+    password.send_keys("Vishal@123")
+    submitBtn = driver.find_element(By.TAG_NAME, "button")
+    submitBtn.click()
+    sleep(1)
+    password = driver.find_element(By.ID, "pin")
+    password.click()
+    password.send_keys("300689")
+    submitBtn = driver.find_element(By.TAG_NAME, "button")
+    submitBtn.click()
+    sleep(1)
+    newurl = driver.current_url
+    driver.close()
+    request_token = newurl.split("request_token=")[1].split("&")[0]
+    gen_ssn = kite.generate_session(
+        request_token=request_token, api_secret=secret)
+    access = gen_ssn['access_token']
+    print(access)
+    f = open("static/config.txt", "w")
+    f.write(access)
+    f.close()
+    kite.set_access_token(access_token=access)
 
 
 def thread_function(i, stocks):
@@ -224,40 +294,44 @@ class API:
 
 
 def ApiF(market, token):
-    try:
-        response = requests.get(
-            'https://api.kite.trade/quote?i='+market+":"+token, headers=headers)
-        stock = list(response.json()['data'].keys())[0]
-        live_data = response.json()['data']
-        temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
-                random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
+    global api
+    f = open("static/config.txt", "r")
+    access = str(f.read())
+    headers = {
+        'X-Kite-Version': '3',
+        'Authorization': 'token '+api+':'+access,
+    }
+    response = requests.get(
+        'https://api.kite.trade/quote?i='+market+":"+token, headers=headers)
+    stock = list(response.json()['data'].keys())[0]
+    live_data = response.json()['data']
+    temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
+            random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
+    name = stock.split(":")[1]
+    if market == "NSE":
+        for shares in NSE:
+            if shares[2] == name:
+                name = shares[3]
+    else:
         name = stock.split(":")[1]
-        if market == "NSE":
-            for shares in NSE:
-                if shares[2] == name:
-                    name = shares[3]
-        else:
-            name = stock.split(":")[1]
-        try:
-            temp[0] = name
-            temp[1] = live_data[stock]["ohlc"]['open']
-            temp[2] = live_data[stock]["ohlc"]["high"]
-            temp[3] = live_data[stock]["ohlc"]["low"]
-            temp[4] = live_data[stock]["ohlc"]["close"]
-            temp[5] = live_data[stock]["last_price"]
-            temp[6] = live_data[stock]["volume"]
-            temp[7] = live_data[stock]["net_change"]
-        except:
-            temp[0] = name
-            temp[1] = live_data[stock]["ohlc"]["open"]
-            temp[2] = live_data[stock]["ohlc"]["high"]
-            temp[3] = live_data[stock]["ohlc"]["low"]
-            temp[4] = live_data[stock]["ohlc"]["close"]
-            temp[5] = live_data[stock]["last_price"]
-            temp[6] = "volume"
-            temp[7] = live_data[stock]["net_change"]
+    try:
+        temp[0] = name
+        temp[1] = live_data[stock]["ohlc"]['open']
+        temp[2] = live_data[stock]["ohlc"]["high"]
+        temp[3] = live_data[stock]["ohlc"]["low"]
+        temp[4] = live_data[stock]["ohlc"]["close"]
+        temp[5] = live_data[stock]["last_price"]
+        temp[6] = live_data[stock]["volume"]
+        temp[7] = live_data[stock]["net_change"]
     except:
-        temp = [0, 0, 0, 0, 0, 0, 0, 0]
+        temp[0] = name
+        temp[1] = live_data[stock]["ohlc"]["open"]
+        temp[2] = live_data[stock]["ohlc"]["high"]
+        temp[3] = live_data[stock]["ohlc"]["low"]
+        temp[4] = live_data[stock]["ohlc"]["close"]
+        temp[5] = live_data[stock]["last_price"]
+        temp[6] = "volume"
+        temp[7] = live_data[stock]["net_change"]
     return temp
 
 
@@ -281,6 +355,8 @@ def ws(request):
 
 @login_required
 def watchlist(request):
+    f = open("static/config.txt", "r")
+    access = str(f.read())
     try:
         current_user = request.user
         senty = []
@@ -323,7 +399,7 @@ def watchlist(request):
                 givenUser = "True"
             return render(request, 'user_trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'givenUser': givenUser, 'stocksA': stockT, 'dataMCX': request.session['TempMCX'], 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
     except:
-        access_gen(request)
+        access_gen_to_use()
         return redirect('trading:watchlist')
 
 

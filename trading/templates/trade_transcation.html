@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10">
                         <div class="container-fluid">
                             <div class="row my-3">
                             <div class="col-3 fw-bold text-start p-0">
@@ -83,13 +83,13 @@
                         </div>
                         <div class="container">
                             <div class="row">
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-2">
                                 <p class="m-2">TRADE AFTER</p>
-                                <input type="date" id="after"  class="bg-orange color-white w-100 height-button border-none px-3  cursor">
+                                <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-2">
                                 <p class="m-2">TRADE BEFORE</p>
-                                <input type="date" id="before"  class="bg-orange color-white w-100 height-button border-none px-3  cursor">
+                                <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
                             </div>
                             <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-2">
                                 <p class="m-2">SELECT MARKET</p>
@@ -152,35 +152,35 @@
                             <table class="table my-5 table-borderless">
                             <thead>
                                 <tr class="table-border-none">
-                                    <th scope="col" class="bg-light ">D</th>
-                                    <th scope="col" class="bg-light ">TIME</th>
-                                    <th scope="col" class="bg-light ">MARKET</th>
-                                    <th scope="col" class="bg-light ">SCRIPT</th>
-                                    <th scope="col" class="bg-light ">B/S</th>
-                                    <th scope="col" class="bg-light ">ORDER TYPE</th>
-                                    <th scope="col" class="bg-light ">LOT</th>
-                                    <th scope="col" class="bg-light ">QTY</th>
-                                    <th scope="col" class="bg-light ">ORDER PRICE</th>
-                                    <th scope="col" class="bg-light ">STATUS</th>
-                                    <th scope="col" class="bg-light ">O.TIME</th>
-                                    <th scope="col" class="bg-light ">CANCEL</th>
+                                    <th scope="col" class="bg-dark text-white ">D</th>
+                                    <th scope="col" class="bg-dark text-white ">TIME</th>
+                                    <th scope="col" class="bg-dark text-white ">MARKET</th>
+                                    <th scope="col" class="bg-dark text-white ">SCRIPT</th>
+                                    <th scope="col" class="bg-dark text-white ">B/S</th>
+                                    <th scope="col" class="bg-dark text-white ">ORDER TYPE</th>
+                                    <th scope="col" class="bg-dark text-white ">LOT</th>
+                                    <th scope="col" class="bg-dark text-white ">QTY</th>
+                                    <th scope="col" class="bg-dark text-white ">ORDER PRICE</th>
+                                    <th scope="col" class="bg-dark text-white ">STATUS</th>
+                                    <th scope="col" class="bg-dark text-white ">O.TIME</th>
+                                    <th scope="col" class="bg-dark text-white ">CANCEL</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-primary" id="table">
+                            <tbody class="" id="table">
                                 {% for trade in trades %}
                                 <tr class="border-b">
-                                <td id="title" class="text-light bg-primary">{{trade.id}}</td>
-                                <td class="text-light bg-primary">{{trade.time}}</td>
-                                <td class="text-light bg-primary">{{trade.market}}</td>
-                                <td class="text-light bg-primary">{{trade.script}}</td>
-                                <td class="text-light bg-primary">{{trade.bs}}</td>
-                                <td class="text-light bg-primary">{{trade.orderType}}</td>
-                                <td class="text-light bg-primary">{{trade.lot}}</td>
-                                <td class="text-light bg-primary">{{trade.qty}}</td>
-                                <td class="text-light bg-primary">{{trade.orderPrice}}</td>
-                                <td class="text-light bg-primary">{{trade.status}}</td>
-                                <td class="text-light bg-primary">{{trade.oTime}}</td>
-                                <td class="text-light bg-primary">
+                                <td id="title" class="text-dark">{{trade.id}}</td>
+                                <td class="text-dark">{{trade.time}}</td>
+                                <td class="text-dark">{{trade.market}}</td>
+                                <td class="text-dark">{{trade.script}}</td>
+                                <td class="text-dark">{{trade.bs}}</td>
+                                <td class="text-dark">{{trade.orderType}}</td>
+                                <td class="text-dark">{{trade.lot}}</td>
+                                <td class="text-dark">{{trade.qty}}</td>
+                                <td class="text-dark">{{trade.orderPrice}}</td>
+                                <td class="text-dark">{{trade.status}}</td>
+                                <td class="text-dark">{{trade.oTime}}</td>
+                                <td class="text-dark">
                                     <button onclick="deleteR(this)" type="button">
                                         X
                                     </button>

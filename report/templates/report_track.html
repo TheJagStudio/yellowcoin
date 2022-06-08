@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-      <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
-       <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-712979384596228-1;">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10">
+       <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-541977280151381-1;">
         <div class="row my-2">
          <div class="col-3 col-sm-3 col-md-6 col-lg-4 col-xl-4 fw-bold">
           TRADE REPORT
@@ -44,12 +44,12 @@
           </div>
          </div>
          <div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
-          <div class="d-flex justify-content-end">
+          <div class="d-flex justify-content-end Admin-dropdown">
            <svg aria-hidden="true" class="svg-inline--fa fa-circle-user fa-2x mt-1" data-icon="circle-user" data-prefix="fas" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" fill="currentColor">
             </path>
            </svg>
-           <div class="dropdown ms-1 bg-transparent">
+           <div class="dropdown ms-1 bg-transparent Admin-dropdown">
             <a aria-expanded="false" class="btn fw-bold focus-none mt-0" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink" role="button">
              {{current_user.username}}
              <span class="ps-2">
@@ -59,7 +59,7 @@
               </svg>
              </span>
             </a>
-            <ul aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+            <ul aria-labelledby="dropdownMenuLink" class="dropdown-menu Admin-dropdown">
              <li>
               <a class="dropdown-item" href="/">
                Action
@@ -71,7 +71,7 @@
               </a>
              </li>
              <li>
-              <a class="dropdown-item" href="/accounts/logout/">
+              <a class="dropdown-item" href="/">
                Logout
               </a>
              </li>
@@ -81,7 +81,7 @@
          </div>
         </div>
        </div>
-       <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-712979384596228-1;">
+       <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-541977280151381-1;">
         <div class="row">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 my-3">
           <div class="container-fluid ps-0">
