@@ -31,6 +31,7 @@ access = str(f.read())
 print(access)
 MCX = []
 NSE = []
+NFO = []
 headers = {
     'X-Kite-Version': '3',
     'Authorization': 'token '+api+':'+access,
@@ -42,9 +43,12 @@ with open("static/all_Symbols.csv", 'r') as csvfile:
             MCX.append(row)
         elif row[11] == "NSE" and row[3] != "":
             NSE.append(row)
+        elif row[11] == "NFO" and row[3] != "":
+            NFO.append(row)
 count = 0
 stockT = []
 stocksA = []
+stocksB = []
 for share in NSE:
     if share[3] != "":
         stockT.append(share[3])
@@ -53,6 +57,11 @@ for share in NSE:
 for share in MCX:
     if share[3] != "":
         stocksA.append(share[2])
+        # print(share[3]+" ==> "+share[0]+" : "+share[2])
+        count += 1
+for share in NFO:
+    if share[3] != "":
+        stocksB.append(share[2])
         # print(share[3]+" ==> "+share[0]+" : "+share[2])
         count += 1
 
@@ -366,8 +375,10 @@ def watchlist(request):
         request.session['live_data'] = {}
         request.session['token_to_instrument_NSE'] = []
         request.session['token_to_instrument_MCX'] = []
+        request.session['token_to_instrument_NFO'] = []
         request.session['TempNSE'] = []
         request.session['TempMCX'] = []
+        request.session['TempNFO'] = []
         if obj.stocks['data'] != []:
             for stock in obj.stocks['data']:
                 for share in NSE:
@@ -378,18 +389,24 @@ def watchlist(request):
                     if share[2] == stock:
                         request.session['token_to_instrument_MCX'].append(
                             share[2])
+                for share in NFO:
+                    if share[2] == stock:
+                        request.session['token_to_instrument_NFO'].append(
+                            share[2])
 
             for stock in request.session['token_to_instrument_NSE']:
-                print(stock)
                 request.session['TempNSE'].append(ApiF("NSE", stock))
             for stock in request.session['token_to_instrument_MCX']:
                 request.session['TempMCX'].append(ApiF("MCX", stock))
+            for stock in request.session['token_to_instrument_NFO']:
+                request.session['TempNFO'].append(ApiF("NFO", stock))
             request.session['TempNSE'].sort(key=lambda x: x[1])
             request.session['TempMCX'].sort(key=lambda x: x[1])
+            request.session['TempNFO'].sort(key=lambda x: x[1])
         ApiInstance1 = API({256265: "NIFTY 50", 265: "SENSEX"}, api, access)
         senty = ApiInstance1.Api()
         if current_user.is_superuser:
-            return render(request, 'trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataMCX': request.session['TempMCX'], 'stocksA': stockT, 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
+            return render(request, 'trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataMCX': request.session['TempMCX'], 'dataNFO': request.session['TempNFO'], 'stocksA': stockT, 'stocksB': stocksA, 'stocksC': stocksB, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
         else:
             user_account = UserAccount.objects.filter(
                 user=current_user).first()
@@ -397,7 +414,7 @@ def watchlist(request):
                 givenUser = "False"
             else:
                 givenUser = "True"
-            return render(request, 'user_trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'givenUser': givenUser, 'stocksA': stockT, 'dataMCX': request.session['TempMCX'], 'stocksB': stocksA, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
+            return render(request, 'user_trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataNFO': request.session['TempNFO'], 'dataMCX': request.session['TempMCX'], 'givenUser': givenUser, 'stocksA': stockT, 'stocksB': stocksA, 'stocksC': stocksB, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
     except:
         access_gen_to_use()
         return redirect('trading:watchlist')
@@ -647,6 +664,9 @@ def dataDisplay(request):
                 for share in MCX:
                     if share[2] == symbol:
                         token_to_instrument_NSE.append(share[2])
+                for share in NFO:
+                    if share[2] == symbol:
+                        token_to_instrument_NSE.append(share[2])
                 dataArrFinal = ApiF("NSE", stock)
                 x = {
                     "name": str(dataArrFinal[0][0]),
@@ -667,6 +687,7 @@ def dataDisplay(request):
             if userStack.stocks['data'] != []:
                 token_to_instrument_NSE = []
                 token_to_instrument_MCX = []
+                token_to_instrument_NFO = []
                 for stock in userStack.stocks['data']:
                     for share in NSE:
                         if share[3] == stock:
@@ -674,10 +695,13 @@ def dataDisplay(request):
                     for share in MCX:
                         if share[2] == stock:
                             token_to_instrument_MCX.append(share[2])
+                    for share in NFO:
+                        if share[2] == stock:
+                            token_to_instrument_NSE.append(share[2])
                 dataArrFinal1 = []
                 for stock in token_to_instrument_NSE:
                     dataArrFinal1.append(ApiF("NSE", stock))
-                stringOutput = {"NSE": [], "MCX": []}
+                stringOutput = {"NSE": [], "MCX": [], "NFO": []}
                 for i in dataArrFinal1:
                     x = {
                         "name": str(i[0]),
@@ -705,6 +729,21 @@ def dataDisplay(request):
                         "change": str(i[7])
                     }
                     stringOutput["MCX"].append(x)
+                dataArrFinal3 = []
+                for stock in token_to_instrument_NFO:
+                    dataArrFinal3.append(ApiF("NFO", stock))
+                for i in dataArrFinal3:
+                    x = {
+                        "name": str(i[0]),
+                        "open": str(i[1]),
+                        "high": str(i[2]),
+                        "low": str(i[3]),
+                        "close": str(i[4]),
+                        "last price": str(i[5]),
+                        "volume": str(i[6]),
+                        "change": str(i[7])
+                    }
+                    stringOutput["NFO"].append(x)
                 return HttpResponse(json.dumps(stringOutput, indent=4), content_type="application/json")
             else:
                 return HttpResponse('No Stocks', content_type="application/json")
@@ -716,11 +755,16 @@ def dataDisplay(request):
                         if share[3] == symbol:
                             stock = share[2]
                     dataArrFinal = ApiF("NSE", stock)
-                else:
+                elif market == "MCX":
                     for share in MCX:
                         if share[2] == symbol:
                             stock = share[2]
                     dataArrFinal = ApiF("MCX", stock)
+                elif market == "NFO":
+                    for share in NFO:
+                        if share[2] == symbol:
+                            stock = share[2]
+                    dataArrFinal = ApiF("NFO", stock)
                 x = {
                     "name": str(dataArrFinal[0]),
                     "open": str(dataArrFinal[1]),

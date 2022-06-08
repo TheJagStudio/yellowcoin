@@ -8,14 +8,32 @@ from user.models import UserAccount
 def dashboard(request):
     current_user = request.user
     if current_user.is_superuser:
-        return render(request, 'dashboard_trades.html', {'current_user': current_user})
+        accounts = UserAccount.objects.all()
+        count = [0, 0, 0]
+        for account in accounts:
+            if "Master" in account.Account_Type:
+                count[0] += 1
+            if "Broker" in account.Account_Type:
+                count[1] += 1
+            if "User" in account.Account_Type:
+                count[2] += 1
+        return render(request, 'dashboard_trades.html', {'current_user': current_user, 'count': count})
     else:
         user_account = UserAccount.objects.filter(user=current_user).first()
         if user_account.Account_Type == "User":
             givenUser = "False"
         else:
             givenUser = "True"
-        return render(request, 'user_dashboard_trades.html', {'current_user': current_user, 'givenUser': givenUser})
+        accounts = UserAccount.objects.all()
+        count = [0, 0, 0]
+        for account in accounts:
+            if "Master" in account.Account_Type:
+                count[0] += 1
+            if "Broker" in account.Account_Type:
+                count[1] += 1
+            if "User" in account.Account_Type:
+                count[2] += 1
+        return render(request, 'user_dashboard_trades.html', {'current_user': current_user, 'givenUser': givenUser, 'count': count})
 
 
 @login_required
