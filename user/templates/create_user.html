@@ -124,36 +124,33 @@
                               <div class="row">
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault1" name="flexRadioDefault" type="checkbox"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault1" name="flexRadioDefault" type="checkbox" onchange="buttonDisabler('mcx')"/>
                                  <label class="form-check-label" for="flexRadioDefault1">
                                   MCX
                                  </label>
                                 </div>
-                                <div onclick="viewer('MCX')" class="bg-orange w-50 color-white text-center cursor-pointer py-3 input-border">
-                                 MCX View
-                                </div>
+                                <input onclick="viewer('MCX')" type="button" id="MCXV" class="bg-orange w-50 text-white text-center color-white cursor-pointer py-3 input-border opacity-50" style="border: 0;" disabled value="MCX View">
+                                </input>
                                </div>
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault2" name="flexRadioDefault" type="checkbox"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault2" name="flexRadioDefault" type="checkbox" onchange="buttonDisabler('nse')"/>
                                  <label class="form-check-label focus-none" for="flexRadioDefault2">
                                   NSE
                                  </label>
                                 </div>
-                                <div onclick="viewer('NSE')" class="bg-orange w-50 color-white text-center py-3 cursor-pointer input-border">
-                                 NSE View
-                                </div>
+                                <input onclick="viewer('NSE')" type="button" id="NSEV" class="bg-orange w-50 text-white text-center color-white cursor-pointer py-3 input-border opacity-50" style="border: 0;" disabled value="NSE View">
+                                </input>
                                </div>
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault3" name="flexRadioDefault" type="checkbox"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault3" name="flexRadioDefault" type="checkbox" onchange="buttonDisabler('forex')"/>
                                  <label class="form-check-label" for="flexRadioDefault3">
                                   Forex
                                  </label>
                                 </div>
-                                <div onclick="viewer('Forex')" class="bg-orange w-50 color-white text-center cursor-pointer py-3 input-border">
-                                 Forex
-                                </div>
+                                <input onclick="viewer('Forex')" type="button" id="FOREXV" class="bg-orange w-50 text-white text-center color-white cursor-pointer py-3 input-border opacity-50" style="border: 0;" disabled value="Forex">
+                                </input>
                                </div>
                               </div>
                              </div>
@@ -1140,6 +1137,47 @@
         </div>
 </div>
 <script>
+    function buttonDisabler(segment) {
+        let mcx = document.getElementById('flexRadioDefault1').checked;
+        let nse = document.getElementById('flexRadioDefault2').checked;
+        let forex = document.getElementById('flexRadioDefault3').checked;
+        if (segment == 'mcx') {
+            if (mcx == true) {
+                let button = document.getElementById('MCXV');
+                button.disabled = false;
+                button.classList.remove('opacity-50');
+            }
+            else {
+                let button = document.getElementById('MCXV');
+                button.disabled = true;
+                button.classList.add('opacity-50');
+            }
+        } 
+        else if (segment == 'nse') {
+            if (nse == true) {
+                let button = document.getElementById('NSEV');
+                button.disabled = false;
+                button.classList.remove('opacity-50');
+            }
+            else {
+                let button = document.getElementById('NSEV');
+                button.disabled = true;
+                button.classList.add('opacity-50');
+            }
+        } 
+        else if (segment == 'forex') {
+            if (forex == true) {
+                let button = document.getElementById('FOREXV');
+                button.disabled = false;
+                button.classList.remove('opacity-50');
+            }
+            else {
+                let button = document.getElementById('FOREXV');
+                button.disabled = true;
+                button.classList.add('opacity-50');
+            }
+        }
+    }
     function viewer(segment)
     {
 
