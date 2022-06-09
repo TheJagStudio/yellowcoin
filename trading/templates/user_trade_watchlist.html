@@ -97,8 +97,9 @@
                            <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-1">
                               <p class="m-2">SEGMENT</p>
                               <select onchange="scriptChanger(this)" id="segment" name="segment" class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
-                                 <option class="bg-light text-dark ps-3" value="NSE">NSEFUT</option>
-                                 <option class="bg-light text-dark ps-3" value="MCX">MCXOPT</option>
+                                 <option class="bg-light text-dark ps-3" value="NSE">NSE</option>
+                                 <option class="bg-light text-dark ps-3" value="NFO">NFO</option>
+                                 <option class="bg-light text-dark ps-3" value="MCX">MCX</option>
                               </select>
                            </div>
                            <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
@@ -117,9 +118,8 @@
                            <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-1">
                               <p class="m-2">CE/PE</p>
                               <select class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
-                                 <option class="bg-light text-dark ps-3" value="2">One</option>
-                                 <option class="bg-light text-dark ps-3" value="3">Two</option>
-                                 <option class="bg-light text-dark ps-3" value="3">Three</option>
+                                 <option class="bg-light text-dark ps-3" value="2">Call</option>
+                                 <option class="bg-light text-dark ps-3" value="3">Put</option>
                               </select>
                            </div>
                            <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-1">
@@ -147,8 +147,10 @@
                         <table class="table my-5 table-borderless">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-dark text-white ">NSEFUT SYM</th>
-                                 <th scope="col" class="bg-dark text-white ">PRICE</th>
+                                 <th scope="col" class="bg-dark text-white ">NSE SYM</th>
+                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white ">LTP</th>
                                  <th scope="col" class="bg-dark text-white ">OPEN</th>
                                  <th scope="col" class="bg-dark text-white ">HIGH</th>
                                  <th scope="col" class="bg-dark text-white ">LOW</th>
@@ -162,7 +164,9 @@
                               {% for stock in dataNSE %}
                               <tr class="">
                                  <td class="td-border ">{{stock.0}}</td>
-                                 <td class="td-border  bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
                                  <td class="td-border">{{stock.1}}</td>
                                  <td class="td-border ">{{stock.2}}</td>
                                  <td class="td-border ">{{stock.3}}</td>
@@ -188,8 +192,55 @@
                         <table class="table my-5 table-borderless">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-dark text-white ">MCXOPT SYM</th>
-                                 <th scope="col" class="bg-dark text-white ">PRICE</th>
+                                 <th scope="col" class="bg-dark text-white ">NFO SYM</th>
+                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white ">LTP</th>
+                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white ">LOW</th>
+                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
+                              </tr>
+                           </thead>
+                           <tbody id="table3">
+                              {% for stock in dataNFO %}
+                              <tr class="">
+                                 <td class="td-border ">{{stock.0}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border">{{stock.1}}</td>
+                                 <td class="td-border ">{{stock.2}}</td>
+                                 <td class="td-border ">{{stock.3}}</td>
+                                 <td class="td-border ">{{stock.4}}</td>
+                                 <td class="td-border ">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    {{stock.6}}
+                                 </td>
+                                 <td class="td-border ">{{stock.7}}</td>
+                                 <td class="td-border ">
+                                    <button type="button" onclick="deleteRNFO(this)" class="btn  mx-3 my-0 py-0 the-button">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
+                                          <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                                       </svg>
+                                    </button>
+                                 </td>
+                              </tr>
+                              {% endfor %}
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="table-responsive ms-3">
+                        <table class="table my-5 table-borderless">
+                           <thead>
+                              <tr class="table-border-none">
+                                 <th scope="col" class="bg-dark text-white ">MCX SYM</th>
+                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white ">LTP</th>
                                  <th scope="col" class="bg-dark text-white ">OPEN</th>
                                  <th scope="col" class="bg-dark text-white ">HIGH</th>
                                  <th scope="col" class="bg-dark text-white ">LOW</th>
@@ -203,7 +254,9 @@
                               {% for stock in dataMCX %}
                               <tr class="">
                                  <td class="td-border ">{{stock.0}}</td>
-                                 <td class="td-border  bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
                                  <td class="td-border">{{stock.1}}</td>
                                  <td class="td-border ">{{stock.2}}</td>
                                  <td class="td-border ">{{stock.3}}</td>
@@ -225,6 +278,7 @@
                            </tbody>
                         </table>
                      </div>
+                     
                   </div>
                </div>
             </div>
@@ -249,6 +303,8 @@
                            let table1 = document.getElementById('table1');
                            table1.innerHTML+=`<tr class="">
                                  <td class="td-border ">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
                                  <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
                                  <td class="td-border">`+d['data'][0]['open']+`</td>
                                  <td class="td-border">`+d['data'][0]['high']+`</td>
@@ -268,11 +324,13 @@
                                  </td>
                               </tr>`
                         }
-                        else
+                        else if (segment=="MCX")
                         {
                            let table2 = document.getElementById('table2');
                            table2.innerHTML+=`<tr class="">
                                  <td class="td-border ">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
                                  <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
                                  <td class="td-border">`+d['data'][0]['open']+`</td>
                                  <td class="td-border">`+d['data'][0]['high']+`</td>
@@ -292,7 +350,32 @@
                                  </td>
                               </tr>`
                         }
-                        
+                        else
+                        {
+                           let table3 = document.getElementById('table3');
+                           table3.innerHTML+=`<tr class="">
+                                 <td class="td-border ">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border ">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border ">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    `+d['data'][0]['volume']+`
+                                 </td>
+                                 <td class="td-border ">`+d['data'][0]['change']+`</td>
+                                 <td class="td-border ">
+                                    <button type="button" onclick="deleteRNFO(this)" class="btn  mx-3 my-0 py-0 the-button">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
+                                          <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                                       </svg>
+                                    </button>
+                                 </td>
+                              </tr>`
+                        }
                   })
             }
             function deleteRNSE(element)
@@ -313,6 +396,20 @@
             {
                console.log("working");
                let table = document.getElementById('table2');
+               
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
+                  res =>
+                  res.json()
+               ).then((_res) => {
+                  console.log();
+               });
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+            }
+            function deleteRNFO(element)
+            {
+               console.log("working");
+               let table = document.getElementById('table3');
                
                fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
                   res =>
@@ -355,6 +452,20 @@
                      }
                      }       
                   }
+                  table3 = document.getElementById("table3");
+                  tr3 = table3.getElementsByTagName("tr");
+                  for (i = 0; i < tr3.length; i++) {
+                     td3 = tr3[i].getElementsByTagName("td")[0];
+                     console.log(td3);
+                     if (td3) {
+                     txtValue = td3.textContent || td3.innerText;
+                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                           tr3[i].style.display = "";
+                     } else {
+                           tr3[i].style.display = "none";
+                     }
+                     }       
+                  }
                }
             function DataUpdater()
             {
@@ -371,40 +482,72 @@
                            {
                               if(tr[j].cells[0].innerHTML == symbol)
                               {  
-                                 let oldprice = tr[j].cells[1].innerHTML;
-                                 oldprice = oldprice.replace(',','')
-                                 let newPrice = NSE[i]['last price'];
-                                 newPrice = newPrice.replace(',','');
-                                 if(parseFloat(oldprice.substring(1))>parseFloat(newPrice.substring(1)))
+                                 let oldprice1 = tr[j].cells[1].innerHTML;
+                                 oldprice1 = oldprice1.replace(',','')
+                                 let newPrice1 = NSE[i]['ask'];
+                                 newPrice1 = newPrice1.replace(',','');
+                                 if(parseFloat(oldprice1.substring(1))>parseFloat(newPrice1.substring(1)))
                                  {
-                                    tr[j].cells[1].innerHTML = NSE[i]['last price'];
+                                    tr[j].cells[1].innerHTML = NSE[i]['ask'];
                                     tr[j].cells[1].classList.add("bg-danger");
                                     tr[j].cells[1].classList.remove("bg-primary");
                                  }
                                  else
                                  {
-                                    tr[j].cells[1].innerHTML = NSE[i]['last price'];
+                                    tr[j].cells[1].innerHTML = NSE[i]['ask'];
                                     tr[j].cells[1].classList.add("bg-primary");
                                     tr[j].cells[1].classList.remove("bg-danger");
                                  }
+                                 let oldprice2 = tr[j].cells[2].innerHTML;
+                                 oldprice2 = oldprice2.replace(',','')
+                                 let newPrice2 = NSE[i]['bid'];
+                                 newPrice = newPrice2.replace(',','');
+                                 if(parseFloat(oldprice2.substring(1))>parseFloat(newPrice2.substring(1)))
+                                 {
+                                    tr[j].cells[2].innerHTML = NSE[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-danger");
+                                    tr[j].cells[2].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[2].innerHTML = NSE[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-primary");
+                                    tr[j].cells[2].classList.remove("bg-danger");
+                                 }
+                                 let oldprice3 = tr[j].cells[3].innerHTML;
+                                 oldprice3 = oldprice3.replace(',','')
+                                 let newPrice3 = NSE[i]['last price'];
+                                 newPrice3 = newPrice3.replace(',','');
+                                 if(parseFloat(oldprice3.substring(1))>parseFloat(newPrice3.substring(1)))
+                                 {
+                                    tr[j].cells[3].innerHTML = NSE[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-danger");
+                                    tr[j].cells[3].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[3].innerHTML = NSE[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-primary");
+                                    tr[j].cells[3].classList.remove("bg-danger");
+                                 }
                                  
-                                 tr[j].cells[2].innerHTML = NSE[i]['open'];
-                                 tr[j].cells[3].innerHTML = NSE[i]['high'];
-                                 tr[j].cells[4].innerHTML = NSE[i]['low'];
-                                 tr[j].cells[4].innerHTML = NSE[i]['close'];
-                                 let oldvolume = tr[j].cells[6].innerText;
+                                 tr[j].cells[4].innerHTML = NSE[i]['open'];
+                                 tr[j].cells[5].innerHTML = NSE[i]['high'];
+                                 tr[j].cells[6].innerHTML = NSE[i]['low'];
+                                 tr[j].cells[7].innerHTML = NSE[i]['close'];
+                                 let oldvolume = tr[j].cells[8].innerText;
                                  oldvolume = oldvolume.replace(/\D/g, "");
                                  let newvolume = NSE[i]['volume'];
                                  newvolume = newvolume.replace(/\D/g, "");
                                  if(parseFloat(oldvolume.substring(1))>parseFloat(newvolume.substring(1)))
                                  {
-                                    tr[j].cells[6].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NSE[i]['volume'];
+                                    tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NSE[i]['volume'];
                                  }
                                  else
                                  {
-                                    tr[j].cells[6].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NSE[i]['volume'];
+                                    tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NSE[i]['volume'];
                                  }
-                                 tr[j].cells[7].innerHTML = NSE[i]['change'];
+                                 tr[j].cells[9].innerHTML = NSE[i]['change'];
                               }
                            }
                         }
@@ -418,40 +561,151 @@
                            {
                               if(tr[j].cells[0].innerHTML == symbol)
                               {  
-                                 let oldprice = tr[j].cells[1].innerHTML;
-                                 oldprice = oldprice.replace(',','')
-                                 let newPrice = MCX[i]['last price'];
-                                 newPrice = newPrice.replace(',','');
-                                 if(parseFloat(oldprice.substring(1))>parseFloat(newPrice.substring(1)))
+                                 let oldprice1 = tr[j].cells[1].innerHTML;
+                                 oldprice1 = oldprice1.replace(',','')
+                                 let newPrice1 = MCX[i]['ask'];
+                                 newPrice1 = newPrice1.replace(',','');
+                                 if(parseFloat(oldprice1.substring(1))>parseFloat(newPrice1.substring(1)))
                                  {
-                                    tr[j].cells[1].innerHTML = MCX[i]['last price'];
+                                    tr[j].cells[1].innerHTML = MCX[i]['ask'];
                                     tr[j].cells[1].classList.add("bg-danger");
                                     tr[j].cells[1].classList.remove("bg-primary");
                                  }
                                  else
                                  {
-                                    tr[j].cells[1].innerHTML = MCX[i]['last price'];
+                                    tr[j].cells[1].innerHTML = MCX[i]['ask'];
                                     tr[j].cells[1].classList.add("bg-primary");
                                     tr[j].cells[1].classList.remove("bg-danger");
                                  }
+                                 let oldprice2 = tr[j].cells[2].innerHTML;
+                                 oldprice2 = oldprice2.replace(',','')
+                                 let newPrice2 = MCX[i]['bid'];
+                                 newPrice = newPrice2.replace(',','');
+                                 if(parseFloat(oldprice2.substring(1))>parseFloat(newPrice2.substring(1)))
+                                 {
+                                    tr[j].cells[2].innerHTML = MCX[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-danger");
+                                    tr[j].cells[2].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[2].innerHTML = MCX[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-primary");
+                                    tr[j].cells[2].classList.remove("bg-danger");
+                                 }
+                                 let oldprice3 = tr[j].cells[3].innerHTML;
+                                 oldprice3 = oldprice3.replace(',','')
+                                 let newPrice3 = MCX[i]['last price'];
+                                 newPrice3 = newPrice3.replace(',','');
+                                 if(parseFloat(oldprice3.substring(1))>parseFloat(newPrice3.substring(1)))
+                                 {
+                                    tr[j].cells[3].innerHTML = MCX[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-danger");
+                                    tr[j].cells[3].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[3].innerHTML = MCX[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-primary");
+                                    tr[j].cells[3].classList.remove("bg-danger");
+                                 }
                                  
-                                 tr[j].cells[2].innerHTML = MCX[i]['open'];
-                                 tr[j].cells[3].innerHTML = MCX[i]['high'];
-                                 tr[j].cells[4].innerHTML = MCX[i]['low'];
-                                 tr[j].cells[4].innerHTML = MCX[i]['close'];
-                                 let oldvolume = tr[j].cells[6].innerText;
+                                 tr[j].cells[4].innerHTML = MCX[i]['open'];
+                                 tr[j].cells[5].innerHTML = MCX[i]['high'];
+                                 tr[j].cells[6].innerHTML = MCX[i]['low'];
+                                 tr[j].cells[7].innerHTML = MCX[i]['close'];
+                                 let oldvolume = tr[j].cells[8].innerText;
                                  oldvolume = oldvolume.replace(/\D/g, "");
                                  let newvolume = MCX[i]['volume'];
                                  newvolume = newvolume.replace(/\D/g, "");
                                  if(parseFloat(oldvolume.substring(1))>parseFloat(newvolume.substring(1)))
                                  {
-                                    tr[j].cells[6].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ MCX[i]['volume'];
+                                    tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ MCX[i]['volume'];
                                  }
                                  else
                                  {
-                                    tr[j].cells[6].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ MCX[i]['volume'];
+                                    tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ MCX[i]['volume'];
                                  }
-                                 tr[j].cells[7].innerHTML = MCX[i]['change'];
+                                 tr[j].cells[9].innerHTML = MCX[i]['change'];
+                              }
+                           }
+                        }
+                        let NFO = d['NFO'];
+                        for(let i=0; i < NFO.length; i++)
+                        {
+                           let symbol = NFO[i]['name'];
+                           let table = document.getElementById("table3");
+                           let tr = table.getElementsByTagName("tr");
+                           for(let j=0; j < tr.length; j++)
+                           {
+                              if(tr[j].cells[0].innerHTML == symbol)
+                              {  
+                                 let oldprice1 = tr[j].cells[1].innerHTML;
+                                 oldprice1 = oldprice1.replace(',','')
+                                 let newPrice1 = NFO[i]['ask'];
+                                 newPrice1 = newPrice1.replace(',','');
+                                 if(parseFloat(oldprice1.substring(1))>parseFloat(newPrice1.substring(1)))
+                                 {
+                                    tr[j].cells[1].innerHTML = NFO[i]['ask'];
+                                    tr[j].cells[1].classList.add("bg-danger");
+                                    tr[j].cells[1].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[1].innerHTML = NFO[i]['ask'];
+                                    tr[j].cells[1].classList.add("bg-primary");
+                                    tr[j].cells[1].classList.remove("bg-danger");
+                                 }
+                                 let oldprice2 = tr[j].cells[2].innerHTML;
+                                 oldprice2 = oldprice2.replace(',','')
+                                 let newPrice2 = NFO[i]['bid'];
+                                 newPrice = newPrice2.replace(',','');
+                                 if(parseFloat(oldprice2.substring(1))>parseFloat(newPrice2.substring(1)))
+                                 {
+                                    tr[j].cells[2].innerHTML = NFO[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-danger");
+                                    tr[j].cells[2].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[2].innerHTML = NFO[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-primary");
+                                    tr[j].cells[2].classList.remove("bg-danger");
+                                 }
+                                 let oldprice3 = tr[j].cells[3].innerHTML;
+                                 oldprice3 = oldprice3.replace(',','')
+                                 let newPrice3 = NFO[i]['last price'];
+                                 newPrice3 = newPrice3.replace(',','');
+                                 if(parseFloat(oldprice3.substring(1))>parseFloat(newPrice3.substring(1)))
+                                 {
+                                    tr[j].cells[3].innerHTML = NFO[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-danger");
+                                    tr[j].cells[3].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[3].innerHTML = NFO[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-primary");
+                                    tr[j].cells[3].classList.remove("bg-danger");
+                                 }
+                                 
+                                 tr[j].cells[4].innerHTML = NFO[i]['open'];
+                                 tr[j].cells[5].innerHTML = NFO[i]['high'];
+                                 tr[j].cells[6].innerHTML = NFO[i]['low'];
+                                 tr[j].cells[7].innerHTML = NFO[i]['close'];
+                                 let oldvolume = tr[j].cells[8].innerText;
+                                 oldvolume = oldvolume.replace(/\D/g, "");
+                                 let newvolume = NFO[i]['volume'];
+                                 newvolume = newvolume.replace(/\D/g, "");
+                                 if(parseFloat(oldvolume.substring(1))>parseFloat(newvolume.substring(1)))
+                                 {
+                                    tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NFO[i]['volume'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NFO[i]['volume'];
+                                 }
+                                 tr[j].cells[9].innerHTML = NFO[i]['change'];
                               }
                            }
                         }
@@ -492,6 +746,15 @@
                   var options = document.getElementsByTagName("datalist")[0].options;
                   var count = 0;
                   {% for stock in stocksB %}
+                     options[count].value = "{{stock}}";
+                     count++;
+                  {% endfor %}
+               }
+               if(element.value == "NFO")
+               {
+                  var options = document.getElementsByTagName("datalist")[0].options;
+                  var count = 0;
+                  {% for stock in stocksC %}
                      options[count].value = "{{stock}}";
                      count++;
                   {% endfor %}

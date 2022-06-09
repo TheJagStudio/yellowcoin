@@ -315,7 +315,7 @@ def ApiF(market, token):
     stock = list(response.json()['data'].keys())[0]
     live_data = response.json()['data']
     temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
-            random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
+            random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
     name = stock.split(":")[1]
     if market == "NSE":
         for shares in NSE:
@@ -332,6 +332,8 @@ def ApiF(market, token):
         temp[5] = live_data[stock]["last_price"]
         temp[6] = live_data[stock]["volume"]
         temp[7] = live_data[stock]["net_change"]
+        temp[8] = live_data[stock]["depth"]["buy"][0]["price"]
+        temp[9] = live_data[stock]["depth"]["sell"][0]["price"]
     except:
         temp[0] = name
         temp[1] = live_data[stock]["ohlc"]["open"]
@@ -341,6 +343,8 @@ def ApiF(market, token):
         temp[5] = live_data[stock]["last_price"]
         temp[6] = "volume"
         temp[7] = live_data[stock]["net_change"]
+        temp[8] = "0"
+        temp[9] = "0"
     return temp
 
 
@@ -676,7 +680,9 @@ def dataDisplay(request):
                     "close": str(dataArrFinal[0][4]),
                     "last price": str(dataArrFinal[0][5]),
                     "volume": str(dataArrFinal[0][6]),
-                    "change": str(dataArrFinal[0][7])
+                    "change": str(dataArrFinal[0][7]),
+                    "bid": str(dataArrFinal[0][8]),
+                    "ask": str(dataArrFinal[0][9]),
                 }
                 stringOutput["data"].append(x)
                 return HttpResponse(json.dumps(stringOutput, indent=4), content_type="application/json")
@@ -697,7 +703,7 @@ def dataDisplay(request):
                             token_to_instrument_MCX.append(share[2])
                     for share in NFO:
                         if share[2] == stock:
-                            token_to_instrument_NSE.append(share[2])
+                            token_to_instrument_NFO.append(share[2])
                 dataArrFinal1 = []
                 for stock in token_to_instrument_NSE:
                     dataArrFinal1.append(ApiF("NSE", stock))
@@ -711,7 +717,9 @@ def dataDisplay(request):
                         "close": str(i[4]),
                         "last price": str(i[5]),
                         "volume": str(i[6]),
-                        "change": str(i[7])
+                        "change": str(i[7]),
+                        "bid": str(i[8]),
+                        "ask": str(i[9]),
                     }
                     stringOutput["NSE"].append(x)
                 dataArrFinal2 = []
@@ -726,7 +734,9 @@ def dataDisplay(request):
                         "close": str(i[4]),
                         "last price": str(i[5]),
                         "volume": str(i[6]),
-                        "change": str(i[7])
+                        "change": str(i[7]),
+                        "bid": str(i[8]),
+                        "ask": str(i[9]),
                     }
                     stringOutput["MCX"].append(x)
                 dataArrFinal3 = []
@@ -741,7 +751,9 @@ def dataDisplay(request):
                         "close": str(i[4]),
                         "last price": str(i[5]),
                         "volume": str(i[6]),
-                        "change": str(i[7])
+                        "change": str(i[7]),
+                        "bid": str(i[8]),
+                        "ask": str(i[9]),
                     }
                     stringOutput["NFO"].append(x)
                 return HttpResponse(json.dumps(stringOutput, indent=4), content_type="application/json")
@@ -773,7 +785,9 @@ def dataDisplay(request):
                     "close": str(dataArrFinal[4]),
                     "last price": str(dataArrFinal[5]),
                     "volume": str(dataArrFinal[6]),
-                    "change": str(dataArrFinal[7])
+                    "change": str(dataArrFinal[7]),
+                    "bid": str(dataArrFinal[8]),
+                    "ask": str(dataArrFinal[9]),
                 }
                 stringOutput["data"].append(x)
                 obj = stack.objects.filter(username=request.user).first()
