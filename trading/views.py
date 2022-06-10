@@ -23,6 +23,7 @@ import random
 import requests
 from user.models import UserAccount
 import os
+import threading
 
 api = "uha6zxzenz17uw2y"
 secret = "cwdawxqyp6c0dgdljvffpi4k4nhejnbm"
@@ -64,6 +65,9 @@ for share in NFO:
         stocksB.append(share[2])
         # print(share[3]+" ==> "+share[0]+" : "+share[2])
         count += 1
+print(len(stocksA))
+print(len(stocksB))
+print(len(stockT))
 
 stocks = ["ITC:NSE", "AAPL:NASDAQ", "RELIANCE:NSE",
           "TCS:NSE", "HDFC:NSE", "MRF:NSE", "YESBANK:NSE"]
@@ -801,6 +805,6 @@ def dataDisplay(request):
             userStack = stack.objects.filter(username=request.user.id).first()
             userStack.stocks["data"].remove(symbol)
             userStack.save()
-            return HttpResponse(json.dumps({}), content_type="application/json")
+            return HttpResponse(json.dumps({"success": "True"}), content_type="application/json")
     else:
         return HttpResponse(HttpResponse('Invalid API Key', content_type="application/json"))
