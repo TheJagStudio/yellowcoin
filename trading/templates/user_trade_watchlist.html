@@ -285,6 +285,7 @@
          </div>
       </div>
       <script>
+         let changer = 1;
             function SubmitData()
             {
                   let segment = document.getElementById("segment").value;
@@ -380,45 +381,54 @@
             }
             function deleteRNSE(element)
             {
+               changer = 0;
                console.log("working");
                let table = document.getElementById('table1');
                
                fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
                   res =>
                   res.json()
-               ).then((_res) => {
-                  console.log();
+               ).then((res) => {
+                  console.log(res);
+                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+                  changer = 1;
+                  stateChange();
                });
-               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
             }
             function deleteRMCX(element)
             {
+               changer = 0;
                console.log("working");
                let table = document.getElementById('table2');
                
                fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
                   res =>
                   res.json()
-               ).then((_res) => {
-                  console.log();
+               ).then((res) => {
+                  console.log(res);
+                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+                  changer = 1;
+                  stateChange();
                });
-               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
             }
             function deleteRNFO(element)
             {
+               changer = 0;
                console.log("working");
                let table = document.getElementById('table3');
                
                fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
                   res =>
                   res.json()
-               ).then((_res) => {
-                  console.log();
+               ).then((res) => {
+                  console.log(res);
+                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+                  changer = 1;
+                  stateChange();
                });
-               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
             }
             function filter() {
                   var input, filter, table, tr, td, i, txtValue;
@@ -715,13 +725,13 @@
             function stateChange()
             {
                setTimeout(function(){ 
-                  DataUpdater();
-               }, 20000);
+                  if(changer==1)
+                  {
+                     DataUpdater();
+                  }
+               }, 3000);
             }
-            var today = new Date().getHours();
-            if (today >= 9 && today <= 15) {
                stateChange();
-            }
             function updateToNull(element)
             {  
                if(element.value == "Type Script")
@@ -734,6 +744,7 @@
                
                if(element.value == "NSE")
                {
+                  //1971
                   var options = document.getElementsByTagName("datalist")[0].options;
                   var count = 0;
                   {% for stock in stocksA %}
@@ -743,6 +754,7 @@
                }
                if(element.value == "MCX")
                {
+                  //5914
                   var options = document.getElementsByTagName("datalist")[0].options;
                   var count = 0;
                   {% for stock in stocksB %}
@@ -752,6 +764,7 @@
                }
                if(element.value == "NFO")
                {
+                  //63592
                   var options = document.getElementsByTagName("datalist")[0].options;
                   var count = 0;
                   {% for stock in stocksC %}
