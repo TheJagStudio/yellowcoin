@@ -23,6 +23,7 @@ import random
 import requests
 from user.models import UserAccount
 import os
+from django.views.decorators.csrf import csrf_exempt
 import threading
 
 api = "uha6zxzenz17uw2y"
@@ -653,6 +654,7 @@ def tradesRemove(request):
     return HttpResponse("success")
 
 
+@csrf_exempt
 @login_required
 def dataDisplay(request):
     # args = request.args

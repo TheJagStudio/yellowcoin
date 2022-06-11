@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-ky%4!!+cgc$56_n)ece3047&oh23w%k=$_q)z(hk&@ah_kult%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.109', '127.0.0.1',
-                 'yellowcoin.herokuapp.com', '139.59.10.255']
-
+"""ALLOWED_HOSTS = ['192.168.0.109', '127.0.0.1',
+                 'yellowcoin.herokuapp.com', '139.59.10.255']"""
+ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'log',
     'report',
     'forex',
+    'application',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'yellowcoin.wsgi.application'
 ASGI_APPLICATION = 'yellowcoin.asgi.application'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

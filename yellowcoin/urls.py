@@ -12,4 +12,5 @@ urlpatterns = [
     path('log/', include('log.urls')),
     path('report/', include('report.urls')),
     path('forex/', include('forex.urls')),
+    path('application/', include('application.urls')),
 ]
