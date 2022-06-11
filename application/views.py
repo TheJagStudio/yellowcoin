@@ -15,10 +15,13 @@ def login_user(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        stringOutput = {'status': 'success', 'message': 'Login successful'}
+        userType = UserAccount.objects.filter(
+            user=request.user).first().Account_Type
+        stringOutput = {'status': 'success', 'message': 'Login successful', "name": request.user.username,
+                        "type": userType}
         return HttpResponse(json.dumps(stringOutput, indent=4), content_type="application/json")
     else:
-        return HttpResponse(json.dumps({"success": "True"}, indent=4), content_type="application/json")
+        return HttpResponse(json.dumps({"success": "False"}, indent=4), content_type="application/json")
 
 
 @csrf_exempt
