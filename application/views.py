@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 import json
 # import csrf
 from django.views.decorators.csrf import csrf_exempt
+from user.models import UserAccount
 
 
 @csrf_exempt
@@ -23,4 +24,10 @@ def login_user(request):
 @csrf_exempt
 def get_user(request):
     if request.user.is_authenticated:
-        return HttpResponse(json.dumps({"name": request.user.username}, indent=4), content_type="application/json")
+        userType = UserAccount.objects.filter(
+            user=request.user).first().Account_Type
+        data = {
+            "name": request.user.username,
+            "type": userType
+        }
+        return HttpResponse(json.dumps(data, indent=4), content_type="application/json")
