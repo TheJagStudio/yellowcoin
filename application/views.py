@@ -10,8 +10,10 @@ from user.models import UserAccount
 
 @csrf_exempt
 def login_user(request):
-    username = request.GET.get('username')
-    password = request.GET.get('password')
+    body_unicode = request.body.decode('utf-8')
+    body = json.loads(body_unicode)
+    username = body['username']
+    password = body['password']
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
