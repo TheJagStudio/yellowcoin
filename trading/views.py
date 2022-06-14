@@ -312,57 +312,34 @@ def ApiF(market, token):
         'X-Kite-Version': '3',
         'Authorization': 'token '+api+':'+access,
     }
+    stocks = ""
+    for stock in token:
+        stocks += "i="+market+":"+stock+"&"
+    # remove last character
+    stocks = stocks[:-1]
     response = requests.get(
-        'https://api.kite.trade/quote?i='+market+":"+token, headers=headers)
-    stock = list(response.json()['data'].keys())[0]
+        'https://api.kite.trade/quote?'+stocks, headers=headers)
     live_data = response.json()['data']
-    temp = [random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10),
-            random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10), random.randint(0, 10)]
-    name = stock.split(":")[1]
-    if market == "NSE":
-        for shares in NSE:
-            if shares[2] == name:
-                name = shares[3]
-    else:
-        name = stock.split(":")[1]
-    try:
-        temp[0] = name
-        temp[1] = live_data[stock]["ohlc"]['open']
-        temp[2] = live_data[stock]["ohlc"]["high"]
-        temp[3] = live_data[stock]["ohlc"]["low"]
-        temp[4] = live_data[stock]["ohlc"]["close"]
-        temp[5] = live_data[stock]["last_price"]
-        temp[6] = live_data[stock]["volume"]
-        temp[7] = live_data[stock]["net_change"]
-        temp[8] = live_data[stock]["depth"]["buy"][0]["price"]
-        temp[9] = live_data[stock]["depth"]["sell"][0]["price"]
-    except:
+    temp = []
+    name = ""
+    for i in range(len(token)):
+        if market == "NSE":
+            for share in NSE:
+                if share[2] == token[i]:
+                    name = share[3]
+        else:
+            name = token[i]
+        symbols = market+":"+token[i]
         try:
-            temp[0] = name
-            temp[1] = live_data[stock]["ohlc"]["open"]
-            temp[2] = live_data[stock]["ohlc"]["high"]
-            temp[3] = live_data[stock]["ohlc"]["low"]
-            temp[4] = live_data[stock]["ohlc"]["close"]
-            temp[5] = live_data[stock]["last_price"]
-            temp[6] = "volume"
-            temp[7] = live_data[stock]["net_change"]
-            temp[8] = live_data[stock]["depth"]["buy"][0]["price"]
-            temp[9] = live_data[stock]["depth"]["sell"][0]["price"]
+            temp.append([name, live_data[symbols]["ohlc"]["open"], live_data[symbols]["ohlc"]["high"], live_data[symbols]["ohlc"]["low"], live_data[symbols]["ohlc"]["close"],
+                         live_data[symbols]["last_price"], live_data[symbols]["volume"], live_data[symbols]["net_change"], live_data[symbols]["depth"]["buy"][0]["price"], live_data[symbols]["depth"]["sell"][0]["price"]])
         except:
-            temp[0] = name
-            temp[1] = live_data[stock]["ohlc"]["open"]
-            temp[2] = live_data[stock]["ohlc"]["high"]
-            temp[3] = live_data[stock]["ohlc"]["low"]
-            temp[4] = live_data[stock]["ohlc"]["close"]
-            temp[5] = live_data[stock]["last_price"]
-            temp[6] = "volume"
-            temp[7] = live_data[stock]["net_change"]
-            temp[8] = "0"
-            temp[9] = "0"
+            temp.append([name, live_data[symbols]["ohlc"]["open"], live_data[symbols]["ohlc"]["high"], live_data[symbols]["ohlc"]["low"], live_data[symbols]["ohlc"]["close"],
+                         live_data[symbols]["last_price"], "volume", live_data[symbols]["net_change"], "0", "0"])
     return temp
 
 
-@login_required
+@ login_required
 def home(request):
     """current_user = request.user
     if current_user.username == 'admin':
@@ -372,7 +349,7 @@ def home(request):
     return redirect('trading:watchlist')
 
 
-@login_required
+@ login_required
 def ws(request):
     obj = stack.objects.filter(username=request.user).first()
     context = {'stocks': obj.stocks['data']}
@@ -380,7 +357,7 @@ def ws(request):
     return render(request, 'websockets.html', context=context)
 
 
-@login_required
+@ login_required
 def watchlist(request):
     f = open("static/config.txt", "r")
     access = str(f.read())
@@ -412,17 +389,16 @@ def watchlist(request):
                         request.session['token_to_instrument_NFO'].append(
                             share[2])
 
-            for stock in request.session['token_to_instrument_NSE']:
-                request.session['TempNSE'].append(ApiF("NSE", stock))
-            for stock in request.session['token_to_instrument_MCX']:
-                request.session['TempMCX'].append(ApiF("MCX", stock))
-            for stock in request.session['token_to_instrument_NFO']:
-                request.session['TempNFO'].append(ApiF("NFO", stock))
+            request.session['TempNSE'] = ApiF(
+                "NSE", request.session['token_to_instrument_NSE'])
+            request.session['TempMCX'] = ApiF(
+                "MCX", request.session['token_to_instrument_MCX'])
+            request.session['TempNFO'] = ApiF(
+                "NFO", request.session['token_to_instrument_NFO'])
             request.session['TempNSE'].sort(key=lambda x: x[1])
             request.session['TempMCX'].sort(key=lambda x: x[1])
             request.session['TempNFO'].sort(key=lambda x: x[1])
-        ApiInstance1 = API({256265: "NIFTY 50", 265: "SENSEX"}, api, access)
-        senty = ApiInstance1.Api()
+        senty = [ApiF("NSE", ["NIFTY 50"]), ApiF("BSE", ["SENSEX"])]
         if current_user.is_superuser:
             return render(request, 'trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataMCX': request.session['TempMCX'], 'dataNFO': request.session['TempNFO'], 'stocksA': stockT, 'stocksB': stocksA, 'stocksC': stocksB, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
         else:
@@ -438,7 +414,7 @@ def watchlist(request):
         return redirect('trading:watchlist')
 
 
-@login_required
+@ login_required
 def tradesFunction(request):
     current_user = request.user
     if current_user.is_superuser:
@@ -454,7 +430,7 @@ def tradesFunction(request):
         return render(request, 'user_trade_transcation.html', {'trades': obj, 'current_user': current_user, 'stocksA': stockT, 'dataArrFinal': dataArrFinal, 'givenUser': givenUser})
 
 
-@login_required
+@ login_required
 def Create_market(request):
     current_user = request.user
     if (request.method == 'POST'):
@@ -534,7 +510,7 @@ def Create_market(request):
     return render(request, 'user_create_market.html', {'trades': obj, 'current_user': current_user, 'stocks': stockT})
 
 
-@login_required
+@ login_required
 def Create_limit(request):
     current_user = request.user
     if (request.method == 'POST'):
@@ -614,14 +590,14 @@ def Create_limit(request):
     return render(request, 'user_create_limit.html', {'trades': obj, 'current_user': current_user, 'stocks': stockT})
 
 
-@login_required
+@ login_required
 def Create_stop(request):
     current_user = request.user
     obj = trades.objects.filter(user_id=request.user).all()
     return render(request, 'user_create_stop.html', {'trades': obj, 'current_user': current_user, 'stocks': stockT})
 
 
-@login_required
+@ login_required
 def trading_portfolio(request):
     current_user = request.user
     if current_user.is_superuser:
@@ -635,7 +611,7 @@ def trading_portfolio(request):
         return render(request, 'user_trading_portfolio.html', {'current_user': current_user, 'givenUser': givenUser})
 
 
-@login_required
+@ login_required
 def trading_ban(request):
     current_user = request.user
     if current_user.is_superuser:
@@ -649,22 +625,22 @@ def trading_ban(request):
         return render(request, 'user_trading_ban.html', {'current_user': current_user, 'givenUser': givenUser})
 
 
-@login_required
+@ login_required
 def trading_margin(request):
     current_user = request.user
     if current_user.is_superuser:
         return render(request, 'trading_margin.html', {'current_user': current_user})
 
 
-@login_required
+@ login_required
 def tradesRemove(request):
     id = request.GET.get('id')
     trades.objects.filter(id=id).delete()
     return HttpResponse("success")
 
 
-@csrf_exempt
-@login_required
+@ csrf_exempt
+@ login_required
 def dataDisplay(request):
     # args = request.args
     apiKey = request.GET.get('apiKey')
@@ -686,7 +662,7 @@ def dataDisplay(request):
                 for share in NFO:
                     if share[2] == symbol:
                         token_to_instrument_NSE.append(share[2])
-                dataArrFinal = ApiF("NSE", stock)
+                dataArrFinal = ApiF("NSE", [stock])
                 x = {
                     "name": str(dataArrFinal[0][0]),
                     "open": str(dataArrFinal[0][1]),
@@ -720,8 +696,7 @@ def dataDisplay(request):
                         if share[2] == stock:
                             token_to_instrument_NFO.append(share[2])
                 dataArrFinal1 = []
-                for stock in token_to_instrument_NSE:
-                    dataArrFinal1.append(ApiF("NSE", stock))
+                dataArrFinal1 = ApiF("NSE", token_to_instrument_NSE)
                 stringOutput = {"NSE": [], "MCX": [], "NFO": []}
                 for i in dataArrFinal1:
                     x = {
@@ -738,8 +713,7 @@ def dataDisplay(request):
                     }
                     stringOutput["NSE"].append(x)
                 dataArrFinal2 = []
-                for stock in token_to_instrument_MCX:
-                    dataArrFinal2.append(ApiF("MCX", stock))
+                dataArrFinal = ApiF("MCX", token_to_instrument_MCX)
                 for i in dataArrFinal2:
                     x = {
                         "name": str(i[0]),
@@ -755,8 +729,7 @@ def dataDisplay(request):
                     }
                     stringOutput["MCX"].append(x)
                 dataArrFinal3 = []
-                for stock in token_to_instrument_NFO:
-                    dataArrFinal3.append(ApiF("NFO", stock))
+                dataArrFinal = ApiF("NFO", token_to_instrument_NFO)
                 for i in dataArrFinal3:
                     x = {
                         "name": str(i[0]),
@@ -777,32 +750,33 @@ def dataDisplay(request):
     elif apiKey == "qwertyuiop":
         if todo == "get":
             try:
+                stock = []
                 if market == "NSE":
                     for share in NSE:
                         if share[3] == symbol:
-                            stock = share[2]
+                            stock.append(share[2])
                     dataArrFinal = ApiF("NSE", stock)
                 elif market == "MCX":
                     for share in MCX:
                         if share[2] == symbol:
-                            stock = share[2]
+                            stock.append(share[2])
                     dataArrFinal = ApiF("MCX", stock)
                 elif market == "NFO":
                     for share in NFO:
                         if share[2] == symbol:
-                            stock = share[2]
+                            stock.append(share[2])
                     dataArrFinal = ApiF("NFO", stock)
                 x = {
-                    "name": str(dataArrFinal[0]),
-                    "open": str(dataArrFinal[1]),
-                    "high": str(dataArrFinal[2]),
-                    "low": str(dataArrFinal[3]),
-                    "close": str(dataArrFinal[4]),
-                    "last price": str(dataArrFinal[5]),
-                    "volume": str(dataArrFinal[6]),
-                    "change": str(dataArrFinal[7]),
-                    "bid": str(dataArrFinal[8]),
-                    "ask": str(dataArrFinal[9]),
+                    "name": str(dataArrFinal[0][0]),
+                    "open": str(dataArrFinal[0][1]),
+                    "high": str(dataArrFinal[0][2]),
+                    "low": str(dataArrFinal[0][3]),
+                    "close": str(dataArrFinal[0][4]),
+                    "last price": str(dataArrFinal[0][5]),
+                    "volume": str(dataArrFinal[0][6]),
+                    "change": str(dataArrFinal[0][7]),
+                    "bid": str(dataArrFinal[0][8]),
+                    "ask": str(dataArrFinal[0][9]),
                 }
                 stringOutput["data"].append(x)
                 obj = stack.objects.filter(username=request.user).first()

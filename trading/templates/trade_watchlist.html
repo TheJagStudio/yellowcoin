@@ -285,7 +285,7 @@
          </div>
       </div>
       <script>
-         let changer = 1;
+         window.changer = 1;
             function SubmitData()
             {
                   let segment = document.getElementById("segment").value;
@@ -295,6 +295,7 @@
             function add(segment,script)
             {
                let symbol = script;
+               window.changer = 0;
                let fetchRes = fetch("../data?apiKey=qwertyuiop&todo=get&symbol=" + symbol+"&segment="+segment);
                fetchRes.then(res =>
                   res.json()).then(d => {
@@ -377,57 +378,55 @@
                                  </td>
                               </tr>`
                         }
-                  })
+                        window.changer = 1;
+                     })
             }
             function deleteRNSE(element)
             {
-               changer = 0;
                console.log("working");
+               window.changer = 0;
                let table = document.getElementById('table1');
-               
-               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
                   res =>
                   res.json()
                ).then((res) => {
                   console.log(res);
-                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
-                  changer = 1;
-                  stateChange();
+                  window.changer = 1;
                });
             }
             function deleteRMCX(element)
             {
-               changer = 0;
                console.log("working");
+               window.changer = 0;
                let table = document.getElementById('table2');
-               
-               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
                   res =>
                   res.json()
                ).then((res) => {
                   console.log(res);
-                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
-                  changer = 1;
-                  stateChange();
+                  window.changer = 1;
                });
             }
             function deleteRNFO(element)
             {
-               changer = 0;
                console.log("working");
+               window.changer = 0;
                let table = document.getElementById('table3');
-               
-               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
                   res =>
                   res.json()
                ).then((res) => {
                   console.log(res);
-                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
-                  changer = 1;
-                  stateChange();
+                  window.changer = 1;
                });
             }
             function filter() {
@@ -725,9 +724,13 @@
             function stateChange()
             {
                setTimeout(function(){ 
-                  if(changer==1)
+                  if(window.changer==1)
                   {
                      DataUpdater();
+                  }
+                  else
+                  {
+                     console.log("Stopped");
                   }
                }, 3000);
             }
