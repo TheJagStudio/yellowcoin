@@ -720,7 +720,6 @@
                            }
                         }
                   })
-                  console.log(NFO,MCX,NSE);
                   stateChange();
             }
             function stateChange()
@@ -730,9 +729,9 @@
                   {
                      DataUpdater();
                   }
-               }, 1000);
+               }, 4000);
             }
-               stateChange();
+            stateChange();
             function updateToNull(element)
             {  
                if(element.value == "Type Script")

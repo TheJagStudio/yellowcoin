@@ -334,8 +334,8 @@ def ApiF(market, token):
         temp[5] = live_data[stock]["last_price"]
         temp[6] = live_data[stock]["volume"]
         temp[7] = live_data[stock]["net_change"]
-        temp[8] = live_data[stock]["depth"]["sell"][0]["price"]
-        temp[9] = live_data[stock]["depth"]["buy"][0]["price"]
+        temp[8] = live_data[stock]["depth"]["buy"][0]["price"]
+        temp[9] = live_data[stock]["depth"]["sell"][0]["price"]
     except:
         temp[0] = name
         temp[1] = live_data[stock]["ohlc"]["open"]
