@@ -91,67 +91,44 @@
         <div class="row">
          <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <p class="">
-           SEGMENT
-          </p>
-          <select aria-label="Default select example" class="form-select bg-orange color-white height-button focus-none">
-           <option class="bg-light text-dark ps-3" value="1">
-            Forex
-           </option>
-           <option class="bg-light text-dark ps-3" value="2">
-            One
-           </option>
-           <option class="bg-light text-dark ps-3" value="3">
-            Two
-           </option>
-           <option class="bg-light text-dark ps-3" value="3">
-            Three
-           </option>
-          </select>
-         </div>
-         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-          <p class="">
            SCRIPT
           </p>
-          <select aria-label="Default select example" class="form-select bg-orange color-white height-button focus-none">
-           <option class="bg-light text-dark ps-3" value="1">
-            EURUSD
-           </option>
-           <option class="bg-light text-dark ps-3" value="2">
-            One
-           </option>
-           <option class="bg-light text-dark ps-3" value="3">
-            Two
-           </option>
-           <option class="bg-light text-dark ps-3" value="3">
-            Three
-           </option>
-          </select>
-         </div>
-         <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-          <p class="">
-           SEGMENT
-          </p>
-          <select aria-label="Default select example" class="form-select bg-orange color-white height-button focus-none">
-           <option class="bg-light text-dark ps-3" value="1">
-            Forex
-           </option>
-           <option class="bg-light text-dark ps-3" value="2">
-            One
-           </option>
-           <option class="bg-light text-dark ps-3" value="3">
-            Two
-           </option>
-           <option class="bg-light text-dark ps-3" value="3">
-            Three
-           </option>
-          </select>
+          <input list="scripts" autocomplete="off" onclick="updateToNull(this)" value="Type Script" name="script" id="script" class="bg-orange color-white height-button focus-none" style="font-size: .875rem;display: block; width: 100%; padding: 0.375rem 2.25rem 0.375rem 0.75rem; -moz-padding-start: calc(0.75rem - 3px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: white; border: 1px solid #ced4da; border-radius:15px; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; -webkit-appearance: none; -moz-appearance: none; appearance: none;" aria-label="Default select example">
+          <datalist id="scripts">
+             {% for symbol in symbols %}
+             <option  value="{{symbol}}">
+             {% endfor %}
+          </datalist>
          </div>
          <div class="col-12 col-sm-6 col-md-6 col-lg-1 col-xl-1">
-          <button class="btn color-white bg-brown margin-custom focus-none" type="button">
+          <button onclick="data()" class="btn color-white bg-brown margin-custom focus-none" type="button">
            +ADD
           </button>
          </div>
         </div>
        </div>
+       <div id="data">
+       </div>
       </div>
+      <script>
+            function updateToNull(element)
+            {  
+               if(element.value == "Type Script")
+               {
+                  element.value = "";
+               }
+            }
+            function data()
+            {
+                  var symbol = document.getElementById("script").value;
+                  let fetchRes = fetch("/forex/data?symbol="+symbol);
+                  fetchRes.then(res =>
+                  res.json()).then(d => {
+                        console.log(d["data"]);
+                        var data = d["data"];
+                        var div = document.getElementById("data");
+                        div.innerHTML = "Symbol: "+data["symbol"]+"<br>";
+                  });
+            }
+      </script>
 {% endblock %}

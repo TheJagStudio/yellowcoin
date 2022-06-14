@@ -1,4 +1,3 @@
-from wsgiref.util import application_uri
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import chromedriver_autoinstaller
@@ -14,17 +13,15 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import threading
-from django.utils import timezone
 import csv
 from kiteconnect import KiteTicker
-import alpaca_trade_api as tradeapi
 from alpaca_trade_api.rest import REST, TimeFrame
 import random
-import requests
 from user.models import UserAccount
 import os
 from django.views.decorators.csrf import csrf_exempt
 import threading
+
 
 api = "uha6zxzenz17uw2y"
 secret = "cwdawxqyp6c0dgdljvffpi4k4nhejnbm"
