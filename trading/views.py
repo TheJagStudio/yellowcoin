@@ -399,6 +399,7 @@ def watchlist(request):
             request.session['TempMCX'].sort(key=lambda x: x[1])
             request.session['TempNFO'].sort(key=lambda x: x[1])
         senty = [ApiF("NSE", ["NIFTY 50"]), ApiF("BSE", ["SENSEX"])]
+        print(senty)
         if current_user.is_superuser:
             return render(request, 'trade_watchlist.html', {'dataNSE': request.session['TempNSE'], 'dataMCX': request.session['TempMCX'], 'dataNFO': request.session['TempNFO'], 'stocksA': stockT, 'stocksB': stocksA, 'stocksC': stocksB, 'current_user': current_user, 'senty': senty, 'market': 'NSE'})
         else:
