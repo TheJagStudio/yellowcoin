@@ -337,16 +337,28 @@ def ApiF(market, token):
         temp[8] = live_data[stock]["depth"]["buy"][0]["price"]
         temp[9] = live_data[stock]["depth"]["sell"][0]["price"]
     except:
-        temp[0] = name
-        temp[1] = live_data[stock]["ohlc"]["open"]
-        temp[2] = live_data[stock]["ohlc"]["high"]
-        temp[3] = live_data[stock]["ohlc"]["low"]
-        temp[4] = live_data[stock]["ohlc"]["close"]
-        temp[5] = live_data[stock]["last_price"]
-        temp[6] = "volume"
-        temp[7] = live_data[stock]["net_change"]
-        temp[8] = "0"
-        temp[9] = "0"
+        try:
+            temp[0] = name
+            temp[1] = live_data[stock]["ohlc"]["open"]
+            temp[2] = live_data[stock]["ohlc"]["high"]
+            temp[3] = live_data[stock]["ohlc"]["low"]
+            temp[4] = live_data[stock]["ohlc"]["close"]
+            temp[5] = live_data[stock]["last_price"]
+            temp[6] = "volume"
+            temp[7] = live_data[stock]["net_change"]
+            temp[8] = live_data[stock]["depth"]["buy"][0]["price"]
+            temp[9] = live_data[stock]["depth"]["sell"][0]["price"]
+        except:
+            temp[0] = name
+            temp[1] = live_data[stock]["ohlc"]["open"]
+            temp[2] = live_data[stock]["ohlc"]["high"]
+            temp[3] = live_data[stock]["ohlc"]["low"]
+            temp[4] = live_data[stock]["ohlc"]["close"]
+            temp[5] = live_data[stock]["last_price"]
+            temp[6] = "volume"
+            temp[7] = live_data[stock]["net_change"]
+            temp[8] = "0"
+            temp[9] = "0"
     return temp
 
 
