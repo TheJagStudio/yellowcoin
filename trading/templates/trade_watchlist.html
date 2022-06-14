@@ -265,7 +265,10 @@
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.6}}
                                  </td>
-                                 <td class="td-border ">{{stock.7}}</td>
+                                 <td class="td-border ">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    {{stock.7}}
+                                 </td>
                                  <td class="td-border ">
                                     <button type="button" onclick="deleteRMCX(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
@@ -379,6 +382,7 @@
                               </tr>`
                         }
                         window.changer = 1;
+                        stateChange();
                      })
             }
             function deleteRNSE(element)
@@ -395,6 +399,7 @@
                ).then((res) => {
                   console.log(res);
                   window.changer = 1;
+                  stateChange();
                });
             }
             function deleteRMCX(element)
@@ -411,6 +416,7 @@
                ).then((res) => {
                   console.log(res);
                   window.changer = 1;
+                  stateChange();
                });
             }
             function deleteRNFO(element)
@@ -427,6 +433,7 @@
                ).then((res) => {
                   console.log(res);
                   window.changer = 1;
+                  stateChange();
                });
             }
             function filter() {
@@ -556,7 +563,18 @@
                                  {
                                     tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NSE[i]['volume'];
                                  }
-                                 tr[j].cells[9].innerHTML = NSE[i]['change'];
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = NSE[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NSE[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NSE[i]['change'];
+                                 }
                               }
                            }
                         }
@@ -635,7 +653,18 @@
                                  {
                                     tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ MCX[i]['volume'];
                                  }
-                                 tr[j].cells[9].innerHTML = MCX[i]['change'];
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = MCX[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ MCX[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ MCX[i]['change'];
+                                 }
                               }
                            }
                         }
@@ -714,7 +743,18 @@
                                  {
                                     tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NFO[i]['volume'];
                                  }
-                                 tr[j].cells[9].innerHTML = NFO[i]['change'];
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = NFO[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NFO[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NFO[i]['change'];
+                                 }
                               }
                            }
                         }
@@ -727,12 +767,13 @@
                   if(window.changer==1)
                   {
                      DataUpdater();
+                     console.log("Data Updater");
                   }
                   else
                   {
                      console.log("Stopped");
                   }
-               }, 3000);
+               }, 1000);
             }
             stateChange();
             function updateToNull(element)
