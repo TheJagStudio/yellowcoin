@@ -1,397 +1,422 @@
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    margin: 0
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	margin: 0
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace
+	font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace
 }
 
 .navbar-border-radius {
-    border-radius: 15px
+	border-radius: 15px
 }
 
 .navbar-border-radius-2 {
-    border-radius: 55px !important;
-    padding: 0
+	border-radius: 55px !important;
+	padding: 0
 }
 
 .bg-orange {
-    background-color: #fab417
+	background-color: #fab417
 }
 
 .height-navbar-button {
-    height: 3rem
+	height: 3rem
 }
 
 .radius-navbar {
-    border-bottom-left-radius: 15px !important;
-    border-bottom-right-radius: 15px !important
+	border-bottom-left-radius: 15px !important;
+	border-bottom-right-radius: 15px !important
 }
 
 .radius-navbar,
 .radius-navbar-remove {
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 15px !important
+	border-top-left-radius: 15px !important;
+	border-top-right-radius: 15px !important
 }
 
 .radius-navbar-remove {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important
 }
 
 .no-dec {
-    text-decoration: none !important
+	text-decoration: none !important
 }
 
 .no-dec:hover {
-    color: #fab417;
-    margin: 0
+	color: #fab417;
+	margin: 0
 }
 
 .width-navbar-drop {
-    width: 13rem !important
+	width: 11rem !important
 }
 
 .dpdn-class {
-    border-radius: 20px !important;
-    position: relative !important
+	border-radius: 20px !important;
+	position: relative !important
 }
 
 .border-list {
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 15px !important
+	border-top-left-radius: 15px !important;
+	border-top-right-radius: 15px !important
 }
 
 .border-list-2 {
-    border-bottom-left-radius: 15px !important;
-    border-bottom-right-radius: 15px !important
+	border-bottom-left-radius: 15px !important;
+	border-bottom-right-radius: 15px !important
 }
 
-@media (max-width:768px) {
-    .width-navbar-drop {
-        width: 90vw !important
-    }
+@media (max-width:767px) {
+	.width-navbar-drop {
+		width: 90vw !important
+	}
 }
 
 @media (max-width:576px) {
-    .width-navbar-drop {
-        width: 85vw !important
-    }
+	.width-navbar-drop {
+		width: 85vw !important
+	}
 }
 
 .flex-div {
-    align-items: center;
-    display: flex;
-    justify-content: center
+	align-items: center;
+	display: flex;
+	justify-content: center
 }
 
 .raduis-login {
-    border: none;
-    border-radius: 25px !important
+	border: none;
+	border-radius: 25px !important
 }
 
 .button-radius {
-    border-radius: 25px
+	border-radius: 25px
 }
 
 .fs-no,
 .fs-this {
-    font-size: .875rem !important
+	font-size: .875rem !important
 }
 
 .color-red {
-    color: #b00909
+	color: #b00909
 }
 
 .border-r-none {
-    border-right: none !important
+	border-right: none !important
 }
 
 .border-l-none {
-    border-left: none !important
+	border-left: none !important
 }
 
 .left-bar {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg)
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg)
 }
 
 .left-bar,
 .right-bar {
-    background: #fab417;
-    border-radius: 10px 0 0 10px;
-    height: 300px;
-    width: 13px
+	background: #fab417;
+	border-radius: 10px 0 0 10px;
+	height: 300px;
+	width: 13px
 }
 
 .bar {
-    margin-top: 25%
+	margin-top: 25%
 }
 
 body {
-    font-family: Work Sans, sans-serif
+	font-family: Work Sans, sans-serif
 }
 
 .border-grey-c {
-    border-right: 1px solid #8e8e8e !important
+	border-right: 1px solid #8e8e8e !important
 }
 
 .hover-effect-nav:hover {
-    background-color: #fab417;
-    color: #fff !important
+	background-color: #fab417;
+	color: #fff !important
+}
+
+.set-width {
+	width: 120px
 }
 
 .accounts-radius {
-    border-radius: 20px
+	border-radius: 20px
 }
 
 .margin-account {
-    margin: 0 7.5rem
+	margin: 0 7.5rem
 }
 
 .font-smaller {
-    font-size: smaller
+	font-size: smaller
 }
 
 .margin-cols {
-    margin-top: 4.5rem
+	margin-top: 4.5rem
 }
 
 .btn-radius {
-    border-radius: 10px
+	border-radius: 10px
 }
 
 .B-radius {
-    border-radius: 15px
+	border-radius: 15px
 }
 
 .width-card {
-    width: 5rem !important
+	width: 5rem !important
 }
 
 .pos-rel {
-    position: relative !important;
-    top: 10px
+	position: relative !important;
+	top: 10px
 }
 
 .border-dash-nav {
-    border-bottom: .1px solid rgba(0, 0, 0, .182) !important
+	border-bottom: .1px solid rgba(0, 0, 0, .182) !important
 }
 
 .navbar-toggler-icon {
-    color: #000 !important
+	color: #000 !important
 }
 
 .hover-search:hover {
-    cursor: pointer !important
+	cursor: pointer !important
 }
 
 .custom-size {
-    height: 1.5rem
+	height: 1.5rem
+}
+
+.Admin-dropdown,
+.Admin-dropdown li,
+.Admin-dropdown li a {
+	background-color: #fff !important;
+	z-index: 90 !important
 }
 
 .td-border {
-    border: 2px solid #fff;
-    border-radius: 8px !important
+	border: 2px solid #fff;
+	border-radius: 0px !important;
+    text-align: center;
+    padding: 0rem 0.5rem !important;
 }
 
 .cross-size {
-    font-size: larger !important
+	font-size: larger !important
+}
+
+.fixed-width-Trade {
+	max-width: 102px !important;
+	min-width: 102px !important
 }
 
 .focus-none-button:focus {
-    border: none;
-    box-shadow: none !important;
-    outline: none !important
+	border: none;
+	box-shadow: none !important;
+	outline: none !important
 }
 
 .focus-none-button:hover {
-    background-color: #8a2be2 !important
+	background-color: #8a2be2 !important
 }
 
 .the-button:focus {
-    box-shadow: none;
-    outline: none
+	box-shadow: none;
+	outline: none
 }
 
 .bg-gray {
-    background-color: gray
+	background-color: gray
 }
 
 .width-entry {
-    width: 75px
+	width: 75px
 }
 
 .cursor span {
-    cursor: pointer
+	cursor: pointer
 }
 
+.date-input::-webkit-calendar-picker-indicator {
+	-webkit-filter: invert(1) !important;
+	filter: invert(1) !important
+}
 
 .b-r-none {
-    border-radius: none
+	border-radius: none
 }
 
 .custom-w {
-    width: 10rem
+	width: 10rem
 }
 
 .z-i {
-    z-index: 1000 !important
+	z-index: 1000 !important
 }
 
 .small-font {
-    font-size: .7rem
+	font-size: .7rem
 }
 
 .hidden {
-    visibility: hidden !important
+	visibility: hidden !important
 }
 
 @media (max-width:768px) {
-    .custom-w {
-        width: 7rem
-    }
+	.custom-w {
+		width: 7rem
+	}
 }
 
 @media (max-width:400px) {
-    .here {
-        display: flex !important;
-        flex-direction: column !important
-    }
+	.here {
+		display: flex !important;
+		flex-direction: column !important
+	}
 }
 
 .fs-small {
-    font-size: 12px;
-    margin: 0 !important
+	font-size: 12px;
+	margin: 0 !important
 }
 
 .form-select {
-    font-size: .875rem
+	font-size: .875rem
 }
 
 .orange-trade {
-    color: #fab417 !important
+	color: #fab417 !important
 }
 
 .border-right-none {
-    border-right: none !important
+	border-right: none !important
 }
 
 .border-left-none {
-    border-left: none !important
+	border-left: none !important
 }
 
 .Dropdown-arrow,
 .arrow-select {
-    color: #fab417 !important
+	color: #fab417 !important
 }
 
 .arrow-select {
-    background-color: beige !important;
-    font-size: large !important
+	background-color: beige !important;
+	font-size: large !important
 }
 
 .bg-select span {
-    color: aqua !important
+	color: aqua !important
 }
 
 .arrow-class {
-    height: 40px !important
+	height: 40px !important
 }
 
 .height-button {
-    height: 3rem !important
+	height: 3rem !important
 }
 
 .btn-bg-custom {
-    background-color: #4065ff
+	background-color: #4065ff
 }
 
 .container,
 .container-fluid {
-    font-size: .875rem !important
+	font-size: .875rem !important
 }
 
 .bg-brown {
-    background-color: brown
+	background-color: brown
 }
 
 .margin-custom {
-    margin-top: 2.6rem !important
+	margin-top: 2.6rem !important
 }
 
 .hover-effect:hover {
-    cursor: pointer
+	cursor: pointer
 }
 
 .height-button {
-    border-radius: 15px;
-    height: 4rem
+	border-radius: 15px;
+	height: 4rem
 }
 
 .color-white {
-    color: #fff !important
+	color: #fff !important
 }
 
 .focus-none:focus {
-    box-shadow: none;
-    outline: none
+	box-shadow: none;
+	outline: none
 }
 
 .color-black {
-    color: #000
+	color: #000
 }
 
 .bg-danger {
-    background-color: #701323 !important
+	background-color: #701323 !important
 }
 
 .bg-none {
-    background-color: none
+	background-color: none
 }
 
 .border-none {
-    border: none
+	border: none
 }
 
+.input-border {
+	border-radius: 7px !important
+}
 
 .color-orange {
-    color: #fab417
+	color: #fab417
 }
 
 .button-effect:hover {
-    background-color: #962929
+	background-color: #962929
 }
 
 .input-group-text {
-    font-size: .875rem !important
+	font-size: .875rem !important
 }
 
 .bg-brown {
-    background-color: #702313 !important
+	background-color: #702313 !important
 }
 
 .color-brown {
-    color: brown
+	color: brown
 }
 
 .color-blue {
-    color: blue
+	color: blue
 }
 
 .dec-none {
-    text-decoration: none !important
+	text-decoration: none !important
 }
 
 .bg-blue {
-    background-color: #4062ff
+	background-color: #4062ff
 }
 
 .custom-btn {
-    width: 7rem
+	width: 7rem
 }
 
 
@@ -434,3 +459,4 @@ input {
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
 }
+

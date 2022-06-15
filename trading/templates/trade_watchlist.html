@@ -144,42 +144,42 @@
                         </div>
                      </div>
                      <div class="table-responsive ms-3">
-                        <table class="table my-5 table-borderless">
+                        <table class="table my-5 table-borderless bg-dark">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-dark text-white ">NSE SYM</th>
-                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">LTP</th>
-                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
-                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
-                                 <th scope="col" class="bg-dark text-white ">LOW</th>
-                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
-                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
-                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
-                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">NSE SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">REMOVE</th>
                               </tr>
                            </thead>
                            <tbody id="table1">
                               {% for stock in dataNSE %}
                               <tr class="">
-                                 <td class="td-border ">{{stock.0}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
-                                 <td class="td-border">{{stock.1}}</td>
-                                 <td class="td-border ">{{stock.2}}</td>
-                                 <td class="td-border ">{{stock.3}}</td>
-                                 <td class="td-border ">{{stock.4}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white ">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.6}}
                                  </td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.7}}
                                  </td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRNSE(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -192,42 +192,42 @@
                         </table>
                      </div>
                      <div class="table-responsive ms-3">
-                        <table class="table my-5 table-borderless">
+                        <table class="table my-5 table-borderless bg-dark">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-dark text-white ">NFO SYM</th>
-                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">LTP</th>
-                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
-                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
-                                 <th scope="col" class="bg-dark text-white ">LOW</th>
-                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
-                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
-                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
-                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">NFO SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">REMOVE</th>
                               </tr>
                            </thead>
                            <tbody id="table3">
                               {% for stock in dataNFO %}
                               <tr class="">
-                                 <td class="td-border ">{{stock.0}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
-                                 <td class="td-border">{{stock.1}}</td>
-                                 <td class="td-border ">{{stock.2}}</td>
-                                 <td class="td-border ">{{stock.3}}</td>
-                                 <td class="td-border ">{{stock.4}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white ">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white ">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.6}}
                                  </td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.7}}
                                  </td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">
                                     <button type="button" onclick="deleteRNFO(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -240,42 +240,42 @@
                         </table>
                      </div>
                      <div class="table-responsive ms-3">
-                        <table class="table my-5 table-borderless">
+                        <table class="table my-5 table-borderless bg-dark">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-dark text-white ">MCX SYM</th>
-                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">LTP</th>
-                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
-                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
-                                 <th scope="col" class="bg-dark text-white ">LOW</th>
-                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
-                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
-                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
-                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">MCX SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">REMOVE</th>
                               </tr>
                            </thead>
                            <tbody id="table2">
                               {% for stock in dataMCX %}
                               <tr class="">
-                                 <td class="td-border ">{{stock.0}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
-                                 <td class="td-border">{{stock.1}}</td>
-                                 <td class="td-border ">{{stock.2}}</td>
-                                 <td class="td-border ">{{stock.3}}</td>
-                                 <td class="td-border ">{{stock.4}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white ">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white ">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.6}}
                                  </td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.7}}
                                  </td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRMCX(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -313,20 +313,20 @@
                         {
                            let table1 = document.getElementById('table1');
                            table1.innerHTML+=`<tr class="">
-                                 <td class="td-border ">`+d['data'][0]['name']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
-                                 <td class="td-border">`+d['data'][0]['open']+`</td>
-                                 <td class="td-border">`+d['data'][0]['high']+`</td>
-                                 <td class="td-border ">`+d['data'][0]['low']+`</td>
-                                 <td class="td-border">`+d['data'][0]['close']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     `+d['data'][0]['volume']+`
                                  </td>
-                                 <td class="td-border ">`+d['data'][0]['change']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['change']+`</td>
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRNSE(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -339,20 +339,20 @@
                         {
                            let table2 = document.getElementById('table2');
                            table2.innerHTML+=`<tr class="">
-                                 <td class="td-border ">`+d['data'][0]['name']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
-                                 <td class="td-border">`+d['data'][0]['open']+`</td>
-                                 <td class="td-border">`+d['data'][0]['high']+`</td>
-                                 <td class="td-border ">`+d['data'][0]['low']+`</td>
-                                 <td class="td-border">`+d['data'][0]['close']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     `+d['data'][0]['volume']+`
                                  </td>
-                                 <td class="td-border ">`+d['data'][0]['change']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['change']+`</td>
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRMCX(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -365,20 +365,20 @@
                         {
                            let table3 = document.getElementById('table3');
                            table3.innerHTML+=`<tr class="">
-                                 <td class="td-border ">`+d['data'][0]['name']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
-                                 <td class="td-border">`+d['data'][0]['open']+`</td>
-                                 <td class="td-border">`+d['data'][0]['high']+`</td>
-                                 <td class="td-border ">`+d['data'][0]['low']+`</td>
-                                 <td class="td-border">`+d['data'][0]['close']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     `+d['data'][0]['volume']+`
                                  </td>
-                                 <td class="td-border ">`+d['data'][0]['change']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['change']+`</td>
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRNFO(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -781,7 +781,6 @@
                   }
                }, 500);
             }
-            stateChange();
             function updateToNull(element)
             {  
                if(element.value == "Type Script")

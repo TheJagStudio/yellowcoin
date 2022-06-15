@@ -5,8 +5,8 @@
                            <div class="react-reveal container-fluid" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-35245370716331-1;">
                            <div class="row my-3">
                            <div class="col-3 text-start p-0 m-0 fs-small">
-                              <span>SNX : {{senty.0.1}} - {{senty.0.4}} </span>
-                              <p>NFT : {{senty.1.1}} - {{senty.1.4}} </p>
+                              <span>SNX : {{senty.1.0.1}} - {{senty.1.0.4}} </span>
+                              <p>NFT : {{senty.0.0.1}} - {{senty.0.0.4}} </p>
                            </div>
                            <div class="col-9 col-sm-9 col-md-9 col-lg-6 col-xl-6">
                               <div class="input-group shadow-sm">
@@ -144,39 +144,42 @@
                         </div>
                      </div>
                      <div class="table-responsive ms-3">
-                        <table class="table my-5 table-borderless">
+                        <table class="table my-5 table-borderless bg-dark">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-dark text-white ">NSE SYM</th>
-                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">LTP</th>
-                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
-                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
-                                 <th scope="col" class="bg-dark text-white ">LOW</th>
-                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
-                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
-                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
-                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">NSE SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">REMOVE</th>
                               </tr>
                            </thead>
                            <tbody id="table1">
                               {% for stock in dataNSE %}
                               <tr class="">
-                                 <td class="td-border ">{{stock.0}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
-                                 <td class="td-border">{{stock.1}}</td>
-                                 <td class="td-border ">{{stock.2}}</td>
-                                 <td class="td-border ">{{stock.3}}</td>
-                                 <td class="td-border ">{{stock.4}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white ">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.6}}
                                  </td>
-                                 <td class="td-border ">{{stock.7}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    {{stock.7}}
+                                 </td>
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRNSE(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -189,39 +192,42 @@
                         </table>
                      </div>
                      <div class="table-responsive ms-3">
-                        <table class="table my-5 table-borderless">
+                        <table class="table my-5 table-borderless bg-dark">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-dark text-white ">NFO SYM</th>
-                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">LTP</th>
-                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
-                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
-                                 <th scope="col" class="bg-dark text-white ">LOW</th>
-                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
-                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
-                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
-                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">NFO SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">REMOVE</th>
                               </tr>
                            </thead>
                            <tbody id="table3">
                               {% for stock in dataNFO %}
                               <tr class="">
-                                 <td class="td-border ">{{stock.0}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
-                                 <td class="td-border">{{stock.1}}</td>
-                                 <td class="td-border ">{{stock.2}}</td>
-                                 <td class="td-border ">{{stock.3}}</td>
-                                 <td class="td-border ">{{stock.4}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white ">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white ">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.6}}
                                  </td>
-                                 <td class="td-border ">{{stock.7}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    {{stock.7}}
+                                 </td>
+                                 <td class="td-border text-white ">
                                     <button type="button" onclick="deleteRNFO(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -234,39 +240,42 @@
                         </table>
                      </div>
                      <div class="table-responsive ms-3">
-                        <table class="table my-5 table-borderless">
+                        <table class="table my-5 table-borderless bg-dark">
                            <thead>
                               <tr class="table-border-none">
-                                 <th scope="col" class="bg-dark text-white ">MCX SYM</th>
-                                 <th scope="col" class="bg-dark text-white ">BID RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">ASK RATE</th>
-                                 <th scope="col" class="bg-dark text-white ">LTP</th>
-                                 <th scope="col" class="bg-dark text-white ">OPEN</th>
-                                 <th scope="col" class="bg-dark text-white ">HIGH</th>
-                                 <th scope="col" class="bg-dark text-white ">LOW</th>
-                                 <th scope="col" class="bg-dark text-white ">CLOSE</th>
-                                 <th scope="col" class="bg-dark text-white ">VOLUME</th>
-                                 <th scope="col" class="bg-dark text-white ">CHANGE</th>
-                                 <th scope="col" class="bg-dark text-white ">REMOVE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">MCX SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">VOLUME</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade">REMOVE</th>
                               </tr>
                            </thead>
                            <tbody id="table2">
                               {% for stock in dataMCX %}
                               <tr class="">
-                                 <td class="td-border ">{{stock.0}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.8}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.9}}</td>
-                                 <td class="td-border bg-primary color-white">{{stock.5}}</td>
-                                 <td class="td-border">{{stock.1}}</td>
-                                 <td class="td-border ">{{stock.2}}</td>
-                                 <td class="td-border ">{{stock.3}}</td>
-                                 <td class="td-border ">{{stock.4}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white ">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white ">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     {{stock.6}}
                                  </td>
-                                 <td class="td-border ">{{stock.7}}</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    {{stock.7}}
+                                 </td>
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRMCX(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -285,7 +294,7 @@
          </div>
       </div>
       <script>
-         let changer = 1;
+         window.changer = 1;
             function SubmitData()
             {
                   let segment = document.getElementById("segment").value;
@@ -295,6 +304,7 @@
             function add(segment,script)
             {
                let symbol = script;
+               window.changer = 0;
                let fetchRes = fetch("../data?apiKey=qwertyuiop&todo=get&symbol=" + symbol+"&segment="+segment);
                fetchRes.then(res =>
                   res.json()).then(d => {
@@ -303,20 +313,20 @@
                         {
                            let table1 = document.getElementById('table1');
                            table1.innerHTML+=`<tr class="">
-                                 <td class="td-border ">`+d['data'][0]['name']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
-                                 <td class="td-border">`+d['data'][0]['open']+`</td>
-                                 <td class="td-border">`+d['data'][0]['high']+`</td>
-                                 <td class="td-border ">`+d['data'][0]['low']+`</td>
-                                 <td class="td-border">`+d['data'][0]['close']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     `+d['data'][0]['volume']+`
                                  </td>
-                                 <td class="td-border ">`+d['data'][0]['change']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['change']+`</td>
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRNSE(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -329,20 +339,20 @@
                         {
                            let table2 = document.getElementById('table2');
                            table2.innerHTML+=`<tr class="">
-                                 <td class="td-border ">`+d['data'][0]['name']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
-                                 <td class="td-border">`+d['data'][0]['open']+`</td>
-                                 <td class="td-border">`+d['data'][0]['high']+`</td>
-                                 <td class="td-border ">`+d['data'][0]['low']+`</td>
-                                 <td class="td-border">`+d['data'][0]['close']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     `+d['data'][0]['volume']+`
                                  </td>
-                                 <td class="td-border ">`+d['data'][0]['change']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['change']+`</td>
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRMCX(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -355,20 +365,20 @@
                         {
                            let table3 = document.getElementById('table3');
                            table3.innerHTML+=`<tr class="">
-                                 <td class="td-border ">`+d['data'][0]['name']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['bid']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['ask']+`</td>
-                                 <td class="td-border  bg-primary color-white">`+d['data'][0]['last price']+`</td>
-                                 <td class="td-border">`+d['data'][0]['open']+`</td>
-                                 <td class="td-border">`+d['data'][0]['high']+`</td>
-                                 <td class="td-border ">`+d['data'][0]['low']+`</td>
-                                 <td class="td-border">`+d['data'][0]['close']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
                                     `+d['data'][0]['volume']+`
                                  </td>
-                                 <td class="td-border ">`+d['data'][0]['change']+`</td>
-                                 <td class="td-border ">
+                                 <td class="td-border text-white">`+d['data'][0]['change']+`</td>
+                                 <td class="td-border text-white">
                                     <button type="button" onclick="deleteRNFO(this)" class="btn  mx-3 my-0 py-0 the-button">
                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
                                           <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
@@ -377,56 +387,58 @@
                                  </td>
                               </tr>`
                         }
-                  })
+                        window.changer = 1;
+                        stateChange();
+                     })
             }
             function deleteRNSE(element)
             {
-               changer = 0;
                console.log("working");
+               window.changer = 0;
                let table = document.getElementById('table1');
-               
-               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
                   res =>
                   res.json()
                ).then((res) => {
                   console.log(res);
-                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
-                  changer = 1;
+                  window.changer = 1;
                   stateChange();
                });
             }
             function deleteRMCX(element)
             {
-               changer = 0;
                console.log("working");
+               window.changer = 0;
                let table = document.getElementById('table2');
-               
-               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
                   res =>
                   res.json()
                ).then((res) => {
                   console.log(res);
-                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
-                  changer = 1;
+                  window.changer = 1;
                   stateChange();
                });
             }
             function deleteRNFO(element)
             {
-               changer = 0;
                console.log("working");
+               window.changer = 0;
                let table = document.getElementById('table3');
-               
-               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML, 
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
                   res =>
                   res.json()
                ).then((res) => {
                   console.log(res);
-                  console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
-                  table.deleteRow(element.parentNode.parentNode.rowIndex-1);
-                  changer = 1;
+                  window.changer = 1;
                   stateChange();
                });
             }
@@ -557,7 +569,18 @@
                                  {
                                     tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NSE[i]['volume'];
                                  }
-                                 tr[j].cells[9].innerHTML = NSE[i]['change'];
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = NSE[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NSE[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NSE[i]['change'];
+                                 }
                               }
                            }
                         }
@@ -636,7 +659,18 @@
                                  {
                                     tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ MCX[i]['volume'];
                                  }
-                                 tr[j].cells[9].innerHTML = MCX[i]['change'];
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = MCX[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ MCX[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ MCX[i]['change'];
+                                 }
                               }
                            }
                         }
@@ -715,7 +749,18 @@
                                  {
                                     tr[j].cells[8].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NFO[i]['volume'];
                                  }
-                                 tr[j].cells[9].innerHTML = NFO[i]['change'];
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = NFO[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NFO[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[9].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NFO[i]['change'];
+                                 }
                               }
                            }
                         }
@@ -725,13 +770,17 @@
             function stateChange()
             {
                setTimeout(function(){ 
-                  if(changer==1)
+                  if(window.changer==1)
                   {
                      DataUpdater();
+                     console.log("Data Updater");
                   }
-               }, 3000);
+                  else
+                  {
+                     console.log("Stopped");
+                  }
+               }, 500);
             }
-            stateChange();
             function updateToNull(element)
             {  
                if(element.value == "Type Script")
