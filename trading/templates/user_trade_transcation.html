@@ -1,309 +1,770 @@
 {% extends 'user_base.html' %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10">
-                        <div class="container-fluid">
-                            <div class="row my-3">
-                            <div class="col-3 fw-bold text-start p-0">
-                                <div class="form-check ">
-                                    <input class="form-check-input focus-none bg-orange" type="radio"  id="pending" name="orderType" >
-                                    <label class="form-check-label " for="pending">PENDING ORDERS</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input focus-none bg-orange color-black" type="radio" id="executed" name="orderType" >
-                                    <label class="form-check-label" for="executed">EXECUTED ORDERS</label>
-                                </div>
-                            </div>
-                            <div class="col-9 col-sm-9 col-md-9 col-lg-6 col-xl-6">
-                                <div class="input-group shadow-sm ">
-                                    <span class="input-group-text focus-none bg-transparent border-right-none" id="basic-addon1">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass hover-search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="#fab417">
-                                        <path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path>
-                                        </svg>
-                                    </span>
-                                    <input type="text" onkeyup="filter()" id="search" autocomplete="off"  class="form-control focus-none border-left-none" placeholder="Search..." aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-1 col-xl-1 text-center">
-                                <div class="dropdown bg-transparent">
-                                 <a aria-expanded="false" class="btn focus-none" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink" role="button">
-                                  <button class="position-relative border-none bg-transparent" type="button">
-                                   <svg aria-hidden="true" class="svg-inline--fa fa-bell fa-1x p-0 custom-size" color="grey" data-icon="bell" data-prefix="fas" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" fill="currentColor">
-                                    </path>
-                                   </svg>
-                                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    3
-                                    <span class="visually-hidden">
-                                     unread messages
-                                    </span>
-                                   </span>
-                                  </button>
-                                 </a>
-                                 <ul aria-labelledby="dropdownMenuLink" class="dropdown-menu">
-                                  <li>
-                                   <a class="dropdown-item" href="/">
-                                    Action
-                                   </a>
-                                  </li>
-                                  <li>
-                                   <a class="dropdown-item" href="/">
-                                    Another action
-                                   </a>
-                                  </li>
-                                  <li>
-                                   <a class="dropdown-item" href="/">
-                                    Something else here
-                                   </a>
-                                  </li>
-                                 </ul>
-                                </div>
-                               </div>
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2 d-flex flex-row">
-                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-user" class="svg-inline--fa fa-circle-user fa-2x mt-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z"></path>
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10">
+                           <div class="react-reveal container-fluid" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-35245370716331-1;">
+                           <div class="row my-3">
+                           <div class="col-3 text-start p-0 m-0 fs-small">
+                              <span>SNX : {{senty.1.0.1}} - {{senty.1.0.4}} </span>
+                              <p>NFT : {{senty.0.0.1}} - {{senty.0.0.4}} </p>
+                           </div>
+                           <div class="col-9 col-sm-9 col-md-9 col-lg-6 col-xl-6">
+                              <div class="input-group shadow-sm">
+                               <span class="input-group-text focus-none bg-transparent border-right-none" id="basic-addon1">
+                                <svg aria-hidden="true" class="svg-inline--fa fa-magnifying-glass hover-search" color="#fab417" data-icon="magnifying-glass" data-prefix="fas" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" fill="currentColor">
+                                 </path>
                                 </svg>
-                                <div class="dropdown ms-1 bg-transparent">
-                                    <a class="btn fw-bold focus-none" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="/">
-                                        {{current_user.username}}
-                                        <span class="ps-2">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fw-bold" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                            <path fill="currentColor" d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"></path>
-                                        </svg>
-                                        </span>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="/">Action</a></li>
-                                        <li><a class="dropdown-item" href="/">Another action</a></li>
-                                        <li><a class="dropdown-item" href="/accounts/logout/">Logout</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            </div>
+                               </span>
+                               <input onkeyup="filter()" id="search" aria-describedby="basic-addon1" aria-label="Username" class="form-control focus-none border-left-none" placeholder="Search..." type="text"/>
+                              </div>
+                             </div>
+                             <div class="col-6 col-sm-6 col-md-6 col-lg-1 col-xl-1 text-center">
+                              <div class="dropdown bg-transparent">
+                               <a aria-expanded="false" class="btn focus-none" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink" role="button">
+                                <button class="position-relative border-none bg-transparent" type="button">
+                                 <svg aria-hidden="true" class="svg-inline--fa fa-bell fa-1x p-0 custom-size" color="grey" data-icon="bell" data-prefix="fas" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" fill="currentColor">
+                                  </path>
+                                 </svg>
+                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                  3
+                                  <span class="visually-hidden">
+                                   unread messages
+                                  </span>
+                                 </span>
+                                </button>
+                               </a>
+                               <ul aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+                                <li>
+                                 <a class="dropdown-item" href="/">
+                                  Action
+                                 </a>
+                                </li>
+                                <li>
+                                 <a class="dropdown-item" href="/">
+                                  Another action
+                                 </a>
+                                </li>
+                                <li>
+                                 <a class="dropdown-item" href="/">
+                                  Something else here
+                                 </a>
+                                </li>
+                               </ul>
+                              </div>
+                             </div>
+                             <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+                              <div class="d-flex justify-content-end">
+                               <svg aria-hidden="true" class="svg-inline--fa fa-circle-user fa-2x mt-1" data-icon="circle-user" data-prefix="fas" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" fill="currentColor">
+                                </path>
+                               </svg>
+                               <div class="dropdown ms-1 bg-transparent">
+                                <a aria-expanded="false" class="btn fw-bold focus-none mt-0" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink" role="button">
+                                 {{current_user.username}}
+                                 <span class="ps-2">
+                                  <svg aria-hidden="true" class="svg-inline--fa fa-angle-down fw-bold" data-icon="angle-down" data-prefix="fas" focusable="false" role="img" viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" fill="currentColor">
+                                   </path>
+                                  </svg>
+                                 </span>
+                                </a>
+                                <ul aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+                                 <li>
+                                  <a class="dropdown-item" href="/">
+                                   Action
+                                  </a>
+                                 </li>
+                                 <li>
+                                  <a class="dropdown-item" href="/">
+                                   Another action
+                                  </a>
+                                 </li>
+                                 <li>
+                                  <a class="dropdown-item" href="/accounts/logout/">
+                                   Logout
+                                  </a>
+                                 </li>
+                                </ul>
+                               </div>
+                              </div>
+                             </div>
                         </div>
-                        <div class="container">
-                            <div class="row">
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-2">
-                                <p class="m-2">TRADE AFTER</p>
-                                <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-2">
-                                <p class="m-2">TRADE BEFORE</p>
-                                <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                                <p class="m-2">SELECT MARKET</p>
-                                <select id="market" class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
-                                    <option class="bg-light text-dark ps-3" value="Select Market">Select Market</option>
-                                    <option class="bg-light text-dark ps-3" value="NSEFUT">NSEFUT</option>
-                                    <option class="bg-light text-dark ps-3" value="MCXFUT">MCXFUT</option>
-                                    <option class="bg-light text-dark ps-3" value="NSEOPT">NSEOPT</option>
-                                    <option class="bg-light text-dark ps-3" value="GLOBAL FUTURES">GLOBAL FUTURES</option>
-                                    <option class="bg-light text-dark ps-3" value="NSEEQT">NSEEQT</option>
-                                    <option class="bg-light text-dark ps-3" value="NSECDS">NSECDS</option>
-                                </select>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                                <p class="m-2">SELECT SCRIPT</p>
-                                <select id="script" class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
-                                    <option class="bg-light text-dark ps-3" value="Select Script">Select Script</option>
-                                    {% for stock in stocksA %}
-                                    <option class="bg-light text-dark ps-3" value="{{stock}}">{{stock}}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-2 ">
-                                <p class="m-2">ORDER TYPE</p>
-                                <select id="orderType" class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
-                                    <option class="bg-light text-dark ps-3" value="Select Order Type">Select Order Type</option>
-                                    <option class="bg-light text-dark ps-3" value="Buy Limit">Buy Limit</option>
-                                    <option class="bg-light text-dark ps-3" value="Buy Stop">Buy Stop</option>
-                                    <option class="bg-light text-dark ps-3" value="Sell Limit">Sell Limit</option>
-                                    <option class="bg-light text-dark ps-3" value="Sell Stop">Sell Stop</option>
-                                </select>
-                            </div>
-                            </div>
+                     </div>
+                     <div class="container-fluid">
+                        <div class="row">
+                           <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-1">
+                              <p class="m-2">SEGMENT</p>
+                              <select onchange="scriptChanger(this)" id="segment" name="segment" class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
+                                 <option class="bg-light text-dark ps-3" value="NSE">NSE - EQ</option>
+                                 <option class="bg-light text-dark ps-3" value="NFO">NFO</option>
+                                 <option class="bg-light text-dark ps-3" value="MCX">MCX</option>
+                              </select>
+                           </div>
+                           <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                              <p class="m-2">SCRIPT</p>
+                              <input list="scripts" onclick="updateToNull(this)" value="Type Script" name="script" id="script" class="bg-orange color-white height-button focus-none" style="font-size: .875rem;display: block; width: 100%; padding: 0.375rem 2.25rem 0.375rem 0.75rem; -moz-padding-start: calc(0.75rem - 3px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: white; border: 1px solid #ced4da; border-radius:15px; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; -webkit-appearance: none; -moz-appearance: none; appearance: none;" aria-label="Default select example">
+                              <datalist id="scripts">
+                                 {% for stock in stocksA %}
+                                 <option  value="{{stock}}">
+                                 {% endfor %}
+                              </datalist>
+                           </div>
+                           <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                              <p class="m-2">EXPIRY</p>
+                              <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
+                           </div>
+                           <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-1">
+                              <p class="m-2">CE/PE</p>
+                              <select class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
+                                 <option class="bg-light text-dark ps-3" value="2">Call</option>
+                                 <option class="bg-light text-dark ps-3" value="3">Put</option>
+                              </select>
+                           </div>
+                           <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-1">
+                              <p class="m-2">STRIKE</p>
+                              <select class="form-select bg-orange color-white height-button focus-none" aria-label="Default select example">
+                                 <option class="bg-light text-dark ps-3" value="1">Select...</option>
+                                 <option class="bg-light text-dark ps-3" value="2">One</option>
+                                 <option class="bg-light text-dark ps-3" value="3">Two</option>
+                                 <option class="bg-light text-dark ps-3" value="3">Three</option>
+                              </select>
+                           </div>
+                           <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+                              <p class="m-2">Add New Expiry</p>
+                              <input type="date" class="bg-orange date-input color-white w-100 height-button border-none px-3 fs-6 cursor">
+                           </div>
+                              <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+                              <p class="m-2" style="opacity:0">SUBMIT</p>
+                              <button onclick="SubmitData()" class="bg-orange color-white height-button focus-none" style="border-radius:15px; width: 70%; border-width: 0;" aria-label="Default select example">
+                                 Submit
+                              </button>
+                           </div>
                         </div>
-                        <div class="container-fluid my-5">
-                            <div class="row">
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center my-1">
-                                </div>
-                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center my-1">
-                                <button type="button" onclick="setFilter()" class="btn btn-bg-custom float-end btn-lg fs-6 focus-none text-light">FIND ORDER</button>
-                            </div>
-                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center my-1">
-                                <button type="button" onclick="clearFilter()" class="btn btn-info float-start btn-lg fs-6 focus-none text-light">CLEAR FILTER</button>
-                            </div>
-                            </div>
-                        </div>
-                        <div class=" ms-3"> 
-                            SHOW
-                            <span>
-                            <select class="form-select bg-orange color-white focus-none width-entry d-inline mx-2" aria-label="Default select example">
-                                <option class="bg-light text-dark ps-3" value="10">10</option>
-                                <option class="bg-light text-dark ps-3" value="20">20</option>
-                                <option class="bg-light text-dark ps-3" value="30">30</option>
-                                <option class="bg-light text-dark ps-3" value="40">40</option>
-                            </select>
-                            </span>
-                            ENTRIES
-                        </div>
-                        <div class="table-responsive  ms-3">
-                            <table class="table my-5 table-borderless">
-                            <thead>
-                                <tr class="table-border-none">
-                                    <th scope="col" class="bg-dark text-white ">D</th>
-                                    <th scope="col" class="bg-dark text-white ">TIME</th>
-                                    <th scope="col" class="bg-dark text-white ">MARKET</th>
-                                    <th scope="col" class="bg-dark text-white ">SCRIPT</th>
-                                    <th scope="col" class="bg-dark text-white ">B/S</th>
-                                    <th scope="col" class="bg-dark text-white ">ORDER TYPE</th>
-                                    <th scope="col" class="bg-dark text-white ">LOT</th>
-                                    <th scope="col" class="bg-dark text-white ">QTY</th>
-                                    <th scope="col" class="bg-dark text-white ">ORDER PRICE</th>
-                                    <th scope="col" class="bg-dark text-white ">STATUS</th>
-                                    <th scope="col" class="bg-dark text-white ">O.TIME</th>
-                                    <th scope="col" class="bg-dark text-white ">CANCEL</th>
-                                </tr>
-                            </thead>
-                            <tbody class="" id="table">
-                                {% for trade in trades %}
-                                <tr class="border-b">
-                                <td id="title" class="text-dark">{{trade.id}}</td>
-                                <td class="text-dark">{{trade.time}}</td>
-                                <td class="text-dark">{{trade.market}}</td>
-                                <td class="text-dark">{{trade.script}}</td>
-                                <td class="text-dark">{{trade.bs}}</td>
-                                <td class="text-dark">{{trade.orderType}}</td>
-                                <td class="text-dark">{{trade.lot}}</td>
-                                <td class="text-dark">{{trade.qty}}</td>
-                                <td class="text-dark">{{trade.orderPrice}}</td>
-                                <td class="text-dark">{{trade.status}}</td>
-                                <td class="text-dark">{{trade.oTime}}</td>
-                                <td class="text-dark">
-                                    <button onclick="deleteR(this)" type="button">
-                                        X
+                     </div>
+                     <div class="table-responsive ms-3">
+                        <table class="table my-5 table-borderless bg-dark">
+                           <thead>
+                              <tr class="td-border">
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">NSE SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">REMOVE</th>
+                              </tr>
+                           </thead>
+                           <tbody id="table1">
+                              {% for stock in dataNSE %}
+                              <tr class="">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    {{stock.7}}
+                                 </td>
+                                 <td class="td-border text-white">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white">
+                                    <button type="button" onclick="deleteRNSE(this)" class="btn  mx-3 my-0 py-0 the-button">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
+                                          <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                                       </svg>
                                     </button>
-                                </td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                            </table>
-                        </div>
-                        <div class="d-flex flex-row-reverse bd-highlight">
-                            <div class="p-2 bd-highlight">
-                            <div class="container float-end w-100">
-                                <nav aria-label="Page navigation example float-end">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link text-dark border-none mx-1" href="/">Previous</a></li>
-                                        <li class="page-item"><a class="page-link text-dark border rounded border-dark" href="/">1</a></li>
-                                        <li class="page-item"><a class="page-link text-dark border-none mx-1" href="/">Next</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
+                                 </td>
+                              </tr>
+                              {% endfor %}
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="table-responsive ms-3">
+                        <table class="table my-5 table-borderless bg-dark">
+                           <thead>
+                              <tr class="table-border-none">
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">NFO SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border ">REMOVE</th>
+                              </tr>
+                           </thead>
+                           <tbody id="table3">
+                              {% for stock in dataNFO %}
+                              <tr class="">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white ">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    {{stock.7}}
+                                 </td>
+                                 <td class="td-border text-white ">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white ">
+                                    <button type="button" onclick="deleteRNFO(this)" class="btn  mx-3 my-0 py-0 the-button">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
+                                          <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                                       </svg>
+                                    </button>
+                                 </td>
+                              </tr>
+                              {% endfor %}
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="table-responsive ms-3">
+                        <table class="table my-5 table-borderless bg-dark">
+                           <thead>
+                              <tr class="table-border-none">
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">MCX SYM</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">BID RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">ASK RATE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">LTP</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">CHANGE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">OPEN</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">HIGH</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">LOW</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">CLOSE</th>
+                                 <th scope="col" class="bg-dark text-white fixed-width-Trade td-border">REMOVE</th>
+                              </tr>
+                           </thead>
+                           <tbody id="table2">
+                              {% for stock in dataMCX %}
+                              <tr class="">
+                                 <td class="td-border text-white ">{{stock.0}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.8}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.9}}</td>
+                                 <td class="td-border text-white bg-primary color-white">{{stock.5}}</td>
+                                 <td class="td-border text-white">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    {{stock.7}}
+                                 </td>
+                                 <td class="td-border text-white ">{{stock.1}}</td>
+                                 <td class="td-border text-white ">{{stock.2}}</td>
+                                 <td class="td-border text-white ">{{stock.3}}</td>
+                                 <td class="td-border text-white ">{{stock.4}}</td>
+                                 <td class="td-border text-white">
+                                    <button type="button" onclick="deleteRMCX(this)" class="btn  mx-3 my-0 py-0 the-button">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
+                                          <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                                       </svg>
+                                    </button>
+                                 </td>
+                              </tr>
+                              {% endfor %}
+                           </tbody>
+                        </table>
+                     </div>
+                     
+                  </div>
+               </div>
             </div>
-        </div>
-        <script>
+         </div>
+      </div>
+      <script>
+         window.changer = 1;
+            function SubmitData()
+            {
+                  let segment = document.getElementById("segment").value;
+                  let script = document.getElementById("script").value;
+                  add(segment,script);
+            }
+            function add(segment,script)
+            {
+               let symbol = script;
+               window.changer = 0;
+               let fetchRes = fetch("../data?apiKey=qwertyuiop&todo=get&symbol=" + symbol+"&segment="+segment);
+               fetchRes.then(res =>
+                  res.json()).then(d => {
+                        console.log(d)
+                        if (segment=="NSE")
+                        {
+                           let table1 = document.getElementById('table1');
+                           table1.innerHTML+=`<tr class="">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    `+d['data'][0]['change']+`
+                                 </td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
+                                    <button type="button" onclick="deleteRNSE(this)" class="btn  mx-3 my-0 py-0 the-button">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
+                                          <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                                       </svg>
+                                    </button>
+                                 </td>
+                              </tr>`
+                        }
+                        else if (segment=="MCX")
+                        {
+                           let table2 = document.getElementById('table2');
+                           table2.innerHTML+=`<tr class="">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    `+d['data'][0]['change']+`
+                                 </td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
+                                    <button type="button" onclick="deleteRMCX(this)" class="btn  mx-3 my-0 py-0 the-button">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
+                                          <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                                       </svg>
+                                    </button>
+                                 </td>
+                              </tr>`
+                        }
+                        else
+                        {
+                           let table3 = document.getElementById('table3');
+                           table3.innerHTML+=`<tr class="">
+                                 <td class="td-border text-white">`+d['data'][0]['name']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['bid']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['ask']+`</td>
+                                 <td class="td-border text-white bg-primary color-white">`+d['data'][0]['last price']+`</td>
+                                 <td class="td-border text-white">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>
+                                    `+d['data'][0]['change']+`
+                                 </td>
+                                 <td class="td-border text-white">`+d['data'][0]['open']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['high']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['low']+`</td>
+                                 <td class="td-border text-white">`+d['data'][0]['close']+`</td>
+                                 <td class="td-border text-white">
+                                    <button type="button" onclick="deleteRNFO(this)" class="btn  mx-3 my-0 py-0 the-button">
+                                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark fa-1x cross-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red">
+                                          <path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path>
+                                       </svg>
+                                    </button>
+                                 </td>
+                              </tr>`
+                        }
+                        window.changer = 1;
+                        stateChange();
+                     })
+            }
+            function deleteRNSE(element)
+            {
+               console.log("working");
+               window.changer = 0;
+               let table = document.getElementById('table1');
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
+                  res =>
+                  res.json()
+               ).then((res) => {
+                  console.log(res);
+                  window.changer = 1;
+                  stateChange();
+               });
+            }
+            function deleteRMCX(element)
+            {
+               console.log("working");
+               window.changer = 0;
+               let table = document.getElementById('table2');
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
+                  res =>
+                  res.json()
+               ).then((res) => {
+                  console.log(res);
+                  window.changer = 1;
+                  stateChange();
+               });
+            }
+            function deleteRNFO(element)
+            {
+               console.log("working");
+               window.changer = 0;
+               let table = document.getElementById('table3');
+               console.log(table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML);
+               let name = table.rows[element.parentNode.parentNode.rowIndex-1].cells[0].innerHTML;
+               table.deleteRow(element.parentNode.parentNode.rowIndex-1);
+               fetch("../data?apiKey=qwertyuiop&todo=delete&symbol="+ name, 
+                  res =>
+                  res.json()
+               ).then((res) => {
+                  console.log(res);
+                  window.changer = 1;
+                  stateChange();
+               });
+            }
             function filter() {
-                var input, filter, table, tr, td, i, txtValue;
-                input = document.getElementById("search");
-                filter = input.value.toUpperCase();
-                table = document.getElementById("table");
-                tr = table.getElementsByTagName("tr");
-                for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[3];
-                    if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                    }       
-                }
-            }
-            function filterInd(x,input) {
-                var filter, table, tr, td, i, txtValue;
-                filter = input
-                table = document.getElementById("table");
-                tr = table.getElementsByTagName("tr");
-                for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[x];
-                    if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                    }       
-                }
-            }
-            function deleteR(element)
+                  var input, filter, table, tr, td, i, txtValue;
+                  input = document.getElementById("search");
+                  filter = input.value.toUpperCase();
+                  table1 = document.getElementById("table1");
+                  tr1 = table1.getElementsByTagName("tr");
+                  for (i = 0; i < tr1.length; i++) {
+                     td1 = tr1[i].getElementsByTagName("td")[0];
+                     console.log(td);
+                     if (td1) {
+                     txtValue = td1.textContent || td1.innerText;
+                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                           tr1[i].style.display = "";
+                     } else {
+                           tr1[i].style.display = "none";
+                     }
+                     }       
+                  }
+                  table2 = document.getElementById("table2");
+                  tr2 = table2.getElementsByTagName("tr");
+                  for (i = 0; i < tr2.length; i++) {
+                     td2 = tr2[i].getElementsByTagName("td")[0];
+                     console.log(td2);
+                     if (td2) {
+                     txtValue = td2.textContent || td2.innerText;
+                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                           tr2[i].style.display = "";
+                     } else {
+                           tr2[i].style.display = "none";
+                     }
+                     }       
+                  }
+                  table3 = document.getElementById("table3");
+                  tr3 = table3.getElementsByTagName("tr");
+                  for (i = 0; i < tr3.length; i++) {
+                     td3 = tr3[i].getElementsByTagName("td")[0];
+                     console.log(td3);
+                     if (td3) {
+                     txtValue = td3.textContent || td3.innerText;
+                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                           tr3[i].style.display = "";
+                     } else {
+                           tr3[i].style.display = "none";
+                     }
+                     }       
+                  }
+               }
+            function DataUpdater()
             {
-                let text = "Are You sure you want to delete this Transcation?\nThis action cannot be undone.\nTranscation details : \n ID : "+element.parentNode.parentNode.childNodes[1].innerHTML + "\n Market : " + element.parentNode.parentNode.childNodes[5].innerHTML + "\n Script : " + element.parentNode.parentNode.childNodes[7].innerHTML + "\n Order Price : " + element.parentNode.parentNode.childNodes[19].innerHTML + "\n Quantity : " + element.parentNode.parentNode.childNodes[17].innerHTML + "\n Lot : " + element.parentNode.parentNode.childNodes[15].innerHTML + "\n Date : " + element.parentNode.parentNode.childNodes[3].innerHTML ;
-                if (confirm(text) == true) {
-                    let table = document.getElementById('table');
-                    table.deleteRow(element.parentNode.parentNode.rowIndex-1);
-                    fetch("../tradesRemove?"+"id="+element.parentNode.parentNode.childNodes[1].innerHTML,
-                    res =>
-                    res.json()
-                    ).then((_res) => {
-                        console.log();
-                    });
-                }
+               let fetchRes = fetch("../data/?apiKey=asdfghjkl");
+               fetchRes.then(res =>
+                  res.json()).then(d => {
+                        let NSE = d['NSE'];
+                        for(let i=0; i < NSE.length; i++)
+                        {
+                           let symbol = NSE[i]['name'];
+                           let table = document.getElementById("table1");
+                           let tr = table.getElementsByTagName("tr");
+                           for(let j=0; j < tr.length; j++)
+                           {
+                              if(tr[j].cells[0].innerHTML == symbol)
+                              {  
+                                 let oldprice1 = tr[j].cells[1].innerHTML;
+                                 oldprice1 = oldprice1.replace(',','')
+                                 let newPrice1 = NSE[i]['ask'];
+                                 newPrice1 = newPrice1.replace(',','');
+                                 if(parseFloat(oldprice1.substring(1))>parseFloat(newPrice1.substring(1)))
+                                 {
+                                    tr[j].cells[1].innerHTML = NSE[i]['ask'];
+                                    tr[j].cells[1].classList.add("bg-danger");
+                                    tr[j].cells[1].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[1].innerHTML = NSE[i]['ask'];
+                                    tr[j].cells[1].classList.add("bg-primary");
+                                    tr[j].cells[1].classList.remove("bg-danger");
+                                 }
+                                 let oldprice2 = tr[j].cells[2].innerHTML;
+                                 oldprice2 = oldprice2.replace(',','')
+                                 let newPrice2 = NSE[i]['bid'];
+                                 newPrice = newPrice2.replace(',','');
+                                 if(parseFloat(oldprice2.substring(1))>parseFloat(newPrice2.substring(1)))
+                                 {
+                                    tr[j].cells[2].innerHTML = NSE[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-danger");
+                                    tr[j].cells[2].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[2].innerHTML = NSE[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-primary");
+                                    tr[j].cells[2].classList.remove("bg-danger");
+                                 }
+                                 let oldprice3 = tr[j].cells[3].innerHTML;
+                                 oldprice3 = oldprice3.replace(',','')
+                                 let newPrice3 = NSE[i]['last price'];
+                                 newPrice3 = newPrice3.replace(',','');
+                                 if(parseFloat(oldprice3.substring(1))>parseFloat(newPrice3.substring(1)))
+                                 {
+                                    tr[j].cells[3].innerHTML = NSE[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-danger");
+                                    tr[j].cells[3].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[3].innerHTML = NSE[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-primary");
+                                    tr[j].cells[3].classList.remove("bg-danger");
+                                 }
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = NSE[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[4].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NSE[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[4].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NSE[i]['change'];
+                                 }
+                                 tr[j].cells[5].innerHTML = NSE[i]['open'];
+                                 tr[j].cells[6].innerHTML = NSE[i]['high'];
+                                 tr[j].cells[7].innerHTML = NSE[i]['low'];
+                                 tr[j].cells[8].innerHTML = NSE[i]['close'];
+                              }
+                           }
+                        }
+                        let MCX = d['MCX'];
+                        for(let i=0; i < MCX.length; i++)
+                        {
+                           let symbol = MCX[i]['name'];
+                           let table = document.getElementById("table2");
+                           let tr = table.getElementsByTagName("tr");
+                           for(let j=0; j < tr.length; j++)
+                           {
+                              if(tr[j].cells[0].innerHTML == symbol)
+                              {  
+                                 let oldprice1 = tr[j].cells[1].innerHTML;
+                                 oldprice1 = oldprice1.replace(',','')
+                                 let newPrice1 = MCX[i]['ask'];
+                                 newPrice1 = newPrice1.replace(',','');
+                                 if(parseFloat(oldprice1.substring(1))>parseFloat(newPrice1.substring(1)))
+                                 {
+                                    tr[j].cells[1].innerHTML = MCX[i]['ask'];
+                                    tr[j].cells[1].classList.add("bg-danger");
+                                    tr[j].cells[1].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[1].innerHTML = MCX[i]['ask'];
+                                    tr[j].cells[1].classList.add("bg-primary");
+                                    tr[j].cells[1].classList.remove("bg-danger");
+                                 }
+                                 let oldprice2 = tr[j].cells[2].innerHTML;
+                                 oldprice2 = oldprice2.replace(',','')
+                                 let newPrice2 = MCX[i]['bid'];
+                                 newPrice = newPrice2.replace(',','');
+                                 if(parseFloat(oldprice2.substring(1))>parseFloat(newPrice2.substring(1)))
+                                 {
+                                    tr[j].cells[2].innerHTML = MCX[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-danger");
+                                    tr[j].cells[2].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[2].innerHTML = MCX[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-primary");
+                                    tr[j].cells[2].classList.remove("bg-danger");
+                                 }
+                                 let oldprice3 = tr[j].cells[3].innerHTML;
+                                 oldprice3 = oldprice3.replace(',','')
+                                 let newPrice3 = MCX[i]['last price'];
+                                 newPrice3 = newPrice3.replace(',','');
+                                 if(parseFloat(oldprice3.substring(1))>parseFloat(newPrice3.substring(1)))
+                                 {
+                                    tr[j].cells[3].innerHTML = MCX[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-danger");
+                                    tr[j].cells[3].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[3].innerHTML = MCX[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-primary");
+                                    tr[j].cells[3].classList.remove("bg-danger");
+                                 }
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = MCX[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[4].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ MCX[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[4].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ MCX[i]['change'];
+                                 }
+                                 tr[j].cells[5].innerHTML = MCX[i]['open'];
+                                 tr[j].cells[6].innerHTML = MCX[i]['high'];
+                                 tr[j].cells[7].innerHTML = MCX[i]['low'];
+                                 tr[j].cells[8].innerHTML = MCX[i]['close'];
+                              }
+                           }
+                        }
+                        let NFO = d['NFO'];
+                        for(let i=0; i < NFO.length; i++)
+                        {
+                           let symbol = NFO[i]['name'];
+                           let table = document.getElementById("table3");
+                           let tr = table.getElementsByTagName("tr");
+                           for(let j=0; j < tr.length; j++)
+                           {
+                              if(tr[j].cells[0].innerHTML == symbol)
+                              {  
+                                 let oldprice1 = tr[j].cells[1].innerHTML;
+                                 oldprice1 = oldprice1.replace(',','')
+                                 let newPrice1 = NFO[i]['ask'];
+                                 newPrice1 = newPrice1.replace(',','');
+                                 if(parseFloat(oldprice1.substring(1))>parseFloat(newPrice1.substring(1)))
+                                 {
+                                    tr[j].cells[1].innerHTML = NFO[i]['ask'];
+                                    tr[j].cells[1].classList.add("bg-danger");
+                                    tr[j].cells[1].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[1].innerHTML = NFO[i]['ask'];
+                                    tr[j].cells[1].classList.add("bg-primary");
+                                    tr[j].cells[1].classList.remove("bg-danger");
+                                 }
+                                 let oldprice2 = tr[j].cells[2].innerHTML;
+                                 oldprice2 = oldprice2.replace(',','')
+                                 let newPrice2 = NFO[i]['bid'];
+                                 newPrice = newPrice2.replace(',','');
+                                 if(parseFloat(oldprice2.substring(1))>parseFloat(newPrice2.substring(1)))
+                                 {
+                                    tr[j].cells[2].innerHTML = NFO[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-danger");
+                                    tr[j].cells[2].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[2].innerHTML = NFO[i]['bid'];
+                                    tr[j].cells[2].classList.add("bg-primary");
+                                    tr[j].cells[2].classList.remove("bg-danger");
+                                 }
+                                 let oldprice3 = tr[j].cells[3].innerHTML;
+                                 oldprice3 = oldprice3.replace(',','')
+                                 let newPrice3 = NFO[i]['last price'];
+                                 newPrice3 = newPrice3.replace(',','');
+                                 if(parseFloat(oldprice3.substring(1))>parseFloat(newPrice3.substring(1)))
+                                 {
+                                    tr[j].cells[3].innerHTML = NFO[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-danger");
+                                    tr[j].cells[3].classList.remove("bg-primary");
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[3].innerHTML = NFO[i]['last price'];
+                                    tr[j].cells[3].classList.add("bg-primary");
+                                    tr[j].cells[3].classList.remove("bg-danger");
+                                 }
+                                 let oldchange = tr[j].cells[9].innerText;
+                                 oldchange = oldchange.replace(/\D/g, "");
+                                 let newchange = NFO[i]['change'];
+                                 newchange = newchange.replace(/\D/g, "");
+                                 if(parseFloat(oldchange.substring(1))>parseFloat(newchange.substring(1)))
+                                 {
+                                    tr[j].cells[4].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="red"><path fill="currentColor" d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path></svg>`+ NFO[i]['change'];
+                                 }
+                                 else
+                                 {
+                                    tr[j].cells[4].innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" color="green"><path fill="currentColor" d="M9.39 265.4l127.1-128C143.6 131.1 151.8 128 160 128s16.38 3.125 22.63 9.375l127.1 128c9.156 9.156 11.9 22.91 6.943 34.88S300.9 320 287.1 320H32.01c-12.94 0-24.62-7.781-29.58-19.75S.2333 274.5 9.39 265.4z"></path></svg>`+ NFO[i]['change'];
+                                 }
+                                 tr[j].cells[5].innerHTML = NFO[i]['open'];
+                                 tr[j].cells[6].innerHTML = NFO[i]['high'];
+                                 tr[j].cells[7].innerHTML = NFO[i]['low'];
+                                 tr[j].cells[8].innerHTML = NFO[i]['close'];
+                              }
+                           }
+                        }
+                  })
+                  stateChange();
             }
-            function clearFilter()
-            {   
-                if (document.getElementById('pending').checked) {
-                    document.getElementById('pending').checked = false;
-                }
-                else
-                {
-                    document.getElementById('executed').checked = false;
-                }
-                document.getElementById("after").value = "";
-                document.getElementById("before").value = "";
-                document.getElementById("market").value = "Select Market";
-                document.getElementById("script").value = "Select Script";
-                document.getElementById("orderType").value = "Select Order Type";
-                table = document.getElementById("table");
-                tr = table.getElementsByTagName("tr");
-                for (i = 0; i < tr.length; i++) {
-                        tr[i].style.display = "";
-                }       
-            }
-            function setFilter()
+            function stateChange()
             {
-                let decision = "";
-                decision = document.getElementById('pending').checked ? "pending" : "executed";
-                console.log(decision);
-                let after = document.getElementById("after").value;
-                let before = document.getElementById("before").value;
-                let market = document.getElementById("market").value;
-                let script = document.getElementById("script").value;
-                let ordertype = document.getElementById("orderType").value;
-                if(decision!="")
-                {
-                    filterInd(9,decision);
-                }
-                if(market!="Select Market")
-                {
-                    filterInd(2,market);
-                }
-                if(script!="Select Script")
-                {
-                    filterInd(3,script);
-                }
-                if(ordertype!="Select Order Type")
-                {
-                    filterInd(5,ordertype);
-                }
+               setTimeout(function(){ 
+                  if(window.changer==1)
+                  {
+                     DataUpdater();
+                     console.log("Data Updater");
+                  }
+                  else
+                  {
+                     console.log("Stopped");
+                  }
+               }, 500);
             }
+            function updateToNull(element)
+            {  
+               if(element.value == "Type Script")
+               {
+                  element.value = "";
+               }
+            }
+            function scriptChanger(element)
+            {
+               
+               if(element.value == "NSE")
+               {
+                  //1971
+                  var options = document.getElementsByTagName("datalist")[0].options;
+                  var count = 0;
+                  {% for stock in stocksA %}
+                     options[count].value = "{{stock}}";
+                     count++;
+                  {% endfor %}                  
+               }
+               if(element.value == "MCX")
+               {
+                  //5914
+                  var options = document.getElementsByTagName("datalist")[0].options;
+                  var count = 0;
+                  {% for stock in stocksB %}
+                     options[count].value = "{{stock}}";
+                     count++;
+                  {% endfor %}
+               }
+               if(element.value == "NFO")
+               {
+                  //63592
+                  var options = document.getElementsByTagName("datalist")[0].options;
+                  var count = 0;
+                  {% for stock in stocksC %}
+                     options[count].value = "{{stock}}";
+                     count++;
+                  {% endfor %}
+               }
+            }
+            stateChange();
         </script>
 {% endblock content %}
