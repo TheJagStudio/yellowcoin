@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+# add json field
+from django.contrib.postgres.fields import JSONField
 
 
 class UserAccount(models.Model):
@@ -10,4 +12,19 @@ class UserAccount(models.Model):
     Partnership = models.CharField(max_length=100, default="5")
     Remarks = models.CharField(max_length=100)
     creator = models.CharField(max_length=100, default="admin")
+    segments = models.JSONField(default={"segments": []})
+    MCX = models.JSONField(default={"Brokerage Details": [],
+                                    "Margin Details": [], "Other Details": []})
+    NSE = models.JSONField(default={"Brokerage Details": [],
+                                    "Margin Details": [], "Other Details": []})
+    FOREX = models.JSONField(default={"Brokerage Details": [],
+                                      "Margin Details": [], "Other Details": []})
+    Between_HighLow = models.BooleanField(default=True)
+    Auto_Square = models.BooleanField(default=True)
+    Day_AutoSquare = models.BooleanField(default=True)
+    Position_SquareOff = models.BooleanField(default=True)
+    Linked_with_Ledger = models.BooleanField(default=True)
+    Band_Script_Allow = models.BooleanField(default=True)
+    Alert = models.FloatField(default=0.0)
+    M2M_PL = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -81,6 +81,8 @@
          </div>
         </div>
        </div>
+       <form method="post">
+            {% csrf_token %}
        <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-541977280151381-1;">
         <div class="row">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 my-3">
@@ -338,11 +340,12 @@
           </div>
          </div>
          <div class="col-12 text-end my-2">
-          <button class="btn bg-brown mx-4 color-white btn-lg focus-none button-effect my-1" type="button">
+          <button  class="btn bg-brown mx-4 color-white btn-lg focus-none button-effect my-1" type="submit">
            View Report
           </button>
          </div>
         </div>
        </div>
+      </form>
       </div>
 {% endblock %}

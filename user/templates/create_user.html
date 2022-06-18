@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-      <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-10 col-xl-10">
        <div class="react-reveal container" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-564358617613298-1;">
         <div class="row my-2">
          <div class="col-3 col-sm-3 col-md-6 col-lg-4 col-xl-4 fw-bold">
@@ -124,7 +124,7 @@
                               <div class="row">
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault1" name="flexRadioDefault" type="checkbox" onchange="buttonDisabler('mcx')"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault1" name="flexRadioDefault1" type="checkbox" value="MCX" onchange="buttonDisabler('mcx')"/>
                                  <label class="form-check-label" for="flexRadioDefault1">
                                   MCX
                                  </label>
@@ -134,7 +134,7 @@
                                </div>
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault2" name="flexRadioDefault" type="checkbox" onchange="buttonDisabler('nse')"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault2" name="flexRadioDefault2" type="checkbox" value="NSE" onchange="buttonDisabler('nse')"/>
                                  <label class="form-check-label focus-none" for="flexRadioDefault2">
                                   NSE
                                  </label>
@@ -144,7 +144,7 @@
                                </div>
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault3" name="flexRadioDefault" type="checkbox" onchange="buttonDisabler('forex')"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault3" name="flexRadioDefault3" type="checkbox" value="FOREX" onchange="buttonDisabler('forex')"/>
                                  <label class="form-check-label" for="flexRadioDefault3">
                                   Forex
                                  </label>
@@ -175,37 +175,37 @@
                                 </h5>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="mcx_bd_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="mcx_bd_userchoice">
+                                    <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                     </select>
                                 </div>
                                 </div>
                                 <div class="input-group mb-3">
-                                <span class="input-group-text bg-transparent border-none" id="basic-addon1">
+                                <span class="input-group-text bg-transparent border-none" id="">
                                     Type :
                                 </span>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="Lot" name="Type" type="radio" value="Yes"/>
+                                    <input class="form-check-input" id="Lot" name="mcx_bd_type" type="radio" value="Lot"/>
                                     <label class="form-check-label" for="Lot">
                                     Lot
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="Percent" name="Type" type="radio" value="No"/>
+                                    <input class="form-check-input" id="Percent" name="mcx_bd_type" type="radio" value="Percent"/>
                                     <label class="form-check-label" for="Percent">
                                     Percent
                                     </label>
@@ -215,20 +215,20 @@
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-0 mb-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="mcx_bd_script">
                                     Select Script :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
+                                    <select class="form-select input-border focus-none" id="mcx_bd_script">
                                     <option class="">
                                         Select Script
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                         Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                         Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                         Master Three
                                     </option>
                                     </select>
@@ -237,18 +237,18 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="mcx_bd_delivery">
                                     Delivery Com :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Delivery Com" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="mcx_bd_delivery" name="mcx_bd_delivery" class="form-control input-border focus-none" placeholder="Delivery Com" type="text"/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="mcx_bd_intradaycom">
                                     Intraday Com :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Intraday Com" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username"  id="mcx_bd_intradaycom" name="mcx_bd_intradaycom" class="form-control input-border focus-none" placeholder="Intraday Com" type="text"/>
                                     </div>
                                 </div>
                                 </div>
@@ -264,20 +264,20 @@
                                 </h5>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="mcx_md_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="mcx_md_userchoice">
+                                    <option class="selectid">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                     </select>
@@ -288,13 +288,13 @@
                                     Type :
                                 </span>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="margin-Lot" name="margin-Type" type="radio" value="Yes"/>
+                                    <input class="form-check-input" id="margin-Lot" name="mcx_md_type" type="radio" value="Yes"/>
                                     <label class="form-check-label" for="margin-Lot">
                                     Lot
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="margin-Percent" name="margin-Type" type="radio" value="No"/>
+                                    <input class="form-check-input" id="margin-Percent" name="mcx_md_type" type="radio" value="No"/>
                                     <label class="form-check-label" for="margin-Percent">
                                     Percent
                                     </label>
@@ -302,30 +302,30 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="mcx_md_totallotwise">
                                     Total Lot Wise
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="MCX Lot Wise" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="mcx_md_totallotwise" name="mcx_md_totallotwise" aria-label="Username" class="form-control input-border focus-none" placeholder="MCX Lot Wise" type="text"/>
                                 </div>
                                 </div>
                                 <div class="row">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-0 mb-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="mcx_md_script">
                                     Select Script :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
+                                    <select class="form-select input-border focus-none" id="mcx_md_script">
                                     <option class="">
                                         Select Script
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                         Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                         Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                         Master Three
                                     </option>
                                     </select>
@@ -334,23 +334,23 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="mcx_md_maxorder">
                                     Max order :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Max Order" type="text"/>
+                                    <input aria-describedby="basic-addon1"  id="mcx_md_maxorder" name="mcx_md_maxorder" aria-label="Username" class="form-control input-border focus-none" placeholder="Max Order" type="text"/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="mcx_md_positionlimit">
                                     Position Limit :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Position Limit" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="mcx_md_positionlimit" name="mcx_md_positionlimit" aria-label="Username" class="form-control input-border focus-none" placeholder="Position Limit" type="text"/>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                <button class="btn btn-danger mb-4">
+                                <button type="button" class="btn btn-danger mb-4">
                                     + Add
                                 </button>
                                 </div>
@@ -361,14 +361,14 @@
                                 </h6>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="mcx_od_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
+                                    <select class="form-select input-border focus-none" id="mcx_od_userchoice">
                                     <option class="">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
                                     <option value="2">
@@ -385,13 +385,13 @@
                                     Type :
                                 </span>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="other-allow" name="other-Type" type="radio" value="Yes"/>
+                                    <input class="form-check-input" id="other-allow" name="mcx_od_type" type="radio" value="Yes"/>
                                     <label class="form-check-label" for="other-allow">
                                     Allow
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="other-block" name="other-Type" type="radio" value="No"/>
+                                    <input class="form-check-input" id="other-block" name="mcx_od_type" type="radio" value="No"/>
                                     <label class="form-check-label" for="other-block">
                                     Block
                                     </label>
@@ -399,24 +399,21 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="mcx_od_allowscripts">
                                     Allow Scripts
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Allow Scripts" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="mcx_od_allowscripts"class="form-control input-border focus-none" placeholder="Allow Scripts" type="text"/>
                                 </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4 mb-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="mcx_od_noofscripts">
                                     No. of scripts
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="No. of scripts" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="mcx_od_noofscripts" name="mcx_od_noofscripts" class="form-control input-border focus-none" placeholder="No. of scripts" type="text"/>
                                 </div>
                                 </div>
-                                <input id="fresh-limit" type="checkbox"/>
-                                <label for="fresh-limit" style="margin-left: 5px;">
-                                Fresh Limit Allowed ?
-                                </label>
+                                
                                 </div>
                                 </div>
                             </div>
@@ -440,20 +437,20 @@
                                 </h5>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="nse_bd_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="nse_bd_userchoice">
+                                    <option class="select_id">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                     </select>
@@ -461,23 +458,12 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="nse_bd_minscriptrate">
                                     Min script rate :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Min script rate" type="number"/>
+                                    <input aria-describedby="basic-addon1" id="nse_bd_minscriptrate" name="nse_bd_minscriptrate" aria-label="Username" class="form-control input-border focus-none" placeholder="Min script rate" type="number"/>
                                 </div>
-                                <div class="input-group mt-3">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
-                                    Delivery Commision :
-                                    </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Delivery Commision" type="number"/>
-                                </div>
-                                <div class="input-group mt-3">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
-                                    Intraday Commision :
-                                    </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Intraday Commision" type="number"/>
-                                </div>
+                              
                                 </div>
                                 <p class="mt-3 fw-bold px-2">
                                 Script wise brokerage
@@ -486,20 +472,20 @@
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-0 mb-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="nse_bd_script">
                                     Select Script :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
+                                    <select class="form-select input-border focus-none" id="nse_bd_script">
                                     <option class="">
                                         Select Script
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                         Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                         Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                         Master Three
                                     </option>
                                     </select>
@@ -508,23 +494,23 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="nse_bd_deliverycommision">
                                     Delivery Com :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Delivery Com" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="nse_bd_deliverycommision" name="nse_bd_deliverycommision" aria-label="Username" class="form-control input-border focus-none" placeholder="Delivery Com" type="text"/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="nse_bd_intradaycommision">
                                     Intraday Com :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Intraday Com" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="nse_bd_intradaycommision" name="nse_bd_intradaycommision "class="form-control input-border focus-none" placeholder="Intraday Com" type="text"/>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                <button class="btn btn-danger mb-4">
+                                <button type="button" class="btn btn-danger mb-4">
                                     + Add
                                 </button>
                                 </div>
@@ -535,20 +521,20 @@
                                 </h5>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="nse_md_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="nse_md_userchoice">
+                                    <option class="select_id">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                     </select>
@@ -559,13 +545,13 @@
                                     Type :
                                 </span>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="NSE-margin-Lot" name="NSE-margin-Type" type="radio" value="Yes"/>
+                                    <input class="form-check-input" id="NSE-margin-Lot" name="nse_md_type" type="radio" value="Yes"/>
                                     <label class="form-check-label" for="NSE-margin-Lot">
                                     Lot
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="NSE-margin-Percent" name="NSE-margin-Type" type="radio" value="No"/>
+                                    <input class="form-check-input" id="NSE-margin-Percent" name="nse_md_type" type="radio" value="No"/>
                                     <label class="form-check-label" for="NSE-margin-Percent">
                                     Percent
                                     </label>
@@ -573,30 +559,30 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="nse_md_totallotwise">
                                     Total Lot Wise
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="MCX Lot Wise" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="nse_md_totallotwise" name="nse_md_totallotwise" aria-label="Username" class="form-control input-border focus-none" placeholder="MCX Lot Wise" type="text"/>
                                 </div>
                                 </div>
                                 <div class="row mt-3">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-0 mb-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="nse_md_script">
                                     Select Script :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="nse_md_script">
+                                    <option class="select_id">
                                         Select Script
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                         Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                         Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                         Master Three
                                     </option>
                                     </select>
@@ -605,42 +591,42 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="nse_md_maxorder">
                                     Max order :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Max Order" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="nse_md_maxorder" name="nse_md_maxorder" aria-label="Username" class="form-control input-border focus-none" placeholder="Max Order" type="text"/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="nse_md_positionlimit">
                                     Position Limit :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Position Limit" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="nse_md_positionlimit"  name="nse_md_positionlimit" aria-label="Username" class="form-control input-border focus-none" placeholder="Position Limit" type="text"/>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="input-group">
-                                <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                <label class="input-group-text bg-transparent border-none px-0" for="nse_md_nqv">
                                     L/Q/V :
                                 </label>
-                                <select class="form-select input-border focus-none" id="inputGroupSelect01">
+                                <select class="form-select input-border focus-none" id="nse_md_nqv">
                                     <option class="">
                                     Select Script
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                 </select>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                <button class="btn btn-danger mt-3 mb-4">
+                                <button type="button" class="btn btn-danger mt-3 mb-4">
                                     + Add
                                 </button>
                                 </div>
@@ -651,37 +637,37 @@
                                 </h5>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="nse_od_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="nse_od_userchoice">
+                                    <option class="select_id">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                     </select>
                                 </div>
                                 </div>
                                 <div class="input-group mb-3 mt-2">
-                                <span class="input-group-text bg-transparent border-none" id="basic-addon1">
+                                <span class="input-group-text bg-transparent border-none" id="nse_od_type">
                                     Type :
                                 </span>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="NSE-other-allow" name="NSE-other-Type" type="radio" value="Yes"/>
+                                    <input class="form-check-input" id="NSE-other-allow" name="nse_od_type" type="radio" value="Yes"/>
                                     <label class="form-check-label" for="NSE-other-allow">
                                     Allow
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="NSE-other-block" name="NSE-other-Type" type="radio" value="No"/>
+                                    <input class="form-check-input" id="NSE-other-block" name="nse_od_type" type="radio" value="No"/>
                                     <label class="form-check-label" for="NSE-other-block">
                                     Block
                                     </label>
@@ -689,30 +675,28 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="nse_od_allowscripts">
                                     Allow Scripts
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Allow Scripts" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="nse_od_allowscripts" name="nse_od_allowscripts" aria-label="Username" class="form-control input-border focus-none" placeholder="Allow Scripts" type="text"/>
                                 </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4 mb-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="nse_od_noofscripts">
                                     No. of scripts
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="No. of scripts" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="nse_od_noofscripts" name="nse_od_noofscripts" aria-label="Username" class="form-control input-border focus-none" placeholder="No. of scripts" type="text"/>
                                 </div>
                                 <div class="input-group mt-3">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="nse_od_minratescriptblock">
                                     Min rate Script Block :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Min rate Script Block" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="nse_od_minratescriptblock" name="nse_od_minratescriptblock"class="form-control input-border focus-none" placeholder="Min rate Script Block" type="text"/>
                                 </div>
                                 </div>
-                                <input id="NSE-fresh-limit" type="checkbox"/>
-                                <label for="NSE-fresh-limit" style="margin-left: 5px;">
-                                Fresh Limit Allowed ?
-                                </label>
+                                
+                                
                                 </div>
                                 </div>
                             </div>
@@ -736,37 +720,37 @@
                                 </h5>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="forex_bd_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="forex_bd_userchoice">
+                                    <option class="select_id">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                     </select>
                                 </div>
                                 </div>
                                 <div class="input-group mb-3">
-                                <span class="input-group-text bg-transparent border-none" id="basic-addon1">
+                                <span class="input-group-text bg-transparent border-none" id="forex_bd_type">
                                     Type :
                                 </span>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="Forex-Lot" name="Forex-Type" type="radio" value="Yes"/>
+                                    <input class="form-check-input" id="Forex-Lot" name="forex_bd_type" type="radio" value="Yes"/>
                                     <label class="form-check-label" for="Forex-Lot">
                                     Lot
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="Forex-Percent" name="Forex-Type" type="radio" value="No"/>
+                                    <input class="form-check-input" id="Forex-Percent" name="forex_bd_type" type="radio" value="No"/>
                                     <label class="form-check-label" for="Forex-Percent">
                                     Percent
                                     </label>
@@ -776,20 +760,20 @@
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-0 mb-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="forex_bd_symbol">
                                     Select Symbol :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
+                                    <select class="form-select input-border focus-none" id="forex_bd_symbol">
                                     <option class="">
                                         Select Symbol
                                     </option>
-                                    <option value="1">
+                                    <option value="Master On">
                                         Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                         Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                         Master Three
                                     </option>
                                     </select>
@@ -798,23 +782,23 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="forex_bd_deliverycom">
                                     Delivery Com :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Delivery Com" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="forex_bd_deliverycom" name="forex_bd_deliverycom" class="form-control input-border focus-none" placeholder="Delivery Com" type="text"/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="forex_bd_intradaycom">
                                     Intraday Com :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Intraday Com" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="forex_bd_intradaycom" name="forex_bd_intradaycom" class="form-control input-border focus-none" placeholder="Intraday Com" type="text"/>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                <button class="btn btn-danger mb-4">
+                                <button type="button" class="btn btn-danger mb-4">
                                     + Add
                                 </button>
                                 </div>
@@ -825,20 +809,20 @@
                                 </h5>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="forex_md_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="forex_md_userchoice">
+                                    <option class="select_id">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                     </select>
@@ -849,13 +833,13 @@
                                     Type :
                                 </span>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="Forex-margin-Lot" name="Forex-margin-Type" type="radio" value="Yes"/>
+                                    <input class="form-check-input" id="Forex-margin-Lot" name="forex_md_type" type="radio" value="Yes"/>
                                     <label class="form-check-label" for="Forex-margin-Lot">
                                     Lot
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="Forex-margin-Percent" name="Forex-margin-Type" type="radio" value="No"/>
+                                    <input class="form-check-input" id="Forex-margin-Percent" name="forex_md_type" type="radio" value="No"/>
                                     <label class="form-check-label" for="Forex-margin-Percent">
                                     Percent
                                     </label>
@@ -863,30 +847,30 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="forex_md_totallotwise">
                                     Total Lot Wise
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="MCX Lot Wise" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="forex_md_totallotwise" name="forex_md_totallotwise" class="form-control input-border focus-none" placeholder="MCX Lot Wise" type="text"/>
                                 </div>
                                 </div>
                                 <div class="row">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-0 mb-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="forex_md_symbol">
                                     Select Symbol :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
+                                    <select class="form-select input-border focus-none" id="forex_md_symbol">
                                     <option class="">
                                         Select Symbol
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                         Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                         Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                         Master Three
                                     </option>
                                     </select>
@@ -895,23 +879,23 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="forex_md_maxorder">
                                     Max order :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Max Order" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username"id="forex_md_maxorder" name="forex_md_maxorder" class="form-control input-border focus-none" placeholder="Max Order" type="text"/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                     <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none px-0" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none px-0" for="forex_md_positionlimit">
                                     Position Limit :
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Position Limit" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="forex_md_positionlimit" name="forex_md_positionlimit" aria-label="Username" class="form-control input-border focus-none" placeholder="Position Limit" type="text"/>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                <button class="btn btn-danger mb-4">
+                                <button type="button" class="btn btn-danger mb-4">
                                     + Add
                                 </button>
                                 </div>
@@ -922,20 +906,20 @@
                                 </h5>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="forex_od_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="inputGroupSelect01">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="forex_od_userchoice">
+                                    <option class="select_id">
                                     Select ID
                                     </option>
-                                    <option value="1">
+                                    <option value="Master One">
                                     Master One
                                     </option>
-                                    <option value="2">
+                                    <option value="Master Two">
                                     Master Two
                                     </option>
-                                    <option value="3">
+                                    <option value="Master Three">
                                     Master Three
                                     </option>
                                     </select>
@@ -946,13 +930,13 @@
                                     Type :
                                 </span>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="Forex-other-allow" name="Forex-other-Type" type="radio" value="Yes"/>
+                                    <input class="form-check-input" id="Forex-other-allow" name="forex_od_type" type="radio" value="Yes"/>
                                     <label class="form-check-label" for="Forex-other-allow">
                                     Allow
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline mt-2">
-                                    <input class="form-check-input" id="Forex-other-block" name="Forex-other-Type" type="radio" value="No"/>
+                                    <input class="form-check-input" id="Forex-other-block" name="forex_od_type" type="radio" value="No"/>
                                     <label class="form-check-label" for="Forex-other-block">
                                     Block
                                     </label>
@@ -960,24 +944,21 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="forex_od_allowsymbol">
                                     Allow Symbol
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="Allow Symbol" type="text"/>
+                                    <input aria-describedby="basic-addon1" id="forex_od_allowsymbol" name="forex_od_allowsymbol" aria-label="Username" class="form-control input-border focus-none" placeholder="Allow Symbol" type="text"/>
                                 </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4 mb-4">
                                 <div class="input-group">
-                                    <label class="input-group-text bg-transparent border-none" for="inputGroupSelect01">
+                                    <label class="input-group-text bg-transparent border-none" for="forex_od_noofsymbol">
                                     No. of Symbol
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="No. of Symbol" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="forex_od_noofsymbol" name="forex_od_noofsymbol" class="form-control input-border focus-none" placeholder="No. of Symbol" type="text"/>
                                 </div>
                                 </div>
-                                <input id="Forex-fresh-limit" type="checkbox"/>
-                                <label for="Forex-fresh-limit" style="margin-left: 5px;">
-                                Fresh Limit Allowed ?
-                                </label>
+                                <
                                 </div>
                                 </div>
                             </div>
@@ -1114,7 +1095,7 @@
                                <span class="input-group-text bg-transparent border-none " id="basic-addon1">
                                 Alert % :
                                </span>
-                               <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="" type="number"/>
+                               <input aria-describedby="basic-addon1" id="alertper"  name="alertper" aria-label="Username" class="form-control input-border focus-none" placeholder="" type="number"/>
                               </div>
                              </div>
                              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 my-2">
@@ -1122,10 +1103,20 @@
                                <span class="input-group-text bg-transparent border-none " id="basic-addon1">
                                 M2M PL :
                                </span>
-                               <input aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="" type="number"/>
+                               <input aria-describedby="basic-addon1" id="M2MPL"  name="M2MPL" aria-label="Username" class="form-control input-border focus-none" placeholder="" type="number"/>
                               </div>
                              </div>
                             </div>
+                            <div class="other-details row">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 my-2">
+                                 <div class="input-group">
+                                  <span class="input-group-text bg-transparent border-none">
+                                    Balance :
+                                  </span>
+                                  <input id ="Balance" name="Balance" aria-describedby="basic-addon1" aria-label="Username" class="form-control input-border focus-none" placeholder="" type="number"/>
+                                 </div>
+                                </div>
+                               </div>
                             <div class="col-12 text-end">
                                 <button type="submit" class="btn bg-brown color-white btn-lg focus-none button-effect">Submit</button></div>
                             </div>

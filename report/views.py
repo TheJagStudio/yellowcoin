@@ -8,6 +8,8 @@ from user.models import UserAccount
 @login_required
 def track_report(request):
     current_user = request.user
+    if request.method == 'POST':
+        return render(request, 'reportPdf.html', {'current_user': current_user})
     if current_user.is_superuser:
         return render(request, 'report_track.html', {'current_user': current_user})
 
