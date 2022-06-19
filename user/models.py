@@ -27,4 +27,8 @@ class UserAccount(models.Model):
     Band_Script_Allow = models.BooleanField(default=True)
     Alert = models.FloatField(default=0.0)
     M2M_PL = models.IntegerField(default=0)
+    Balance = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username

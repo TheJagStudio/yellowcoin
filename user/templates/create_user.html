@@ -50,7 +50,7 @@
             </path>
            </svg>
            <div class="dropdown ms-1 bg-transparent">
-            <a aria-expanded="false" class="btn fw-bold focus-none mt-0" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink" role="button">
+            <a aria-expanded="false" class="btn fw-bold focus-none mt-0" data-bs-toggle="dropdown" href="/" id="dropdownMenuLink"  name="dropdownMenuLink" role="button">
              {{current_user.username}}
              <span class="ps-2">
               <svg aria-hidden="true" class="svg-inline--fa fa-angle-down fw-bold" data-icon="angle-down" data-prefix="fas" focusable="false" role="img" viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
@@ -124,7 +124,7 @@
                               <div class="row">
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault1" name="flexRadioDefault1" type="checkbox" value="MCX" onchange="buttonDisabler('mcx')"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault1" name="flexRadioDefault1" type="checkbox" value="unchecked" onchange="buttonDisabler('mcx')"/>
                                  <label class="form-check-label" for="flexRadioDefault1">
                                   MCX
                                  </label>
@@ -134,7 +134,7 @@
                                </div>
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault2" name="flexRadioDefault2" type="checkbox" value="NSE" onchange="buttonDisabler('nse')"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault2" name="flexRadioDefault2" type="checkbox" value="unchecked" onchange="buttonDisabler('nse')"/>
                                  <label class="form-check-label focus-none" for="flexRadioDefault2">
                                   NSE
                                  </label>
@@ -144,7 +144,7 @@
                                </div>
                                <div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 my-2">
                                 <div class="form-check">
-                                 <input class="form-check-input focus-none" id="flexRadioDefault3" name="flexRadioDefault3" type="checkbox" value="FOREX" onchange="buttonDisabler('forex')"/>
+                                 <input class="form-check-input focus-none" id="flexRadioDefault3" name="flexRadioDefault3" type="checkbox" value="unchecked" onchange="buttonDisabler('forex')"/>
                                  <label class="form-check-label" for="flexRadioDefault3">
                                   Forex
                                  </label>
@@ -178,19 +178,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="mcx_bd_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="mcx_bd_userchoice">
+                                    <select class="form-select input-border focus-none" id="mcx_bd_userchoice" name="mcx_bd_userchoice">
                                     <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="Master Two">
-                                    Master Two
-                                    </option>
-                                    <option value="Master Three">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -218,7 +214,7 @@
                                     <label class="input-group-text bg-transparent border-none px-0" for="mcx_bd_script">
                                     Select Script :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="mcx_bd_script">
+                                    <select class="form-select input-border focus-none" id="mcx_bd_script" name="mcx_bd_script">
                                     <option class="">
                                         Select Script
                                     </option>
@@ -267,19 +263,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="mcx_md_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="mcx_md_userchoice">
-                                    <option class="selectid">
+                                    <select class="form-select input-border focus-none" id="mcx_md_userchoice" name="mcx_md_userchoice">
+                                    <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="Master Two">
-                                    Master Two
-                                    </option>
-                                    <option value="Master Three">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -315,7 +307,7 @@
                                     <label class="input-group-text bg-transparent border-none px-0" for="mcx_md_script">
                                     Select Script :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="mcx_md_script">
+                                    <select class="form-select input-border focus-none" id="mcx_md_script" name="mcx_md_script">
                                     <option class="">
                                         Select Script
                                     </option>
@@ -364,19 +356,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="mcx_od_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="mcx_od_userchoice">
-                                    <option class="">
+                                    <select class="form-select input-border focus-none" id="mcx_od_userchoice" name="mcx_od_userchoice">
+                                    <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="2">
-                                    Master Two
-                                    </option>
-                                    <option value="3">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -402,7 +390,7 @@
                                     <label class="input-group-text bg-transparent border-none" for="mcx_od_allowscripts">
                                     Allow Scripts
                                     </label>
-                                    <input aria-describedby="basic-addon1" aria-label="Username" id="mcx_od_allowscripts"class="form-control input-border focus-none" placeholder="Allow Scripts" type="text"/>
+                                    <input aria-describedby="basic-addon1" aria-label="Username" id="mcx_od_allowscripts" name="mcx_od_allowscripts" class="form-control input-border focus-none" placeholder="Allow Scripts" type="text"/>
                                 </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 mt-4 mb-4">
@@ -440,19 +428,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="nse_bd_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="nse_bd_userchoice">
-                                    <option class="select_id">
+                                    <select class="form-select input-border focus-none" id="nse_bd_userchoice" name="nse_bd_userchoice">
+                                    <option value="select_id" >
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="Master Two">
-                                    Master Two
-                                    </option>
-                                    <option value="Master Three">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -475,7 +459,7 @@
                                     <label class="input-group-text bg-transparent border-none px-0" for="nse_bd_script">
                                     Select Script :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="nse_bd_script">
+                                    <select class="form-select input-border focus-none" id="nse_bd_script" name="nse_bd_script">
                                     <option class="">
                                         Select Script
                                     </option>
@@ -524,19 +508,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="nse_md_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="nse_md_userchoice">
-                                    <option class="select_id">
+                                    <select class="form-select input-border focus-none" id="nse_md_userchoice" name="nse_md_userchoice">
+                                    <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="Master Two">
-                                    Master Two
-                                    </option>
-                                    <option value="Master Three">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -572,8 +552,8 @@
                                     <label class="input-group-text bg-transparent border-none px-0" for="nse_md_script">
                                     Select Script :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="nse_md_script">
-                                    <option class="select_id">
+                                    <select class="form-select input-border focus-none" id="nse_md_script" name="nse_md_script">
+                                    <option value="select_id">
                                         Select Script
                                     </option>
                                     <option value="Master One">
@@ -610,7 +590,7 @@
                                 <label class="input-group-text bg-transparent border-none px-0" for="nse_md_nqv">
                                     L/Q/V :
                                 </label>
-                                <select class="form-select input-border focus-none" id="nse_md_nqv">
+                                <select class="form-select input-border focus-none" id="nse_md_nqv" name="nse_md_nqv">
                                     <option class="">
                                     Select Script
                                     </option>
@@ -640,19 +620,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="nse_od_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="nse_od_userchoice">
-                                    <option class="select_id">
+                                    <select class="form-select input-border focus-none" id="nse_od_userchoice" name="nse_od_userchoice">
+                                    <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="Master Two">
-                                    Master Two
-                                    </option>
-                                    <option value="Master Three">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -723,19 +699,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="forex_bd_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="forex_bd_userchoice">
-                                    <option class="select_id">
+                                    <select class="form-select input-border focus-none" id="forex_bd_userchoice" name="forex_bd_userchoice">
+                                    <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="Master Two">
-                                    Master Two
-                                    </option>
-                                    <option value="Master Three">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -763,7 +735,7 @@
                                     <label class="input-group-text bg-transparent border-none px-0" for="forex_bd_symbol">
                                     Select Symbol :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="forex_bd_symbol">
+                                    <select class="form-select input-border focus-none" id="forex_bd_symbol" name="forex_bd_symbol">
                                     <option class="">
                                         Select Symbol
                                     </option>
@@ -812,19 +784,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="forex_md_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="forex_md_userchoice">
-                                    <option class="select_id">
+                                    <select class="form-select input-border focus-none" id="forex_md_userchoice" name="forex_md_userchoice">
+                                    <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="Master Two">
-                                    Master Two
-                                    </option>
-                                    <option value="Master Three">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -860,7 +828,7 @@
                                     <label class="input-group-text bg-transparent border-none px-0" for="forex_md_symbol">
                                     Select Symbol :
                                     </label>
-                                    <select class="form-select input-border focus-none" id="forex_md_symbol">
+                                    <select class="form-select input-border focus-none" id="forex_md_symbol" name="forex_md_symbol">
                                     <option class="">
                                         Select Symbol
                                     </option>
@@ -909,19 +877,15 @@
                                     <label class="input-group-text bg-transparent border-none" for="forex_od_userchoice">
                                     Copy Settings From
                                     </label>
-                                    <select class="form-select input-border focus-none" id="forex_od_userchoice">
-                                    <option class="select_id">
+                                    <select class="form-select input-border focus-none" id="forex_od_userchoice" name="forex_od_userchoice">
+                                    <option value="select_id">
                                     Select ID
                                     </option>
-                                    <option value="Master One">
-                                    Master One
+                                    {% for user in users %}
+                                    <option value="{{user}}">
+                                    {{user}}
                                     </option>
-                                    <option value="Master Two">
-                                    Master Two
-                                    </option>
-                                    <option value="Master Three">
-                                    Master Three
-                                    </option>
+                                    {% endfor %}
                                     </select>
                                 </div>
                                 </div>
@@ -1137,11 +1101,13 @@
                 let button = document.getElementById('MCXV');
                 button.disabled = false;
                 button.classList.remove('opacity-50');
+                document.getElementById('flexRadioDefault1').value = 'checked';
             }
             else {
                 let button = document.getElementById('MCXV');
                 button.disabled = true;
                 button.classList.add('opacity-50');
+                document.getElementById('flexRadioDefault1').value = 'unchecked';
             }
         } 
         else if (segment == 'nse') {
@@ -1149,11 +1115,13 @@
                 let button = document.getElementById('NSEV');
                 button.disabled = false;
                 button.classList.remove('opacity-50');
+                document.getElementById('flexRadioDefault2').value = 'checked';
             }
             else {
                 let button = document.getElementById('NSEV');
                 button.disabled = true;
                 button.classList.add('opacity-50');
+                document.getElementById('flexRadioDefault2').value = 'unchecked';
             }
         } 
         else if (segment == 'forex') {
@@ -1161,11 +1129,13 @@
                 let button = document.getElementById('FOREXV');
                 button.disabled = false;
                 button.classList.remove('opacity-50');
+                document.getElementById('flexRadioDefault3').value = 'checked';
             }
             else {
                 let button = document.getElementById('FOREXV');
                 button.disabled = true;
                 button.classList.add('opacity-50');
+                document.getElementById('flexRadioDefault3').value = 'unchecked';
             }
         }
     }
