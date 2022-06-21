@@ -5,40 +5,25 @@
     </head>
     <body>
         <h5 id="app"></h5>
-        <button onclick="updater()">Update</button>
         <script>
-            let queryString = '';
-            let datat = [];
-            {% for stock in stocks %}
-            queryString += 'stock='+'{{ stock }}'+'&';
-            datat.push('{{ stock }}');
-            {% endfor %}
-            queryString = queryString.slice(0, -1);
-            var socket = new WebSocket('ws://'+window.location.host+'/ws/stock/trade/?'+queryString);
-            console.log(queryString);
+            var socket = new WebSocket('ws://'+window.location.host+'/ws/stock/trade/');
             socket.onmessage = function(event) {
-                const data = JSON.parse(event.data);
-                let finalData = [];
-                for (let i = 0; i < data.message.length; i++) {
-                    if (datat.indexOf(data.message[i][0]) != -1 ){
-                        finalData.push(data.message[i]);
-                    }
+                if (JSON.parse(event.data)["message"] == "connected") {
+                    socket.send(JSON.stringify({
+                        'message': 'new'
+                    }));
+                    sender();
                 }
-                document.getElementById('app').innerHTML = finalData;
-                console.log(finalData);
-                stateChange();
+                else {
+                    console.log(JSON.parse(event.data)["message"]);
+                    document.getElementById("app").innerHTML = JSON.parse(event.data)["message"];
+                }
             };
-            socket.onconnect = function(event) {
-                console.log(event.data);
-            };
-            function updater() {
+            function sender() {
                 socket.send(JSON.stringify({
                     'message': 'update'
                 }));
-            }
-            function stateChange()
-            {
-                setTimeout(updater(), 30000);
+                setTimeout(sender, 500);
             }
         </script>
     </body>
